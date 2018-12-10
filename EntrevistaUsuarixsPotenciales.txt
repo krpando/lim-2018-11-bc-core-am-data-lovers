@@ -1,0 +1,22 @@
+Usuarixs potenciales:
+Estudiantes universitarios sin rango o límite de edad, de pre-grado y/o post-grado. 
+De prefencia que tengan conocimientos o interés en investigación, o manipulación de data, en temas de humanidades, uso de datos demográficos y otros.
+
+CUESTIONARIO:
+1. ¿Nombre y edad?
+2. ¿A qué te dedicas?
+3. ¿Qué estudias? ¿Dónde estudias?
+4. ¿Alguna vez has realizado una investigación: Monografía, Tesis, Proyecto de investigación?
+5. ¿Qué tipo de herramientas utilizas para obtener información?
+6. ¿Con qué frecuencia has hecho uso de estas herramientas (base de datos)?
+7. ¿Dónde sueles buscar información para realizar tus trabajos universitarios?
+8. ¿Cuáles son las bases de datos que más consultas?
+9. ¿Qué tipo de información buscas en una base datos, para un estudio o trabajo?
+10. ¿Qué tipo de problemas encuentras cuando utilizas como fuente para un estudio o trabajo, una base datos?
+11. ¿Qué limitaciones encuentras en la data que se te ofrece?
+12. ¿De qué manera de gustaría que se te presente estos datos? ¿Visual, textual, otros?
+13. ¿Cómo te gustaría manipular los datos que te ofrece esta base de datos?
+14. ¿Qué tipo de cálculos de te gustaría hacer con la data?
+15. ¿Cómo te gustaría disponer de la información de la data? ¿Copiar, Enlace, Descarga?16. 
+16. ¿Te has sentido satisfechx con los resultados de tu búsqueda?
+17. ¿?
