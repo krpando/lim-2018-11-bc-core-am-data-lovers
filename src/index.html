@@ -1,24 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="ES">
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <title>Banco Mundial | Base de datos</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Esla segunda vez</h1>
-    <article>
-      <h2>Es la segunda vez</h2>
-      <h1>Hola Mundo Funciona por favoooooooor</h1>
-      <p>Con fe, con fe</p>
-      <p>Yo creo que ya, ¿no?</p>
-    </article>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <scrip src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
+    <header>
+      <img alt="WorldBankLogo" class="wb-logo" src="https://i.ibb.co/PmJMJ9K/logo-banco-mundial.jpg"/>
+      <img alt="DisplayMenuIcon" class="menu-icon" src="https://i.ibb.co/p4Z1Cf5/menu-alt-512.png"/>
+    </header>
+    <div>
+      <h1>Base de datos del Banco Mundial</h1>
+        <p class="country-nav">
+          <span>BRASIL |</span>
+          <span>CHILE |</span>
+          <span>MÉXICO |</span>
+          <span>PERÚ</span>
+        </p>
+    </div>
+    <!--Sección Search-->
+    <div class="search-container">
+      <p class="search-txt">Búsqueda por indicadores</p>
+      <form class="search-form">
+        <input class="search-input" placeholder="ejemplo:educación, género, desempleo" id="busqueda"/>
+        <button type="button" class="search-btn"></button>
+      </form>
+    </div>
+    <!--Sección Indicators by years-->
+    <div class="sections-nav-container">
+      <div class="img-container">
+        <img alt="Indicadores según año (Niña en clases)" class="years-img" src="https://i.ibb.co/6tkNRx3/IBRDCampaign-Page-3-Education.png" />
+      </div>
+      <div class="by-years-txt">
+        <h2>¿Cuánto hemos avanzado?</h2>
+        <p class="years-p">Observa el flujo de los indicadores a lo largo de los años. De 1960 hasta 2017.</p>
+      </div>  
+    </div>
+    <!--Sección SortBy -->
+    <div class="sections-nav-container">
+      <div class="sortby-txt">
+        <h2>Indicadores de alto impacto</h2>
+        <p class="sortby-p">Ubica los indicadores por temática, orden alfabético, menor o mayor porcentaje.</p>
+      </div> 
+      <div class="img-container">
+        <img alt="Indicadores de alto impacto (Salón de clases))" class="sortby-img" src="https://i.ibb.co/qgwb50s/fragility-SP.png" />
+      </div>
+    </div>
+    <!--Sección Calculate-->
+    <div class="sections-nav-container">
+      <div class="img-container">
+        <img alt="Datos en gráficos (Mujeres en tec)" class="calculate-img" src="https://i.ibb.co/DVmp8Cq/IBRD-Learn-More-Tiles-ABC-SP.png" />
+      </div>
+      <div class="calculate-txt">
+        <h2>Una mirada más amplia</h2>
+        <p class="calculate-p">Manipula y descarga la data en tablas o gráficos para un mejor análisis.</p>
+      </div>  
+    </div>
+    <footer>
+      <div class="copyright">
+        <img alt="WorldBankLogo-Black&White" src="https://i.ibb.co/Scv1sHW/World-Nabck.png" class="wb-logo-bw">
+        <p class="copyright-txt"> | Base de Datos © 2018</p>
+      </div>  
+      <div class="btn-referencia">
+        <button type="button" class="APA-btn">Referencia APA</button>
+      </div>  
+    </footer>
+    <script src="./data/worldbank/worldbank.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>

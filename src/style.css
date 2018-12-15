@@ -1,0 +1,153 @@
+@media only screen and (max-width: 411px) {
+    body {
+        width: 411px;
+        height: 731px;
+        background-color: #ffffff;
+    }
+/*Encabezado*/
+    header {
+        width: 411px;
+        height: 65px;
+        display:flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        border-bottom: 5px solid #009FDA;
+    }
+    .wb-logo {
+        padding: 3px;
+        width: 191px;
+        height: 50px;
+    }
+    .menu-icon {
+        padding: 10px;
+        width: 36px;
+        height: 33px;
+    }
+/*Para font-type general*/
+    h1, p, input, h2 {
+        font-family: AndesRoundedW01-Regular;
+        font-weight: normal;
+        text-align: center;
+    }
+/*Sección Título y navegación por países*/
+    h1 {
+        font-size: 20px;
+        color: #002244;
+        font-weight: bold;
+    }
+    .country-nav {
+        font-size: 12px;
+        color: #009fda;
+    }
+/*Sección búsqueda*/
+    .search-container {
+        width: 411px;
+        height: 97px;
+        display:block;
+        background-color: #002244;
+        box-sizing: border-box;
+    }
+    .search-txt {
+        padding-top: 10px;
+        font-size: 14px;
+        color: #ffffff;
+    }
+    .search-form {
+        display:flex;
+        justify-content: center;
+    }
+    .search-input {
+        width: 225px;
+        height: 30px;
+        font-size: 12px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        align-self: auto;
+        margin-right: 3px;
+    }
+    .search-btn {
+        width: 35px;
+        height: 35px;
+        background-image:url(https://i.ibb.co/f4CDkWY/search-enter-display-573173-color.png);
+        background-position:center;
+        background-size: 33px;
+        border-radius: 8px;
+        border-color: #009FDA;
+    }
+/*Sección Filtrado By Years*/
+    .sections-nav-container{
+        display:flex;
+    }
+    .img-container, .years-img, .sortby-img, .calculate-img {
+        width: 231px;
+        height: 151px;
+    }
+    .years-img, .sortby-img, .calculate-img {
+        position: absolute;
+        object-fit: cover;   
+    }
+    .by-years-txt, .sortby-txt, .calculate-txt {
+        width: 180px;
+        height: 151px;
+        color:#ffffff;
+        padding-left: 15px;
+        padding-right: 15px;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    .by-years-txt {
+        background-color: #009fda;
+    }
+    h2 {
+        font-size:17px; 
+    }
+    .years-p, .sortby-p, .calculate-p{
+        font-size: 13px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+/*Sección Sort By*/
+    .sortby-txt {
+        background-color:#000000;
+    }
+/*Sección Calculate*/
+    .calculate-txt {
+        background-color:#B88C1D;
+    }
+/*Pie de página*/
+    footer {
+        width: 411px;
+        height: 45px;
+        background-color: #ffffff;
+        justify-content: center;
+        box-sizing: border-box;
+        border-top: 5px solid #009FDA;
+        display: flex;
+    }
+    .copyright {
+        display: flex;
+        align-content: space-between;
+        font-size: 12px;
+    }
+    .wb-logo-bw {
+        width: 128px;
+        height: 21px;
+        padding-top: 9px;
+        margin-right: 7px;
+    }
+    .btn-referencia {
+        padding-top: 7px;
+        margin-left: 5px;
+    }
+    .APA-btn {
+        width: 97px;
+        height: 24px;
+        border-radius: 7px;
+        background-color: #000000;
+        color:#ffffff;
+        font-size: 10px;
+    }
+    .APA-btn:hover { 
+        background-color: #006068; 
+    }
+}
