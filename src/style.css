@@ -1,3 +1,38 @@
+body {
+    background-color: #ffffff;
+}
+/*Encabezado*/
+header {
+    height: 100px;
+    display:flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-bottom: 5px solid #009FDA;
+}
+.wb-logo {
+    padding: 10px;
+    width: auto;
+    height: 80px;
+}
+.menu-icon{
+    visibility: hidden;
+}
+/*Para font-type general*/
+h1, p, input, h2 {
+    font-family: AndesRoundedW01-Regular;
+    font-weight: normal;
+    text-align: center;
+}
+/*Sección Título y navegación por países*/
+h1 {
+    font-size: 40px;
+    color: #002244;
+    font-weight: bold;
+}
+.country-nav {
+    font-size: 20px;
+    color: #009fda;
+}
 @media only screen and (max-width: 411px) {
     body {
         width: 411px;

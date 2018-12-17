@@ -6,7 +6,7 @@
 };
 
 window.example = example;*/
-const primerPaso =WORLDBANK.PER.indicators;
+/*const primerPaso =WORLDBANK.PER.indicators;
 let resultadoPrimerPaso=[];
 for(let i=0;i<primerPaso.length;i++){
   resultadoPrimerPaso.push(primerPaso[i]);
@@ -24,5 +24,10 @@ if(palabra==="indicadores"){
       if(search){
 
       }
-    }
-  }
+}*/
+const one=WORLDBANK.PER.indicators;
+  const two=[];
+    for(i=0; i<one.length; i++) {
+      two.push(one[i].indicatorName);
+        document.getElementById('salida').innerHTML = `${two}`;
+    };
