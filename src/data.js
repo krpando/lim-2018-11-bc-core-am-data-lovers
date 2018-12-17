@@ -27,7 +27,24 @@ if(palabra==="indicadores"){
 }*/
 const one=WORLDBANK.PER.indicators;
   const two=[];
+  const three=[];
     for(i=0; i<one.length; i++) {
       two.push(one[i].indicatorName);
-        document.getElementById('salida').innerHTML = `${two}`;
+      three.push(one[i].data['2012']);
+      let tr = document.createElement("TR");  
+      let th1 = document.createElement("TH");      // Create a <button> element
+      let t = document.createTextNode(one[i].indicatorName);
+      let th2 = document.createElement("TH");        // Create a <button> element
+      let nt = document.createTextNode(one[i].data['2012']);
+      tr.appendChild(th1);
+      tr.appendChild(th2);
+      th1.appendChild(t);
+      th2.appendChild(nt);
+      document.getElementById('lista').appendChild(tr);
+      // document.getElementById('lista').appendChild(nt);
+      // debugger;
+      
+       
+        
     };
+    //document.getElementById('salida').innerHTML = `${two}`;

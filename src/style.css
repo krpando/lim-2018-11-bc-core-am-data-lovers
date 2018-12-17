@@ -33,6 +33,9 @@ h1 {
     font-size: 20px;
     color: #009fda;
 }
+.tabla {
+    border-color: #000000;
+}
 @media only screen and (max-width: 411px) {
     body {
         width: 411px;
