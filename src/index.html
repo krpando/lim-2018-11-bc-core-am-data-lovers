@@ -2,31 +2,41 @@
 <html lang="ES">
   <head>
     <meta charset="utf-8">
-    <title>Banco Mundial | Base de datos</title>
+    <title>Banco Mundial | Base de datos Perú</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!--Encabezado-->
     <header>
       <img alt="WorldBankLogo" class="wb-logo" src="https://i.ibb.co/PmJMJ9K/logo-banco-mundial.jpg"/>
       <img alt="DisplayMenuIcon" class="menu-icon" src="https://i.ibb.co/p4Z1Cf5/menu-alt-512.png"/>
-    </header>
+    <!--Título y enlaces para búsqueda de datos por países-->
     <div>
       <h1>Base de datos del Banco Mundial</h1>
         <p class="country-nav">
           <span>BRASIL |</span>
           <span>CHILE |</span>
           <span>MÉXICO |</span>
-          <span>PERÚ</span>
+          <span id="country-peru">PERÚ</span>
         </p>
     </div>
+    
+    </header>
+    
     <!--Sección Search-->
     <div class="search-container">
-      <p class="search-txt">Búsqueda por indicadores</p>
+      <label class="search-txt">Búsqueda por indicadores</label>
       <form class="search-form">
-        <input class="search-input" placeholder="ejemplo:educación, género, desempleo" id="busqueda"/>
-        <button type="button" class="search-btn"></button>
+        <input class="search-input" placeholder="Ejemplo:educación, género, desempleo" id="busqueda"/>
+        <button type="button" class="search-btn" onclick="lista()"></button>
       </form>
     </div>
+    <!--Sección Search-->
+    
+    <input id="año"/>
+    <button type="button" class="order-btn" onclick="busqueda()"></button>
+     
+    
     <div>
         <table class = "tabla" id= "lista" style="width:100%">
             <tr>
@@ -36,7 +46,7 @@
 
           </table>
       <p id="salida"></p>
-    </div>>
+    </div>
     <!--Sección Indicators by years-->
     <div class="sections-nav-container">
       <div class="img-container">
