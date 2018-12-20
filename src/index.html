@@ -20,23 +20,24 @@
           <span id="country-peru">PERÚ</span>
         </p>
     </div>
-    
     </header>
-    
-    <!--Sección Search-->
+    <!--Sección Search: Prueba de Tabla-->
     <div class="search-container">
       <label class="search-txt">Búsqueda por indicadores</label>
       <form class="search-form">
-        <input class="search-input" placeholder="Ejemplo:educación, género, desempleo" id="busqueda"/>
+        <input class="search-input" placeholder="ingresa un año del 2000 al 2015" id="año"/>
         <button type="button" class="search-btn" onclick="lista()"></button>
       </form>
     </div>
-    <!--Sección Search-->
-    
-    <input id="año"/>
-    <button type="button" class="order-btn" onclick="busqueda()"></button>
-     
-    
+    <!--Sección Search: Búsqueda Rápida-->
+    <div class="search-container">
+      <label class="search-txt">Búsqueda por indicadores</label>
+      <form class="search-form">
+        <input class="search-input" placeholder="Ejemplo:educación, género, desempleo" id="word"/>
+        <button type="button" class="search-btn" id="searchBtn"></button>
+        <textarea id="result"></textarea>
+      </form>
+    </div>
     <div>
         <table class = "tabla" id= "lista" style="width:100%">
             <tr>
