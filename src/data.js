@@ -3,7 +3,7 @@
 };
 esta es una función de ejemplo
 puedes ver como agregamos la función a nuestro objeto global window */
-
+/*
 const one = WORLDBANK.PER.indicators;
 const two = [];
 const three = [];
@@ -34,7 +34,35 @@ function filterIndicators(palabra) {
     return x.toLowerCase().indexOf(palabra.toLowerCase()) > -1;
   });
 }
+function filterCodes(palabra) {
+  const manual = one.map((arr) => {
+    return arr.indicatorName;
+  });
+  return manual.filter((x) => {
+    return x.toLowerCase().indexOf(palabra.toLowerCase()) > -1;
+  });
+}
+*/
+let populationList = '';
+const population = WORLDBANK.PER.indicators
+  .filter(pop => pop.indicatorCode.slice(0, 6) === 'SP.POP')
+  .map(pop => pop.indicatorName)
+  .forEach(pop => {
+    const popList = `<li><a href=#> ${pop} </a></li>`;
+    populationList += popList;
+  });
+document.getElementById('population-list').innerHTML = populationList;
+/*
+function filterIndicators(palabra2) {
+  const manual2 = one.map((arr2) => {
+    return arr2.indicatorCode;
+  });
+  return manual2.filter((x) => {
+    return x.toLowerCase().indexOf(palabra2.toLowerCase()) > -1;
+  });
+}
 
+*/
 /* const ordenar = () => {
   console.log(two.sort());
 } */
