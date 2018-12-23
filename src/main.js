@@ -25,3 +25,12 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     }  
   }
 });
+
+document.getElementById('searchBtn').addEventListener('click', () => {
+    <ul>
+      <li>${population12}</li>
+    </ul>
+  ` ;
+    }  
+  }
+});
