@@ -10,45 +10,67 @@
     <header>
       <div class="title-container">
         <img alt="WorldBankLogo" class="wb-logo" src="https://i.ibb.co/PmJMJ9K/logo-banco-mundial.jpg"/>
-        <h1>| Base de datos</h1>
       </div>  
       <!--Menú y enlaces para búsqueda de datos por países-->
       <div class="menu-container">
+<<<<<<< HEAD
           <nav class="menu-nav">
             <img alt="DisplayMenuIcon" class="menu-icon" src="https://i.ibb.co/p4Z1Cf5/menu-alt-512.png"/>
             <a>Instrucciones</a>
             <a>Preguntas frecuentes</a>
             <a>Ayuda</a>
+=======
+        <div class="country-nav">
+          <span>BRASIL |</span>
+          <span>CHILE |</span>
+          <span>MÉXICO |</span>
+          <span id="country-peru">PERÚ</span>
+        </div>
+        <div class="country-list">
+          <select>
+            <option><a>BRASIL</a></option> 
+            <option><a>CHILE</a></option> 
+            <option><a>MÉXICO</a></option> 
+            <option selected="selected"><a>PERÚ</a></option> 
+          </select>
+        </div>        
+        <div class="menu-nav">
+          <input id="menu-display" type="checkbox"></input>
+          <label for="menu-display"><img alt="DisplayMenuIcon" class="menu-icon" src="https://i.ibb.co/p4Z1Cf5/menu-alt-512.png"/></label>
+          <nav>
+            <ul>
+              <li><a>Instrucciones</a></li>
+              <li><a>Preguntas frecuentes</a></li>
+              <li><a>Ayuda</a></li>
+            </ul>    
+>>>>>>> d85dc3854357cbdf74ba5b0fd1ed02ef5df74868
           </nav>
-          <div class="country-nav">
-            <span>BRASIL |</span>
-            <span>CHILE |</span>
-            <span>MÉXICO |</span>
-            <span id="country-peru">PERÚ</span>
-          </div>      
+        </div>  
       </div>  
     </header>
     <!--Sección Search-->
   <div class="search-container">
       <!--Search: Búsqueda Rápida-->
       <div class="search-fast">  
-        <label class="search-txt">Búsqueda por indicadores</label>
+        <label class="search-txt-fast">Búsqueda por indicadores</label>
         <form class="search-form">
           <input class="search-input" placeholder="Ejemplo:educación, género, desempleo" id="word"/>
           <button type="button" class="search-btn" id="searchBtn"></button>
         </form>
       </div>
+      <hr></hr>
       <!--Search: Búsqueda por temas-->
       <div class="search-topic">  
-        <label class="search-txt">Búsqueda por temas</label>
+        <label class="search-txt-topic">Búsqueda por temas</label>
         <form class="search-form">
-          <button type="button" class="topic-btn" id="gender">Género</button>
-          <button type="button" class="topic-btn" id="education">Educación</button>
-          <button type="button" class="topic-btn" id="social-dev">Desarrollo Social</button>
-          <button type="button" class="topic-btn" id="economy">Economía</button> 
+          <button type="button" class="topic-btn" id="gender">GÉNERO</button>
+          <button type="button" class="topic-btn" id="education">EDUCACIÓN</button>
+          <button type="button" class="topic-btn" id="social-dev">DESARROLLO SOCIAL</button>
+          <button type="button" class="topic-btn" id="economy">ECONOMÍA</button> 
         </form>  
       </div>   
     </div>    
+<<<<<<< HEAD
       <!--Resultados-->
       <div class="result-form" id="result-container">
         <form id="result">
@@ -67,6 +89,13 @@
         </form>
       </div>     
 Sección Search: Prueba de Tabla
+=======
+    <!--Resultados
+    <div class="result-form" id="result-container">
+      <form id="result"></form>
+    </div> -->    
+<!-- Sección Search: Prueba de Tabla
+>>>>>>> d85dc3854357cbdf74ba5b0fd1ed02ef5df74868
       <div class="search-container">
       <label class="search-txt">Búsqueda por indicadores</label>
       <form class="search-form">
@@ -76,46 +105,58 @@ Sección Search: Prueba de Tabla
     </div>
   
       <p id="salida"></p>
-    </div>
-    Sección Indicators by years
+    </div>-->
+    <!-- Sección Indicators by years -->
     <div class="sections-nav-container">
-      <div class="img-container">
+      <div class="img-item">
         <img alt="Indicadores según año (Niña en clases)" class="years-img" src="https://i.ibb.co/6tkNRx3/IBRDCampaign-Page-3-Education.png" />
       </div>
-      <div class="by-years-txt">
-        <h2>¿Cuánto hemos avanzado?</h2>
-        <p class="years-p">Observa el flujo de los indicadores a lo largo de los años. De 1960 hasta 2017.</p>
-      </div>  
-    </div>
-    Sección SortBy
-    <div class="sections-nav-container">
-      <div class="sortby-txt">
-        <h2>Indicadores de alto impacto</h2>
-        <p class="sortby-p">Ubica los indicadores por temática, orden alfabético, menor o mayor porcentaje.</p>
-      </div> 
-      <div class="img-container">
-        <img alt="Indicadores de alto impacto (Salón de clases))" class="sortby-img" src="https://i.ibb.co/qgwb50s/fragility-SP.png" />
+      <div class="section-title">
+          <h2>¿CUÁNTO HEMOS AVANZADO?</h2>
+          <img alt="Flecha descripción menú" class="arrow-title" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/>
+      </div>
+      <div class="section-txt">
+          <p class="description-txt">Observa el flujo de los indicadores a lo largo de los años. De 1960 hasta 2017.</p>
+          <img alt="Flecha elegir opción" class="arrow-txt" src="https://i.ibb.co/HBQV0f1/flecha-abajo-en-boton-circular.png"/> 
       </div>
     </div>
-    Sección Calculate
+    <!-- Sección Sort by -->
     <div class="sections-nav-container">
-      <div class="img-container">
-        <img alt="Datos en gráficos (Mujeres en tec)" class="calculate-img" src="https://i.ibb.co/DVmp8Cq/IBRD-Learn-More-Tiles-ABC-SP.png" />
+      <div class="img-item">
+          <img alt="Indicadores de alto impacto (Salón de clases))" class="sortby-img" src="https://i.ibb.co/qgwb50s/fragility-SP.png"/>
       </div>
-      <div class="calculate-txt">
-        <h2>Una mirada más amplia</h2>
-        <p class="calculate-p">Manipula y descarga la data en tablas o gráficos para un mejor análisis.</p>
+      <div class="section-title">
+          <h2>INDICADORES DE ALTO IMPACTO</h2>
+          <img alt="Flecha descripción menú" class="arrow-title" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/>
+      </div>
+      <div class="section-txt">
+          <p class="description-txt">Ubica los indicadores por temática, orden alfabético, menor o mayor porcentaje.</p>
+          <img alt="Flecha elegir opción" class="arrow-txt" src="https://i.ibb.co/HBQV0f1/flecha-abajo-en-boton-circular.png"/> 
+      </div>
+    </div>  
+    <!-- Sección Calculate -->
+    <div class="sections-nav-container">
+        <div class="img-item">
+            <img alt="Datos en gráficos (Mujeres en tec)" class="calculate-img" src="https://i.ibb.co/DVmp8Cq/IBRD-Learn-More-Tiles-ABC-SP.png"/>
+        </div>
+        <div class="section-title">
+            <h2>UNA MIRADA MÁS AMPLIA</h2>
+            <img alt="Flecha descripción menú" class="arrow-title" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/>
+        </div>
+        <div class="section-txt">
+            <p class="description-txt">Manipula y descarga la data en tablas o gráficos para un mejor análisis.</p>
+            <img alt="Flecha elegir opción" class="arrow-txt" src="https://i.ibb.co/HBQV0f1/flecha-abajo-en-boton-circular.png"/> 
+        </div>
       </div>  
-    </div>
     <footer>
       <div class="copyright">
         <img alt="WorldBankLogo-Black&White" src="https://i.ibb.co/Scv1sHW/World-Nabck.png" class="wb-logo-bw">
         <p class="copyright-txt"> | Base de Datos © 2018</p>
       </div>  
       <div class="btn-referencia">
-        <button type="button" class="APA-btn">Referencia APA</button>
+        <button type="button" class="APA-btn">CITAR DATA EN APA</button>
       </div>  
-    </footer> -->
+    </footer> 
     <script src="./data/worldbank/worldbank.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
