@@ -1,19 +1,18 @@
-body {
+/* body {
     background-color: #ffffff;
 }
-/*Para font-type general*/
-h1, p, input, h2, a, span, label, button {
+Para font-type general
+h1, p, input, h2, a, span, label, button, #result {
     font-family: AndesRoundedW01-Regular;
     font-weight: normal;
     text-align: center;
 }
-/*Encabezado*/
+Encabezado
 header {
     height: 100px;
     display:flex;
     justify-content: space-between;
     box-sizing: border-box;
-    border-bottom: 5px solid #009FDA;
 }
     .title-container{
         display: inline-flex;
@@ -29,7 +28,7 @@ header {
             color: #002244;
             font-weight: bold;
         }
-/*Menú y navegación por países*/    
+Menú y navegación por países    
     .menu-container {
         display: block;
         margin-top: 20px;
@@ -37,7 +36,7 @@ header {
     }
         /*.menu-icon {
             visibility: hidden;
-        }*/
+        }
         .menu.nav {
             color: #002244;
         }
@@ -124,158 +123,288 @@ header {
         width: 80%;
         height: 80%;
         margin: 20px auto;
-    }                       
-/*Responsive para dispoitivo móvil*/
-@media only screen and (max-width: 411px) {
+        padding: 15px;
+        text-align: left;
+    }  */                      
+/*Responsive para dispositivo móvil*/
+@media only screen and (max-width: 360px) {
     body {
-        width: 411px;
-        height: 731px;
+        width: 360px;
+        height: 640px;
         background-color: #ffffff;
     }
-/*Encabezado*/
-    header {
-        width: 411px;
-        height: 65px;
-        display:flex;
-        justify-content: space-between;
-        box-sizing: border-box;
-        border-bottom: 5px solid #009FDA;
-    }
-    .wb-logo {
-        padding: 3px;
-        width: 191px;
-        height: 50px;
-    }
-    .menu-icon {
-        padding: 10px;
-        width: 36px;
-        height: 33px;
-    }
 /*Para font-type general*/
-    h1, p, input, h2 {
+    label, button, h2, select, option, .description-txt {
         font-family: AndesRoundedW01-Regular;
         font-weight: normal;
         text-align: center;
     }
-/*Sección Título y navegación por países*/
-    h1 {
-        font-size: 20px;
-        color: #002244;
-        font-weight: bold;
+    input, p, a {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: normal;
+        text-align: center;
+    }    
+/*Encabezado*/
+    header {
+        height: 46px;
+        width: 360px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .wb-logo {
+        padding: 10px;
+        width: 125px;
+        height: auto;
     }
     .country-nav {
-        font-size: 12px;
-        color: #009fda;
+        display: none;
     }
+    select {
+        border: 0px transparent;
+        margin: 0 auto;
+        color: #002244;
+        height: 25px;
+        cursor: pointer;
+        background: 295px 12px no-repeat #ffffff;
+        text-align-last:center; 
+    }
+    select:hover {
+        border-radius: 8px;
+        background-color: #009FDA;
+        color: #ffffff;
+    }
+    option {
+        background-color: #ffffff;
+        color:#002244;
+        cursor: pointer;
+    }
+    .menu-icon {
+        height: 25px;
+        padding: 15px;
+    }
+    .menu-container {
+        display: grid;
+        grid-template-columns: 70px auto auto;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+    .menu-icon:hover {
+        cursor: pointer;
+    }
+    #menu-display {
+        display: none;
+    }
+    nav {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1s;
+    }
+    #menu-display:checked ~ nav {
+        visibility: visible;
+        opacity: 1;
+    }
+    ul {
+        height: 117px;
+        width: 360px;
+        list-style-type: none;
+        margin: -1% 0 0 -89%;
+        padding: 0;
+        background-color:#002244;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+    }
+    li a {
+        display: block;
+        padding: 13.5px 20px;
+        color: #ffffff;
+        text-align: right;
+        font-size: 11px;
+        text-decoration: none;
+        border-top: 1px solid #009FDA;
+    }
+    li a:hover {
+        background-color:#B88C1D;
+        color: #ffffff;
+        cursor: pointer;
+    } 
 /*Sección búsqueda*/
     .search-container {
-        width: 411px;
-        height: 97px;
-        display:block;
+        height: 117px;
+        width: 360px;
         background-color: #002244;
-        box-sizing: border-box;
     }
-    .search-txt {
-        padding-top: 10px;
+    .search-fast {
+        text-align: center;
+        padding: 8px;
+    }
+    .search-txt-fast {
         font-size: 14px;
         color: #ffffff;
     }
+    .search-txt-topic {
+        display: none;
+    }   
     .search-form {
         display:flex;
         justify-content: center;
+        padding-top:3px;
+    }
+    hr {
+        width: 290px;
+        margin-bottom:4px;
+        margin-top:4px;
     }
     .search-input {
         width: 225px;
-        height: 30px;
-        font-size: 12px;
+        height: 24px;
+        font-size: 11px;
         background-color: #ffffff;
         border-radius: 8px;
         align-self: auto;
         margin-right: 3px;
     }
     .search-btn {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
         background-image:url(https://i.ibb.co/f4CDkWY/search-enter-display-573173-color.png);
         background-position:center;
-        background-size: 33px;
+        background-size: 30px;
         border-radius: 8px;
         border-color: #009FDA;
     }
-/*Sección Filtrado By Years*/
+    .search-btn:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+    .topic-btn{
+        height: 18px; 
+        width: auto;
+        background-color: #009FDA;
+        border-radius: 5px;
+        border-color: transparent;
+        margin: 3px;
+        font-size: 10px;
+        color: #ffffff;
+    }
+    .topic-btn:hover {
+        cursor: pointer;
+        background-color: #B88C1D;
+    }
+/*Secciones de filtrado, orden y cálculo [default]*/
     .sections-nav-container{
-        display:flex;
-    }
-    .img-container, .years-img, .sortby-img, .calculate-img {
-        width: 231px;
-        height: 151px;
-    }
-    .years-img, .sortby-img, .calculate-img {
-        position: absolute;
-        object-fit: cover;   
-    }
-    .by-years-txt, .sortby-txt, .calculate-txt {
-        width: 180px;
-        height: 151px;
-        color:#ffffff;
-        padding-left: 15px;
-        padding-right: 15px;
-        justify-content: center;
-        box-sizing: border-box;
-    }
-    .by-years-txt {
+        height: 145px;
         background-color: #009fda;
     }
+    .img-item, .years-img, .sortby-img, .calculate-img {
+        width: 360px;
+        height: 145px;
+        position: absolute;
+        transition: width 1.5s;
+    }
+    .years-img, .sortby-img, .calculate-img {
+        opacity: 0.3;
+        object-fit: cover;
+    }
+    .section-title {
+        display: grid;
+        grid-template-columns: 210px auto auto;
+        position: relative;
+        justify-content: center;    
+        align-content: center;
+        height: 145px;
+    }
     h2 {
-        font-size:17px; 
+        color:#ffffff;
+        font-size: 24px;
+        -webkit-text-stroke-width: 0.75px;
+        transition: font-size 0.5s;
     }
-    .years-p, .sortby-p, .calculate-p{
+    .arrow-title {
+        height: 48px;
+        align-self: center;
+        transition: height 2s, transform 0.8s;
+    }
+    .description-txt {
+        color: #ffffff;
         font-size: 13px;
-        padding-left: 15px;
-        padding-right: 15px;
+        align-self: center;
+        cursor: context-menu;
     }
-/*Sección Sort By*/
-    .sortby-txt {
-        background-color:#000000;
+    .arrow-txt {
+        width:35px;
+        height: 35px;
     }
-/*Sección Calculate*/
-    .calculate-txt {
-        background-color:#B88C1D;
+    .section-txt{
+        display: none;
+    }
+/*Secciones de filtrado, orden y cálculo [al pasar el mouse]*/
+    .sections-nav-container:hover {
+        display: grid;
+        grid-auto-columns: 180px;
+        position: relative;
+    } 
+    .sections-nav-container:hover .years-img, .sections-nav-container:hover .sortby-img, .sections-nav-container:hover .calculate-img {
+        width:180px;
+        opacity: 1;
+    } 
+    .sections-nav-container:hover .section-title {
+        grid-template-columns: 100px auto auto;
+        height: auto;
+    }
+    .sections-nav-container:hover h2 {
+        font-size: 10px;
+        text-shadow: 2px 2px 3px #000000;
+        -webkit-text-stroke-width: 0;
+    } 
+    .sections-nav-container:hover .arrow-title {
+        height: 25px;
+        transform: rotate(-180deg);
+    }
+    .sections-nav-container:hover .section-txt {
+        display: grid;
+        grid-template-rows: auto 50px;
+        position: absolute;
+        right: 4%;
+        width: 150px;
+        height: 145px;
+    }
+    .sections-nav-container:hover .arrow-txt {
+        justify-self: center;
+        cursor: pointer;        
     }
 /*Pie de página*/
     footer {
-        width: 411px;
-        height: 45px;
+        width: 360px;
+        height: 40px;
         background-color: #ffffff;
-        justify-content: center;
-        box-sizing: border-box;
-        border-top: 5px solid #009FDA;
+        justify-content: space-around;
         display: flex;
     }
     .copyright {
+        width: 225px;
         display: flex;
-        align-content: space-between;
-        font-size: 12px;
+        font-size: 10px;
+        justify-content: space-between;
+    }
+    .copyright-txt, .btn-referencia, .wb-logo-bw {
+        align-self: center;
+        cursor: context-menu;
     }
     .wb-logo-bw {
-        width: 128px;
-        height: 21px;
-        padding-top: 9px;
-        margin-right: 7px;
-    }
-    .btn-referencia {
-        padding-top: 7px;
-        margin-left: 5px;
+        height: 19px;
     }
     .APA-btn {
-        width: 97px;
-        height: 24px;
+        width: 84px;
+        height: 21px;
         border-radius: 7px;
         background-color: #000000;
         color:#ffffff;
-        font-size: 10px;
+        font-size: 7px;
     }
     .APA-btn:hover { 
-        background-color: #006068; 
+        background-color: #B88C1D; 
+        cursor: copy;
     }
 }
