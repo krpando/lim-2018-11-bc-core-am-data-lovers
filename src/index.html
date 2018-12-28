@@ -15,7 +15,7 @@
       <!--Menú y enlaces para búsqueda de datos por países-->
       <div class="menu-container">
           <nav class="menu-nav">
-            <!--<img alt="DisplayMenuIcon" class="menu-icon" src="https://i.ibb.co/p4Z1Cf5/menu-alt-512.png"/>-->
+            <img alt="DisplayMenuIcon" class="menu-icon" src="https://i.ibb.co/p4Z1Cf5/menu-alt-512.png"/>
             <a>Instrucciones</a>
             <a>Preguntas frecuentes</a>
             <a>Ayuda</a>
@@ -29,7 +29,7 @@
       </div>  
     </header>
     <!--Sección Search-->
-    <div class="search-container">
+  <div class="search-container">
       <!--Search: Búsqueda Rápida-->
       <div class="search-fast">  
         <label class="search-txt">Búsqueda por indicadores</label>
@@ -51,9 +51,22 @@
     </div>    
       <!--Resultados-->
       <div class="result-form" id="result-container">
-        <form id="result"></form>
+        <form id="result">
+            <div class="col-8">
+                <section id="information">
+                  <div class="table-wrapper">
+                  <table id= "lista"  style="width:100%" border="1">
+                    <thead>
+                    </thead>
+                    <tbody id="contentTable">
+                    </tbody>  
+                  </table>
+                  </div>
+                  </section>
+              </div>
+        </form>
       </div>     
-<!-- Sección Search: Prueba de Tabla
+Sección Search: Prueba de Tabla
       <div class="search-container">
       <label class="search-txt">Búsqueda por indicadores</label>
       <form class="search-form">
@@ -61,15 +74,7 @@
         <button type="button" class="search-btn"></button>
       </form>
     </div>
-
-    <div>
-        <table class = "tabla" id= "lista" style="width:100%">
-            <tr>
-              <th>Indicador</th>
-              <th>Valor</th> 
-            </tr>
-
-          </table>
+  
       <p id="salida"></p>
     </div>
     Sección Indicators by years

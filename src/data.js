@@ -7,7 +7,7 @@ puedes ver como agregamos la función a nuestro objeto global window */
 // Función filtrado para búsqueda rápida
 
 // Pintado de tabla en web
-const one = WORLDBANK.PER.indicators;
+/*const one = WORLDBANK.PER.indicators;
 const two = [];
 const three = [];
 let four = document.getElementById('año');
@@ -28,10 +28,10 @@ const lista = () => {
     document.getElementById('lista').appendChild(tr);
   }
 }; 
-
+*/
 /* const ordenar = () => {
   console.log(two.sort());
-} */
+}*/
 function filterIndicators(palabra) {
   const indicadores = one.map((arr) => {
     return arr.indicatorName;
@@ -40,18 +40,24 @@ function filterIndicators(palabra) {
     return x.toLowerCase().indexOf(palabra.toLowerCase()) > -1;
   });
 }
-function filterByCode (){
 
-let str = ''; 
-one
-.filter(arr => arr.indicatorCode.slice(0, 6) === 'SP.POP')
-.map( arr =>  arr.indicatorName)
-.forEach(arr => {
-    const popList12 = `${arr} `;
-    str += popList12;
-  });
-
-
+const filtradoCodigo = (one, string) => {
+  return one.filter(themes =>themes.indicatorCode.slice(0,2)===string);
+};
+function newRowTable(prop,result)
+{
+  var name_table = document.getElementById('lista');
+  var row = name_table.insertRow(0+1);
+  var cell1 =row.insertCell(0);
+  var cell2 =row.insertCell(1);
+  cell1.innerHTML = '<p name = "numero_f[]" class = "non-margin">' + prop+'</p>';
+  cell2.innerHTML = '<p name = "numero_p[]" class = "non-margin">' + result+'</p>';  
+}
+window.worldbank = {
+  filtradoCodigo,
+  newRowTable,
+  
+}
 // console.log(populationList12);
 //////////////////////////
 /////////////////////

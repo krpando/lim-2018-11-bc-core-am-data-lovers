@@ -35,9 +35,9 @@ header {
         margin-top: 20px;
         margin-right: 25px;
     }
-        /*.menu-icon {
+    .menu-icon {
             visibility: hidden;
-        }*/
+        }
         .menu.nav {
             color: #002244;
         }
@@ -124,6 +124,7 @@ header {
         width: 80%;
         height: 80%;
         margin: 20px auto;
+        overflow-y: scroll;
     }                       
 /*Responsive para dispoitivo móvil*/
 @media only screen and (max-width: 411px) {
