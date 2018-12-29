@@ -27,12 +27,15 @@ document.getElementById('searchBtn').addEventListener('click', () => {
 });
 
 */
+const viernes = document.getElementById('search-btn').addEventListener('click',() =>{
+
+})
 const one = WORLDBANK.PER.indicators;
 const resultado = (theme) => document.getElementById('result').innerHTML += 
 `<ul>
     <li>${de.indicatorName}</li>
-</ul>`
-      ;
+</ul>
+` ;
 
 const educationThemes = document.getElementById('education').addEventListener('click',() =>{
 worldbank.filtradoCodigo(one, 'SE').forEach(resultado)});
@@ -51,11 +54,6 @@ document.getElementById('result').innerHTML = devString;
 });
   
  */
-const hola = () =>{
-  worldbank.filtradoCodigo(one,'SE').forEach(ed => {
-    de.data
-  })
-}
 
 const developThemes = document.getElementById('social-dev').addEventListener('click',() =>{
   worldbank.filtradoCodigo(one, 'SL').forEach(resultado);
@@ -108,14 +106,7 @@ worldbank.filtradoCodigo(one, 'SE').forEach(ed => {
   resultado.innerHTML=educationString;
 })
 }) 
-
-
-let ar = [];
-const asi = () => {
-  for(let i = 0; i < one.length; i++){
-ar.push(one[i].data);
-}
-let ar = [];
-for(i = 0; i < one.length; i++){
-
-}*/
+*/
+const safari = WORLDBANK.PER.indicators;
+const provecho = safari.map(ed => ed.data);
+const choca = provecho.map(de => Object.keys(de.data));

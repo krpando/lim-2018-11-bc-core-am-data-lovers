@@ -123,18 +123,11 @@ Menú y navegación por países
         width: 80%;
         height: 80%;
         margin: 20px auto;
-<<<<<<< HEAD
-        overflow-y: scroll;
-    }                       
-/*Responsive para dispoitivo móvil*/
-@media only screen and (max-width: 411px) {
-=======
         padding: 15px;
         text-align: left;
     }  */                      
 /*Responsive para dispositivo móvil*/
 @media only screen and (max-width: 360px) {
->>>>>>> d85dc3854357cbdf74ba5b0fd1ed02ef5df74868
     body {
         width: 360px;
         height: 640px;
@@ -167,7 +160,7 @@ Menú y navegación por países
     .country-nav {
         display: none;
     }
-    select {
+    #country-select {
         border: 0px transparent;
         margin: 0 auto;
         color: #002244;
@@ -238,9 +231,11 @@ Menú y navegación por países
     } 
 /*Sección búsqueda*/
     .search-container {
-        height: 117px;
+        padding-top: 10px;
+        height: 80px;
         width: 360px;
         background-color: #002244;
+        padding-bottom: 2px;
     }
     .search-fast {
         text-align: center;
@@ -260,7 +255,7 @@ Menú y navegación por países
     }
     hr {
         width: 290px;
-        margin-bottom:4px;
+        margin-bottom:1px;
         margin-top:4px;
     }
     .search-input {
@@ -381,6 +376,30 @@ Menú y navegación por países
         justify-self: center;
         cursor: pointer;        
     }
+    #result-container{
+        margin-left: 24px;
+        margin-right: 27px;
+        width: 360px;
+
+    
+    }
+    select{
+    margin-top: 8px;
+    margin-right: 5px;
+    border-radius: 5px;
+    background-color: #009FDA;
+    color: #ffffff;
+    border: 0px transparent;
+    cursor: pointer;
+    text-align-last: center; 
+    height: 25px;
+    }
+    #cuadro-resultados{
+        height: 484px;
+        background-color: #002244;
+        width: 360px;
+
+    }
 /*Pie de página*/
     footer {
         width: 360px;
@@ -414,4 +433,11 @@ Menú y navegación por países
         background-color: #B88C1D; 
         cursor: copy;
     }
+}
+#cuadro{
+    height: 455px;
+    background-color: #ffffff;
+    width: 340px;
+    margin-right:4px;
+    margin-left: 6.5px;
 }

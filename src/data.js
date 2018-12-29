@@ -44,6 +44,7 @@ function filterIndicators(palabra) {
 const filtradoCodigo = (one, string) => {
   return one.filter(themes =>themes.indicatorCode.slice(0,2)===string);
 };
+
 function newRowTable(prop,result)
 {
   var name_table = document.getElementById('lista');
@@ -53,6 +54,13 @@ function newRowTable(prop,result)
   cell1.innerHTML = '<p name = "numero_f[]" class = "non-margin">' + prop+'</p>';
   cell2.innerHTML = '<p name = "numero_p[]" class = "non-margin">' + result+'</p>';  
 }
+ function filterYears (data){
+   let yearData =[];
+   for( let i=0; i<data.length; i++){
+     yearData.push(data[i]);
+   }
+   return yearData;
+ }
 window.worldbank = {
   filtradoCodigo,
   newRowTable,

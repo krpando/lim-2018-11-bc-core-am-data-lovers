@@ -12,14 +12,7 @@
         <img alt="WorldBankLogo" class="wb-logo" src="https://i.ibb.co/PmJMJ9K/logo-banco-mundial.jpg"/>
       </div>  
       <!--Menú y enlaces para búsqueda de datos por países-->
-      <div class="menu-container">
-<<<<<<< HEAD
-          <nav class="menu-nav">
-            <img alt="DisplayMenuIcon" class="menu-icon" src="https://i.ibb.co/p4Z1Cf5/menu-alt-512.png"/>
-            <a>Instrucciones</a>
-            <a>Preguntas frecuentes</a>
-            <a>Ayuda</a>
-=======
+      <div class="menu-container"> 
         <div class="country-nav">
           <span>BRASIL |</span>
           <span>CHILE |</span>
@@ -27,7 +20,7 @@
           <span id="country-peru">PERÚ</span>
         </div>
         <div class="country-list">
-          <select>
+          <select id = "country-select">
             <option><a>BRASIL</a></option> 
             <option><a>CHILE</a></option> 
             <option><a>MÉXICO</a></option> 
@@ -43,7 +36,6 @@
               <li><a>Preguntas frecuentes</a></li>
               <li><a>Ayuda</a></li>
             </ul>    
->>>>>>> d85dc3854357cbdf74ba5b0fd1ed02ef5df74868
           </nav>
         </div>  
       </div>  
@@ -51,7 +43,7 @@
     <!--Sección Search-->
   <div class="search-container">
       <!--Search: Búsqueda Rápida-->
-      <div class="search-fast">  
+       <div class="search-fast">  
         <label class="search-txt-fast">Búsqueda por indicadores</label>
         <form class="search-form">
           <input class="search-input" placeholder="Ejemplo:educación, género, desempleo" id="word"/>
@@ -60,7 +52,7 @@
       </div>
       <hr></hr>
       <!--Search: Búsqueda por temas-->
-      <div class="search-topic">  
+      <div class="search-topic">
         <label class="search-txt-topic">Búsqueda por temas</label>
         <form class="search-form">
           <button type="button" class="topic-btn" id="gender">GÉNERO</button>
@@ -69,85 +61,70 @@
           <button type="button" class="topic-btn" id="economy">ECONOMÍA</button> 
         </form>  
       </div>   
-    </div>    
-<<<<<<< HEAD
+     </div> 
       <!--Resultados-->
-      <div class="result-form" id="result-container">
-        <form id="result">
+      <!-- <div class="result-form" id="result-container"> 
+       <div class ='styled-select yellow rounded'>
+        <select>
+          <option>ORDEN</option>
+          <option>Ascendente</option>
+          <option>Descendente</option>
+        </select>
+        <select>
+          <option>CALCULOS</option>
+          <option>Promedio</option>
+          <option>Rango</option>
+        </select>
+        <select>
+          <option>GRAFICOS</option>
+          <option>Tablas</option>
+          <option>Mapas</option>
+          <option>Graficos</option>
+        </select>
+      </div> -->
+        <!-- <form id="result"> 
             <div class="col-8">
                 <section id="information">
                   <div class="table-wrapper">
                   <table id= "lista"  style="width:100%" border="1">
-                    <thead>
-                    </thead>
                     <tbody id="contentTable">
                     </tbody>  
                   </table>
                   </div>
                   </section>
               </div>
-        </form>
-      </div>     
-Sección Search: Prueba de Tabla
-=======
-    <!--Resultados
-    <div class="result-form" id="result-container">
-      <form id="result"></form>
-    </div> -->    
-<!-- Sección Search: Prueba de Tabla
->>>>>>> d85dc3854357cbdf74ba5b0fd1ed02ef5df74868
-      <div class="search-container">
-      <label class="search-txt">Búsqueda por indicadores</label>
-      <form class="search-form">
-        <input class="search-input" placeholder="ingresa un año del 2000 al 2015" id="word"/>
-        <button type="button" class="search-btn"></button>
-      </form>
-    </div>
-  
-      <p id="salida"></p>
-    </div>-->
-    <!-- Sección Indicators by years -->
-    <div class="sections-nav-container">
-      <div class="img-item">
-        <img alt="Indicadores según año (Niña en clases)" class="years-img" src="https://i.ibb.co/6tkNRx3/IBRDCampaign-Page-3-Education.png" />
-      </div>
-      <div class="section-title">
-          <h2>¿CUÁNTO HEMOS AVANZADO?</h2>
-          <img alt="Flecha descripción menú" class="arrow-title" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/>
-      </div>
-      <div class="section-txt">
-          <p class="description-txt">Observa el flujo de los indicadores a lo largo de los años. De 1960 hasta 2017.</p>
-          <img alt="Flecha elegir opción" class="arrow-txt" src="https://i.ibb.co/HBQV0f1/flecha-abajo-en-boton-circular.png"/> 
+          </form>  -->
+           
+<!-- Sección Search: Prueba de Tabla -->
+    <div class="search-container">
+      <div class="search-fast">
+       <label class="search-txt-fast">Búsqueda por indicadores</label> 
+        <form class="search-form"> 
+         <input class="search-input" placeholder="ingresa un año del 2000 al 2015" id="word"/>
+         <button type="button" class="search-btn"></button>
+       </form>
       </div>
     </div>
-    <!-- Sección Sort by -->
-    <div class="sections-nav-container">
-      <div class="img-item">
-          <img alt="Indicadores de alto impacto (Salón de clases))" class="sortby-img" src="https://i.ibb.co/qgwb50s/fragility-SP.png"/>
-      </div>
-      <div class="section-title">
-          <h2>INDICADORES DE ALTO IMPACTO</h2>
-          <img alt="Flecha descripción menú" class="arrow-title" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/>
-      </div>
-      <div class="section-txt">
-          <p class="description-txt">Ubica los indicadores por temática, orden alfabético, menor o mayor porcentaje.</p>
-          <img alt="Flecha elegir opción" class="arrow-txt" src="https://i.ibb.co/HBQV0f1/flecha-abajo-en-boton-circular.png"/> 
-      </div>
-    </div>  
-    <!-- Sección Calculate -->
-    <div class="sections-nav-container">
-        <div class="img-item">
-            <img alt="Datos en gráficos (Mujeres en tec)" class="calculate-img" src="https://i.ibb.co/DVmp8Cq/IBRD-Learn-More-Tiles-ABC-SP.png"/>
-        </div>
-        <div class="section-title">
-            <h2>UNA MIRADA MÁS AMPLIA</h2>
-            <img alt="Flecha descripción menú" class="arrow-title" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/>
-        </div>
-        <div class="section-txt">
-            <p class="description-txt">Manipula y descarga la data en tablas o gráficos para un mejor análisis.</p>
-            <img alt="Flecha elegir opción" class="arrow-txt" src="https://i.ibb.co/HBQV0f1/flecha-abajo-en-boton-circular.png"/> 
-        </div>
-      </div>  
+     <div id= cuadro-resultados>
+     <form id = "cuadro">
+        <div class="col-8">
+            <section id="information">
+              <div class="table-wrapper">
+                <table id="lista" border = 1>
+                  <thead id="title_table">
+                    <tr>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="content_table">
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+     </form>
+    </div>    
     <footer>
       <div class="copyright">
         <img alt="WorldBankLogo-Black&White" src="https://i.ibb.co/Scv1sHW/World-Nabck.png" class="wb-logo-bw">
@@ -162,3 +139,86 @@ Sección Search: Prueba de Tabla
     <script src="main.js"></script>
   </body>
 </html>
+<!-- Sección Indicators by years -->
+    <!-- <div class="sections-nav-container"> 
+      <div class="img-item">
+        <img alt="Indicadores según año (Niña en clases)" class="years-img" src="https://i.ibb.co/6tkNRx3/IBRDCampaign-Page-3-Education.png" />
+      </div>
+      <div class="section-title">
+          <h2>¿CUÁNTO HEMOS AVANZADO?</h2>
+          <img alt="Flecha descripción menú" class="arrow-title" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/>
+      </div>
+      <div class="section-txt">
+          <p class="description-txt">Observa el flujo de los indicadores a lo largo de los años. De 1960 hasta 2017.</p>
+          <img alt="Flecha elegir opción" class="arrow-txt" src="https://i.ibb.co/HBQV0f1/flecha-abajo-en-boton-circular.png"/> 
+      </div>
+    </div> -->
+    <!-- Sección Sort by -->
+    <!-- <div class="sections-nav-container"> 
+       <div class="img-item">
+          <img alt="Indicadores de alto impacto (Salón de clases))" class="sortby-img" src="https://i.ibb.co/qgwb50s/fragility-SP.png"/>
+      </div>
+      <div class="section-title">
+          <h2>INDICADORES DE ALTO IMPACTO</h2>
+          <img alt="Flecha descripción menú" class="arrow-title" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/>
+      </div>
+      <div class="section-txt">
+          <p class="description-txt">Ubica los indicadores por temática, orden alfabético, menor o mayor porcentaje.</p>
+          <img alt="Flecha elegir opción" class="arrow-txt" src="https://i.ibb.co/HBQV0f1/flecha-abajo-en-boton-circular.png"/> 
+      </div> 
+     </div>   -->
+    <!-- Sección Calculate -->
+     <!-- <div class="sections-nav-container"> 
+        <div class="img-item">
+            <img alt="Datos en gráficos (Mujeres en tec)" class="calculate-img" src="https://i.ibb.co/DVmp8Cq/IBRD-Learn-More-Tiles-ABC-SP.png"/>
+        </div>
+        <div class="section-title">
+            <h2>UNA MIRADA MÁS AMPLIA</h2>
+            <img alt="Flecha descripción menú" class="arrow-title" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/>
+        </div>
+        <div class="section-txt">
+            <p class="description-txt">Manipula y descarga la data en tablas o gráficos para un mejor análisis.</p>
+            <img alt="Flecha elegir opción" class="arrow-txt" src="https://i.ibb.co/HBQV0f1/flecha-abajo-en-boton-circular.png"/> 
+        </div>
+       </div>  -->
+       <!-- FUNCIONA TABLA INDICADOR
+function filterYears (data){
+   let yearData =[];
+   for( let i=0; i<data.length; i++){
+     yearData.push(data[i]);
+   }
+   return yearData;
+ }
+ const safari3= WORLDBANK.PER.indicators;
+const so = filterYears(safari3).map(ed => ed.data);
+
+const tu = Object.keys(so[0]);
+function newRowTable1(country) {
+
+  var name_table = document.getElementById("lista");
+  var row = name_table.insertRow(0);
+  var countryArr=country;
+  countryArr.unshift('Año');
+  for (let i = 0; i < countryArr.length; i++) {
+    row.insertCell(i).innerHTML = countryArr[i];
+  }
+}
+let heyu = ['PERU'];
+newRowTable1(heyu);
+
+function newRowTableYear2(vacilando){
+	var name_table=document.getElementById("lista");
+    for (let i = 0; i<vacilando.length; i++) {
+      var row = name_table.insertRow(0+1);
+      row.insertCell(0).innerHTML = vacilando[i];
+    }
+}
+newRowTableYear2(tu);
+const ta = Object.values(so[0]);
+newRowTableYear2(ta);
+
+
+
+
+
+        -->
