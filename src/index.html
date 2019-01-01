@@ -44,7 +44,7 @@
     <div class="search-container">
       <!--Search: Búsqueda Rápida-->
       <div class="search-fast">  
-        <label class="search-txt-fast">Búsqueda por indicadores</label>
+        <label class="search-txt-fast">Búsqueda de indicadores</label>
         <form class="search-form">
           <input class="search-input" placeholder="Ejemplo:educación, género, desempleo" id="word"/>
           <button type="button" class="search-btn" id="searchBtn"></button>
@@ -62,72 +62,66 @@
         </form>  
       </div>   
     </div>    
-    <!--Resultados
+    <!--Resultados Búsqueda-->
     <div class="result-form" id="result-container">
       <form id="result"></form>
-    </div> -->    
-<!-- Sección Search: Prueba de Tabla
-      <div class="search-container">
-      <label class="search-txt">Búsqueda por indicadores</label>
-      <form class="search-form">
-        <input class="search-input" placeholder="ingresa un año del 2000 al 2015" id="año"/>
-        <button type="button" class="search-btn" onclick="lista()"></button>
-      </form>
-    </div>
-
-    <div>
-        <table class = "tabla" id= "lista" style="width:100%">
-            <tr>
-              <th>Indicador</th>
-              <th>Valor</th> 
-            </tr>
-
-          </table>
-      <p id="salida"></p>
-    </div>-->
-    <!-- Sección Indicators by years -->
-    <div class="sections-nav-container">
-      <div class="img-item">
-        <img alt="Indicadores según año (Niña en clases)" class="years-img" src="https://i.ibb.co/6tkNRx3/IBRDCampaign-Page-3-Education.png" />
-      </div>
-      <div class="section-title">
-          <h2>¿CUÁNTO HEMOS AVANZADO?</h2>
-          <img alt="Flecha descripción menú" class="arrow-title" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/>
-      </div>
-      <div class="section-txt">
-          <p class="description-txt">Observa el flujo de los indicadores a lo largo de los años. De 1960 hasta 2017.</p>
-          <img alt="Flecha elegir opción" class="arrow-txt" src="https://i.ibb.co/HBQV0f1/flecha-abajo-en-boton-circular.png"/> 
-      </div>
-    </div>
-    <!-- Sección Sort by -->
-    <div class="sections-nav-container">
-      <div class="img-item">
-          <img alt="Indicadores de alto impacto (Salón de clases))" class="sortby-img" src="https://i.ibb.co/qgwb50s/fragility-SP.png"/>
-      </div>
-      <div class="section-title">
-          <h2>INDICADORES DE ALTO IMPACTO</h2>
-          <img alt="Flecha descripción menú" class="arrow-title" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/>
-      </div>
-      <div class="section-txt">
-          <p class="description-txt">Ubica los indicadores por temática, orden alfabético, menor o mayor porcentaje.</p>
-          <img alt="Flecha elegir opción" class="arrow-txt" src="https://i.ibb.co/HBQV0f1/flecha-abajo-en-boton-circular.png"/> 
-      </div>
+    </div>    
+    <!-- Resultados Tabla-->
+    <div class="result-form">
+      <input id="año"></input>
+      <button type="button" id="yearBtn">Go for it, bae</button>  
+      <table class="tabla" id="table" style="width:70%">
+        <tr>
+          <th>Indicador</th>
+          <th>Valor</th> 
+        </tr>
+      </table>
     </div>  
-    <!-- Sección Calculate -->
-    <div class="sections-nav-container">
+    <!-- Sección Indicators by years -->
+    <div class="sections-container">
+      <div class="section-nav-container">
         <div class="img-item">
-            <img alt="Datos en gráficos (Mujeres en tec)" class="calculate-img" src="https://i.ibb.co/DVmp8Cq/IBRD-Learn-More-Tiles-ABC-SP.png"/>
+          <img alt="Indicadores según año (Niña en clases)" class="years-img" src="https://i.ibb.co/6tkNRx3/IBRDCampaign-Page-3-Education.png" />
         </div>
         <div class="section-title">
-            <h2>UNA MIRADA MÁS AMPLIA</h2>
+            <h2>¿CUÁNTO HEMOS AVANZADO?</h2>
             <img alt="Flecha descripción menú" class="arrow-title" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/>
         </div>
         <div class="section-txt">
-            <p class="description-txt">Manipula y descarga la data en tablas o gráficos para un mejor análisis.</p>
+            <p class="description-txt">Observa el flujo de los indicadores a lo largo de los años. De 1960 hasta 2017.</p>
+            <img alt="Flecha elegir opción" class="arrow-txt" src="https://i.ibb.co/HBQV0f1/flecha-abajo-en-boton-circular.png"/> 
+        </div>
+      </div>
+      <!-- Sección Sort by -->
+      <div class="section-nav-container">
+        <div class="img-item">
+            <img alt="Indicadores de alto impacto (Salón de clases))" class="sortby-img" src="https://i.ibb.co/qgwb50s/fragility-SP.png"/>
+        </div>
+        <div class="section-title">
+            <h2>INDICADORES DE ALTO IMPACTO</h2>
+            <img alt="Flecha descripción menú" class="arrow-title" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/>
+        </div>
+        <div class="section-txt">
+            <p class="description-txt">Ubica los indicadores por temática, orden alfabético, menor o mayor porcentaje.</p>
             <img alt="Flecha elegir opción" class="arrow-txt" src="https://i.ibb.co/HBQV0f1/flecha-abajo-en-boton-circular.png"/> 
         </div>
       </div>  
-    <footer>
+      <!-- Sección Calculate -->
+      <div class="section-nav-container">
+          <div class="img-item">
+              <img alt="Datos en gráficos (Mujeres en tec)" class="calculate-img" src="https://i.ibb.co/DVmp8Cq/IBRD-Learn-More-Tiles-ABC-SP.png"/>
+          </div>
+          <div class="section-title">
+              <h2>UNA MIRADA MÁS AMPLIA</h2>
+              <img alt="Flecha descripción menú" class="arrow-title" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/>
+          </div>
+          <div class="section-txt">
+              <p class="description-txt">Manipula y descarga la data en tablas o gráficos para un mejor análisis.</p>
+              <img alt="Flecha elegir opción" class="arrow-txt" src="https://i.ibb.co/HBQV0f1/flecha-abajo-en-boton-circular.png"/> 
+          </div>
+        </div>
+      </div>    
+      <footer>
       <div class="copyright">
         <img alt="WorldBankLogo-Black&White" src="https://i.ibb.co/Scv1sHW/World-Nabck.png" class="wb-logo-bw">
         <p class="copyright-txt"> | Base de Datos © 2018</p>

@@ -1,136 +1,8 @@
-/* body {
-    background-color: #ffffff;
-}
-Para font-type general
-h1, p, input, h2, a, span, label, button, #result {
-    font-family: AndesRoundedW01-Regular;
-    font-weight: normal;
-    text-align: center;
-}
-Encabezado
-header {
-    height: 100px;
-    display:flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-}
-    .title-container{
-        display: inline-flex;
-        align-items: center;
-    }
-        .wb-logo {
-            padding: 10px;
-            width: auto;
-            height: 80px;
-        }
-        h1 {
-            font-size: 25px;
-            color: #002244;
-            font-weight: bold;
-        }
-Menú y navegación por países    
-    .menu-container {
-        display: block;
-        margin-top: 20px;
-        margin-right: 25px;
-    }
-        /*.menu-icon {
-            visibility: hidden;
-        }
-        .menu.nav {
-            color: #002244;
-        }
-            a {
-                font-size: 15px;
-                margin: 5px;
-            }
-        .country-nav {
-            margin-top:5px;
-            display:block;
-            text-align: center; 
-            color: #009fda;
-        }
-            span {
-                font-size: 20px;
-            }
-            #country-peru {
-                color:#B88C1D;
-                text-decoration-line: underline;
-            }
-    .search-container {
-        width: 100%;
-        height: 150px;
-        display:grid;
-        grid-template-columns: auto auto;
-        align-items: center;
-        background-color: #002244;
-        box-sizing: border-box;
-    }
-        .search-fast, .search-topic {
-            text-align: center;
-        }
-        .search-form{
-            display:flex;
-            justify-content: center;
-            margin-top: 15px;
-        }
-            .search-txt {
-                padding-top: 10px;
-                font-size: 25px;
-                color: #ffffff;
-                text-align: center;
-            }    
-            .search-input {
-                width: 300px;
-                height: 30px;
-                font-size: 14px;
-                background-color: #ffffff;
-                border-radius: 8px;
-                align-self: auto;
-                margin-right: 3px;      
-            }
-            .search-btn {
-                width: 35px;
-                height: 35px;
-                background-image:url(https://i.ibb.co/f4CDkWY/search-enter-display-573173-color.png);
-                background-position:center;
-                background-size: 33px;
-                border-radius: 8px;
-                border-color: #009FDA;
-            }  
-            .topic-btn{
-                height: 35px; 
-                width: auto;
-                background-color: #009FDA;
-                border-radius: 5px;
-                border-color: transparent;
-                margin: 5px;
-                font-size: 15px;
-            }  
-            .topic-btn:hover {
-                background-color: #B88C1D;
-            }
-#result-container {
-    border-top: 5px solid #009FDA;
-    background-color: #002244;
-    width: 100%;
-    height: 500px;
-} 
-    #result {
-        box-shadow: 0 4px 8px 0, 0 6px 20px 0;
-        border: transparent;
-        background-color: #ffffff;
-        width: 80%;
-        height: 80%;
-        margin: 20px auto;
-        padding: 15px;
-        text-align: left;
-    }  */                      
-/*Responsive para dispositivo móvil*/
-@media only screen and (max-width: 360px) {
+/*Responsive para dispositivo móvil [360px - 640px]*/
     body {
-        width: 360px;
-        height: 640px;
+        width: 100%;
+        height: auto;
+        margin:0;
         background-color: #ffffff;
     }
 /*Para font-type general*/
@@ -147,7 +19,7 @@ Menú y navegación por países
 /*Encabezado*/
     header {
         height: 46px;
-        width: 360px;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -180,6 +52,7 @@ Menú y navegación por países
         cursor: pointer;
     }
     .menu-icon {
+        display:block;
         height: 25px;
         padding: 15px;
     }
@@ -206,9 +79,9 @@ Menú y navegación por países
     }
     ul {
         height: 117px;
-        width: 360px;
+        width: 100%;
         list-style-type: none;
-        margin: -1% 0 0 -89%;
+        margin: 0 0 0 -84%;
         padding: 0;
         background-color:#002244;
         position: absolute;
@@ -232,7 +105,7 @@ Menú y navegación por países
 /*Sección búsqueda*/
     .search-container {
         height: 117px;
-        width: 360px;
+        width: 100%x;
         background-color: #002244;
     }
     .search-fast {
@@ -284,7 +157,7 @@ Menú y navegación por países
         background-color: #009FDA;
         border-radius: 5px;
         border-color: transparent;
-        margin: 3px;
+        margin: 2px;
         font-size: 10px;
         color: #ffffff;
     }
@@ -293,9 +166,270 @@ Menú y navegación por países
         background-color: #B88C1D;
     }
 /*Secciones de filtrado, orden y cálculo [default]*/
-    .sections-nav-container{
+    .section-nav-container{
+        width: 100%;
         height: 145px;
         background-color: #009fda;
+    }
+    .img-item, .years-img, .sortby-img, .calculate-img {
+        width: 100%;
+        height: 145px;
+        position: absolute;
+        transition: width 1.5s;
+    }
+    .years-img, .sortby-img, .calculate-img {
+        opacity: 0.3;
+        object-fit: cover;
+    }
+    .section-title {
+        display: grid;
+        grid-template-columns: 210px auto auto;
+        position: relative;
+        justify-content: center;    
+        align-content: center;
+        height: 145px;
+    }
+    h2 {
+        color:#ffffff;
+        font-size: 24px;
+        -webkit-text-stroke-width: 0.75px;
+        transition: font-size 0.5s;
+    }
+    .arrow-title {
+        height: 48px;
+        align-self: center;
+        transition: height 2s, transform 0.8s;
+    }
+    .description-txt {
+        color: #ffffff;
+        font-size: 13px;
+        align-self: center;
+        cursor: context-menu;
+    }
+    .arrow-txt {
+        width:35px;
+        height: 35px;
+    }
+    .section-txt{
+        display: none;
+    }
+/*Secciones de filtrado, orden y cálculo [al pasar el mouse]*/
+    .section-nav-container:hover {
+        display: grid;
+        grid-auto-columns: 180px;
+        position: relative;
+    } 
+    .section-nav-container:hover .years-img, .section-nav-container:hover .sortby-img, .section-nav-container:hover .calculate-img {
+        width:50%;
+        opacity: 1;
+    } 
+    .section-nav-container:hover .section-title {
+        grid-template-columns: 50% auto auto;
+        height: auto;
+    }
+    .section-nav-container:hover h2 {
+        font-size: 10px;
+        text-shadow: 2px 2px 3px #000000;
+        -webkit-text-stroke-width: 0;
+    } 
+    .section-nav-container:hover .arrow-title {
+        height: 25px;
+        transform: rotate(-180deg);
+    }
+    .section-nav-container:hover .section-txt {
+        display: grid;
+        grid-template-rows: auto 50%;
+        position: absolute;
+        right: 4%;
+        width: 40%;
+        height: 145px;
+    }
+    .section-nav-container:hover .arrow-txt {
+        justify-self: center;
+        cursor: pointer;        
+    }
+/*Pie de página*/
+    footer {
+        width: 100%;
+        height: 40px;
+        background-color: #ffffff;
+        justify-content: space-around;
+        display: flex;
+    }
+    .copyright {
+        width: 225px;
+        display: flex;
+        font-size: 10px;
+        justify-content: space-between;
+    }
+    .copyright-txt, .btn-referencia, .wb-logo-bw {
+        align-self: center;
+        cursor: context-menu;
+    }
+    .wb-logo-bw {
+        height: 19px;
+    }
+    .APA-btn {
+        width: 84px;
+        height: 21px;
+        border-radius: 7px;
+        background-color: #000000;
+        color:#ffffff;
+        font-size: 7px;
+    }
+    .APA-btn:hover { 
+        background-color: #B88C1D; 
+        cursor: copy;
+    }
+@media only screen and (min-width: 361px) {
+    body {
+        background-color: #ffffff;
+    }
+    /*Para font-type general*/
+    span, label, button, h2, select, option, .description-txt {
+        font-family: AndesRoundedW01-Regular;
+        font-weight: normal;
+        text-align: center;
+    }
+    input, p, a {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: normal;
+        text-align: center;
+    }
+    /*Encabezado*/
+    header {
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+        .wb-logo {
+            padding: 12px;
+            height: 60px;
+            width: auto;
+        }
+/*      .menu-container {
+            display: grid;
+            grid-auto-rows: 48%;
+            justify-content: center;
+        } */
+            select, .menu-icon, #menu-display {
+                display: none;
+            }
+            nav {
+                visibility: visible;
+                opacity: 1;
+            }
+            ul {
+                list-style-type: none;
+                margin-right:150px;
+                width:auto;
+                height:auto;
+                display: flex;
+                background-color: transparent;
+                color: #000000;
+                flex-direction: row;
+            }
+                li a {
+                    display: block;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 11px;
+                    text-decoration: none;
+                }
+                li a:hover {
+                    background-color: #009FDA;
+                    color: #ffffff;
+                    border-radius: 8px;
+                    cursor: pointer;
+                }                        
+/*            .country-nav {
+                margin-top:5px;
+                display:block;
+                text-align: center; 
+                color: #009fda;
+            }
+                span {
+                    font-size: 18px;
+                    cursor: context-menu;
+                }
+                    #country-peru {
+                        color:#B88C1D;
+                        text-decoration-line: underline;
+                        cursor: pointer;
+                    } */
+    /* Sección de búsqueda*/    
+    .search-container {
+        width: 100%;
+        height: 110px;
+        display: grid;
+        grid-template-columns: 48% 4% 48%;
+        align-items: center;
+        background-color: #002244;
+        box-sizing: border-box;
+    }
+            .search-fast, .search-topic {
+                text-align: center;
+            }
+                .search-form{
+                    display:flex;
+                    justify-content: center;
+                }
+                    .search-txt-topic, .search-txt-fast {
+                        display:block;
+                        padding: 5px;
+                        font-size: 18px;
+                        color: #ffffff;
+                        text-align: center;
+                    }    
+                    .search-input {
+                        width: 300px;
+                        height: 28px;
+                        font-size: 12px;
+                        background-color: #ffffff;
+                        border-radius: 8px;
+                        align-self: auto;
+                        margin-right: 3px;      
+                    }
+                    .search-btn {
+                        width: 35px;
+                        height: 35px;
+                        background-image:url(https://i.ibb.co/f4CDkWY/search-enter-display-573173-color.png);
+                        background-position:center;
+                        background-size: 33px;
+                        border-radius: 8px;
+                        border-color: #009FDA;
+                        cursor: pointer;
+                    } 
+                    hr {
+                        transform:rotate(90deg);
+                        justify-self: center;
+                        width: 70px;
+                    }
+                    .topic-btn{
+                        height: 28px; 
+                        width: auto;
+                        background-color: #009FDA;
+                        color: #ffffff;
+                        border-radius: 5px;
+                        border-color: transparent;
+                        margin: 0 8px 0 8px;
+                        font-size: 12px;
+                    }  
+                    .topic-btn:hover {
+                        background-color: #B88C1D;
+                        cursor: pointer;
+                    }
+    /*Sección de resultados*/
+    .result-form {
+        display:none;
+    }                
+    /*Secciones de filtrado, orden y cálculo [default]*/
+    .section-nav-container{
+        width: 33,3%;
+        background-color: #009fda;
+        display:flex;
     }
     .img-item, .years-img, .sortby-img, .calculate-img {
         width: 360px;
@@ -339,72 +473,5 @@ Menú y navegación por países
     .section-txt{
         display: none;
     }
-/*Secciones de filtrado, orden y cálculo [al pasar el mouse]*/
-    .sections-nav-container:hover {
-        display: grid;
-        grid-auto-columns: 180px;
-        position: relative;
-    } 
-    .sections-nav-container:hover .years-img, .sections-nav-container:hover .sortby-img, .sections-nav-container:hover .calculate-img {
-        width:180px;
-        opacity: 1;
-    } 
-    .sections-nav-container:hover .section-title {
-        grid-template-columns: 100px auto auto;
-        height: auto;
-    }
-    .sections-nav-container:hover h2 {
-        font-size: 10px;
-        text-shadow: 2px 2px 3px #000000;
-        -webkit-text-stroke-width: 0;
-    } 
-    .sections-nav-container:hover .arrow-title {
-        height: 25px;
-        transform: rotate(-180deg);
-    }
-    .sections-nav-container:hover .section-txt {
-        display: grid;
-        grid-template-rows: auto 50px;
-        position: absolute;
-        right: 4%;
-        width: 150px;
-        height: 145px;
-    }
-    .sections-nav-container:hover .arrow-txt {
-        justify-self: center;
-        cursor: pointer;        
-    }
-/*Pie de página*/
-    footer {
-        width: 360px;
-        height: 40px;
-        background-color: #ffffff;
-        justify-content: space-around;
-        display: flex;
-    }
-    .copyright {
-        width: 225px;
-        display: flex;
-        font-size: 10px;
-        justify-content: space-between;
-    }
-    .copyright-txt, .btn-referencia, .wb-logo-bw {
-        align-self: center;
-        cursor: context-menu;
-    }
-    .wb-logo-bw {
-        height: 19px;
-    }
-    .APA-btn {
-        width: 84px;
-        height: 21px;
-        border-radius: 7px;
-        background-color: #000000;
-        color:#ffffff;
-        font-size: 7px;
-    }
-    .APA-btn:hover { 
-        background-color: #B88C1D; 
-        cursor: copy;
-    }
+    
 }
