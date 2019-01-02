@@ -1,0 +1,6 @@
+.result-container {
+    height: 180px;
+    width: 800px;
+    border: 2px blue;
+    overflow: auto;
+}
