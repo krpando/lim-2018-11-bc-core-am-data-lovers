@@ -105,14 +105,14 @@
        </form>
       </div>
     </div>
-     <div id= cuadro-resultados>
-     <form id = "cuadro">
-        <div class="col-8">
+    
+    <div id= cuadro-resultados>
+        <!--<div class="col-8">
             <section id="information">
               <div class="table-wrapper">
                 <table id="lista" border = 1>
                   <thead id="title_table">
-                    <tr>
+                   <tr>
                       <th></th>
                       <th></th>
                     </tr>
@@ -122,8 +122,8 @@
                 </table>
               </div>
             </section>
-          </div>
-     </form>
+          </div>-->
+      <p id="cuadro"> </p>
     </div>    
     <footer>
       <div class="copyright">
@@ -181,44 +181,40 @@
             <img alt="Flecha elegir opción" class="arrow-txt" src="https://i.ibb.co/HBQV0f1/flecha-abajo-en-boton-circular.png"/> 
         </div>
        </div>  -->
-       <!-- FUNCIONA TABLA INDICADOR
-function filterYears (data){
-   let yearData =[];
+
+
+<!-- FUNCIONA TABLA INDICADOR
+function filtraAños (data){
+   let dataAño =[];
    for( let i=0; i<data.length; i++){
-     yearData.push(data[i]);
+     dataAño.push(data[i]);
    }
-   return yearData;
+   return dataAño;
  }
- const safari3= WORLDBANK.PER.indicators;
-const so = filterYears(safari3).map(ed => ed.data);
+ const safari10= WORLDBANK.PER.indicators;
+const so10 = filtraAños(safari10).map(ed => ed.data);
 
-const tu = Object.keys(so[0]);
-function newRowTable1(country) {
-
-  var name_table = document.getElementById("lista");
-  var row = name_table.insertRow(0);
-  var countryArr=country;
-  countryArr.unshift('Año');
-  for (let i = 0; i < countryArr.length; i++) {
-    row.insertCell(i).innerHTML = countryArr[i];
+const tu10 = Object.keys(so10[0]);
+function tabla1(pais) {
+  var nombreTabla = document.getElementById("lista");
+  var row = nombreTabla.insertRow(0);
+  var paisArray=pais;
+  paisArray.unshift('Año');
+  for (let i = 0; i < paisArray.length; i++) {
+    row.insertCell(i).innerHTML = paisArray[i];
   }
 }
 let heyu = ['PERU'];
-newRowTable1(heyu);
+tabla1(heyu);
 
-function newRowTableYear2(vacilando){
-	var name_table=document.getElementById("lista");
-    for (let i = 0; i<vacilando.length; i++) {
-      var row = name_table.insertRow(0+1);
-      row.insertCell(0).innerHTML = vacilando[i];
+function otraTabla(word){
+	var nombreTabla=document.getElementById("lista");
+    for (let i = 0; i<word.length; i++) {
+      var row = nombreTabla.insertRow(0+1);
+      row.insertCell(0).innerHTML = word[i];
     }
 }
-newRowTableYear2(tu);
+otraTabla(tu);
 const ta = Object.values(so[0]);
-newRowTableYear2(ta);
-
-
-
-
-
-        -->
+otraTabla(ta);
+-->
