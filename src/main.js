@@ -4,10 +4,10 @@
 // Funcionalidad de búsqueda rápida
 document.getElementById('searchBtn').addEventListener('click', () => {
     let palabraClave = document.getElementById('word');
-    if (WorldBank.filterIndicators(palabraClave.value, WORLDBANK.PER.indicators).join() === '') {
+    if (WorldBank.filterIndicators(WORLDBANK.PER.indicators, palabraClave.value).join() === '') {
       document.getElementById('result').innerHTML = 'No se encontraron registros';
     } else {
-      const resultado = WorldBank.filterIndicators(palabraClave.value, WORLDBANK.PER.indicators);
+      const resultado = WorldBank.filterIndicators(WORLDBANK.PER.indicators, palabraClave.value);
       for (let i = 0; i < resultado.length; i++) {
         document.getElementById('result').innerHTML += `
       <ul>
