@@ -24,11 +24,11 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     const resultadoValores = filterYears(indicadores, parseInt(año.value));
     for (let i = 0; i < indicadores.length; i++) {
       const resultadoIndicadores = indicadores[i].indicatorName;
-      if(resultadoValores[i] != 0) {
+      if (resultadoValores[i] != 0) { // Condición para imprimir solo indicadores con valores
       document.getElementById('table').innerHTML += `
         <tr>
             <td>${resultadoIndicadores}</td>
-            <td>${resultadoValores[i]}</td>
+            <td>${resultadoValores[i].toFixed(2)} %</td>
         </tr>
     ` ;
     }}
