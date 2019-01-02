@@ -48,4 +48,5 @@ const sortIndic = indicadores.sort();
       <option>${indicador}</option>
     </select>
   `
-  })  
+  })
+  
