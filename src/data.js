@@ -14,3 +14,6 @@ const filtradoCodigo = (one, wordslice) => {
 };
 
 
+window.worldbank ={
+  filtradoCodigo,
+}

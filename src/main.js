@@ -30,6 +30,14 @@ const developThemes = document.getElementById('social-dev').addEventListener('cl
   let arrayVacio=[];
   const genderThemes = document.getElementById('gender').addEventListener('click',() =>{
     (worldbank.filtradoCodigo(one, 'SP')).forEach(resultado);
-    (worldbank.filtradoCodigo(one, 'SG')).forEach(resultado)});
-
+    (worldbank.filtradoCodigo(one, 'SG')).forEach(resultado);
+    (worldbank.filtradoCodigo(one, 'SH')).forEach(resultado)});
+  
+  const economyThemes = document.getElementById('economy').addEventListener('click',() =>{
+      (worldbank.filtradoCodigo(one, 'DT')).forEach(resultado);
+      (worldbank.filtradoCodigo(one, 'HD')).forEach(resultado);
+      (worldbank.filtradoCodigo(one, 'IC')).forEach(resultado);
+      (worldbank.filtradoCodigo(one, 'MS')).forEach(resultado);
+      (worldbank.filtradoCodigo(one, 'pe')).forEach(resultado)});
+        
   
