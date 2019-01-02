@@ -8,6 +8,9 @@ window.WorldBank = {
       return x.toLowerCase().indexOf(palabra.toLowerCase()) > -1;
     });
   },
+
+  // Función filtrado para búsqueda por temas (en construcción - Kimberly)
+
   // Función filtrado por años
   filterYears : (dataBase, año) => {
     const yearData = [];
@@ -16,7 +19,8 @@ window.WorldBank = {
     }
     return yearData;
   },
-// Función ordenando data por años o valores
+
+  // Función ordenando data por años o valores (en construcción - Karla)
   sortData : (dataBase, añosOValores) => { // 'orden' es el tercer parámetro pero aun no se ha incluído
     const sorted = [];
     if(añosOValores === 'años') {

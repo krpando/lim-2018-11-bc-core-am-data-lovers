@@ -1,13 +1,15 @@
 /* global WORLDBANK*/
 /* global WorldBank*/
 
+// Variable a usarse para todas las funciones
+const inData = WORLDBANK.PER.indicators;
 // Funcionalidad de búsqueda rápida
 document.getElementById('searchBtn').addEventListener('click', () => {
   let palabraClave = document.getElementById('word');
-  if (WorldBank.filterIndicators(WORLDBANK.PER.indicators, palabraClave.value).join() === '') {
+  if (WorldBank.filterIndicators(inData, palabraClave.value).join() === '') {
     document.getElementById('result').innerHTML = 'No se encontraron registros';
   } else {
-    const resultado = WorldBank.filterIndicators(WORLDBANK.PER.indicators, palabraClave.value);
+    const resultado = WorldBank.filterIndicators(inData, palabraClave.value);
     for (let i = 0; i < resultado.length; i++) {
       document.getElementById('result').innerHTML += `
         <ul>
@@ -22,10 +24,9 @@ document.getElementById('searchBtn').addEventListener('click', () => {
 // Funcionalidad para mostrar tabla de indicadores y datos según años
 document.getElementById('yearBtn').addEventListener('click', () => {
   let año = document.getElementById('year');
-  const indicadores = WORLDBANK.PER.indicators;
-  const resultadoValores = WorldBank.filterYears(indicadores, parseInt(año.value));
-  for (let i = 0; i < indicadores.length; i++) {
-    const resultadoIndicadores = indicadores[i].indicatorName;
+  const resultadoValores = WorldBank.filterYears(inData, parseInt(año.value));
+  for (let i = 0; i < inData.length; i++) {
+    const resultadoIndicadores = inData[i].indicatorName;
     if (resultadoValores[i] != 0) { // Condición para imprimir solo indicadores con valores
       document.getElementById('table').innerHTML += `
         <tr>
@@ -38,7 +39,7 @@ document.getElementById('yearBtn').addEventListener('click', () => {
 });
 
 // Mostrar indicadores en lista desplegable
-const indicadores = WORLDBANK.PER.indicators.map((arr) => {
+const indicadores = inData.map((arr) => {
   return arr.indicatorName;
 });
 const sortIndic = indicadores.sort();
@@ -49,4 +50,22 @@ const sortIndic = indicadores.sort();
     </select>
   `
   })
-  
+ 
+// Funcionalidad para mostrar tabla de indicadores y datos según años
+document.getElementById('sortBy').addEventListener('click', () => {
+  const opSelected = document.getElementById('indicators').value;
+  let indSelectedData = [];
+  for (let i = 0; i < inData.length; i++) {
+    if (inData[i].indicatorName === opSelected) {
+          indSelectedData.push(inData[i].data);
+    }
+  }  
+  for (let i = 0; i < indSelectedData[0].length; i++) {
+    document.getElementById('table4sort').innerHTML += `
+    <tr>
+      <td>${Object.keys(indSelectedData[0].i)}</td>
+      <td>${Object.values(indSelectedData[0].i)} %</td>
+    </tr>
+    `; 
+  }
+})  
