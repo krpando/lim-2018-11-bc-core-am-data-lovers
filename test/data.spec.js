@@ -11,12 +11,12 @@ const miniData = [
   {
     'data': {'1960':'', '1990':20.55555,'2010':55.008},
     'indicatorName': 'Fuerza laboral con educación intermedia (% del total)',
-    'indicatorCode': 'SL.TLF.INTM.ZS'
+    'indicatorCode': 'SE.TLF.INTM.ZS'
   },
   {
     'data': {'1960':'', '1990':3.5,'2010':0.56},
     'indicatorName': 'Fuerza laboral con educación intermedia, varones (% de la fuerza laboral masculina)',
-    'indicatorCode': 'SL.TLF.INTM.MA.ZS'
+    'indicatorCode': 'SE.TLF.INTM.MA.ZS'
   }
 ];
 
@@ -27,11 +27,11 @@ const inputSearch = 'mujeres';
 const outputSearch = ['Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)'];
 
 describe('filterSearch es una función', () => {
-  it('is a function', () => {
+  it('debería ser una función', () => {
     expect(typeof WorldBank.filterSearch).toBe('function');
   });
 
-  it('returns `outputSearch`', () => {
+  it('returns `debería retornar los indicadores filtrados según la palabra clave`', () => {
     expect(WorldBank.filterSearch(miniData, inputSearch)).toEqual(outputSearch);
   });
 });
@@ -41,17 +41,15 @@ describe('filterSearch es una función', () => {
 const inputThemes = 'SL';
 // Resultado esperado para filterThemes
 const outputThemes = [
-  'Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)', 
-  'Fuerza laboral con educación intermedia (% del total)',
-  'Fuerza laboral con educación intermedia, varones (% de la fuerza laboral masculina)'
+  'Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)'
 ];
 
 describe('filterThemes es una función', () => {
-  it('is a function', () => {
+  it('debería ser una función', () => {
     expect(typeof WorldBank.filterThemes).toBe('function');
   });
 
-  it('returns `outputThemes`', () => {
+  it('returns `deberia retornar una lista con los indicadores filtrados por codigo`', () => {
     expect(WorldBank.filterThemes(miniData, inputThemes)).toEqual(outputThemes);
   });
 });
@@ -63,26 +61,48 @@ const inputByYears = '2010';
 const outputByYears = [15.3567, 55.008, 0.56];
 
 describe('filterYears es una función', () => {
-  it('is a function', () => {
+  it('debería ser una función', () => {
     expect(typeof WorldBank.filterYears).toBe('function');
   });
 
-  it('returns `outputByYears`', () => {
+  it('returns `debería retornar los porcentajes correspondientes al año ingresado`', () => {
     expect(WorldBank.filterYears(miniData, inputByYears)).toEqual(outputByYears);
   });
 });
-
-/* 
+ 
 // ----------- Testeando sortData ----------- //
+/* // Para parámetro 'dataBase'
+const dataData = {'1960':'1.04', '2010':15.3567, '1990':30.45};
 // Para parámetro 'dataType'
-const inputSortOne = 'año';
-const inputSortTwo = 'datos';
-// Resultado esperado para sortData
-const outputSort = [];
+const inputSort1 = 'años';
+const inputSort2 = 'valores';
+// Para parámetro 'orderType'
+const inputOrder1 = 'mayor';
+const inputOrder2 = 'menor';
+// Resultados esperados para sortData
+const añosMayor = {'2010':15.3567, '1990':30.45, '1960':1.04}; 
+const añosMenor = {'1960':1.04, '1990':30.45, '2010':15.3567};
+const valoresMayor = {'1990':30.45, '2010':15.3567, '1960':1.04};
+const valoresMenor = {'1960':1.04, '2010':15.3567, '1990':30.45}; */
 
 describe('sortData es una función', () => {
   it('is a function', () => {
     expect(typeof WorldBank.sortData).toBe('function');
   });
+
+/*   it('returns `añosMayor`', () => {
+    expect(WorldBank.sort(dataData, inputSort1, inputOrder1)).toEqual(añosMayor);
+  });
+
+  it('returns `añosMenor`', () => {
+    expect(WorldBank.sort(dataData, inputSort1, inputOrder2)).toEqual(añosMenor);
+  });
+
+  it('returns `valoresMayor`', () => {
+    expect(WorldBank.sort(dataData, inputSort2, inputOrder1)).toEqual(valoresMayor);
+  });
+
+  it('returns `valoresMenor`', () => {
+    expect(WorldBank.sort(dataData, inputSort2, inputOrder2)).toEqual(valoresMenor);
+  }); */
 }); 
-*/

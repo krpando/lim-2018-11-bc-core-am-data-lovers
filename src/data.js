@@ -11,8 +11,14 @@ window.WorldBank = {
   },
 
   // Función filtrado para búsqueda por temas
-  filterThemes : (dataBase, themeCode) => {
-    return dataBase.filter(themes => themes.indicatorCode.slice(0,2) === themeCode);
+  filterThemes : (dataBase, codeSlice) => {
+    const codeData = []; 
+    for(let i = 0; i < dataBase.length; i++) {
+      if((dataBase[i].indicatorCode).slice(0,2) === codeSlice) {
+        codeData.push(dataBase[i].indicatorName);
+      }
+    } 
+   return codeData;
   },
 
   // Función filtrado por años
@@ -25,15 +31,28 @@ window.WorldBank = {
   },
 
   // Función ordenando data por años o valores (en construcción - Karla)
-/*   sortData : (dataBase, dataType) => { // 'orden' es el tercer parámetro pero aun no se ha incluído
-    const sorted = [];
+  sortData : (dataBase, dataType/*, orderType*/) => { 
+    let sorted = [];
     if(dataType === 'años') {
-      const newData = (Object.keys(dataBase.data)).assign();
-      sorted.push(newData.sort());
-    } else {
-      const newData = (Object.values(dataBase.data)).assign();
-      sorted.push(newData.sort());
-    }
+      sorted.push({
+        'key': (Object.keys(dataBase.data)).sort(),
+        'value': (Object.values(dataBase.data)).sort()
+      })
+    }  
     return sorted;
-  } */
+  }
+    
+/*  let yearType = Object.keys(dataBase.data);
+    let valueType = Object.values(dataBase.data); 
+    if(dataType === 'Año') {
+      switch (orderType) {
+        case 'Mayor':
+          sorted = dataBase.sort((a, b) => a.años > b.años ? 1 : -1);
+          break;
+        case 'Menor':
+          sorted = dataBase.sort((a, b) => a.años > b.años ? 1 : -1).reverse();
+      }
+    return sorted;
+    }
+} */  
 };

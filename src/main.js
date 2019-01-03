@@ -6,15 +6,15 @@ const inData = WORLDBANK.PER.indicators;
 
 // Funcionalidad de búsqueda rápida
 document.getElementById('searchBtn').addEventListener('click', () => {
-  let palabraClave = document.getElementById('word');
-  if (WorldBank.filterIndicatorsSearch(inData, palabraClave.value).join() === '') {
+  let inputWord = document.getElementById('word');
+  if (WorldBank.filterSearch(inData, inputWord.value).join() === '') {
     document.getElementById('result').innerHTML = 'No se encontraron registros';
   } else {
-    const resultado = WorldBank.filterIndicatorsSearch(inData, palabraClave.value);
-    for (let i = 0; i < resultado.length; i++) {
+    const outputSearch = WorldBank.filterSearch(inData, inputWord.value);
+    for (let i = 0; i < outputSearch.length; i++) {
       document.getElementById('result').innerHTML += `
         <ul>
-          <li>${resultado[i]}</li>
+          <li>${outputSearch[i]}</li>
         </ul>
         `;
     }  
@@ -41,18 +41,25 @@ document.getElementById('social-dev').addEventListener('click', () => { // Tema:
 });
 document.getElementById('gender').addEventListener('click', () => { // Tema: Género 
   (WorldBank.filterThemes(inData,'SP')).forEach(resultado);
-  (WorldBank.filterThemes(inData,'SG')).forEach(resultado)
+  (WorldBank.filterThemes(inData,'SG')).forEach(resultado);
+  (WorldBank.filterThemes(inData,'SH')).forEach(resultado)
 });
-const resultado = document.getElementById('result').innerHTML += `
+document.getElementById('economy').addEventListener('click', () => { // Tema: Economía 
+  (WorldBank.filterThemes(inData,'DT')).forEach(resultado);
+  (WorldBank.filterThemes(inData,'HD')).forEach(resultado);
+  (WorldBank.filterThemes(inData,'IC')).forEach(resultado);
+  (WorldBank.filterThemes(inData,'pe')).forEach(resultado)
+});
+const resultado = (inData) => document.getElementById('result').innerHTML += `
   <ul>
-    <li>${themes.indicatorName}</li>
+    <li>${[i]]}</li>
   </ul>
   `;*/
 
 // Funcionalidad para mostrar tabla de indicadores y datos según años
 document.getElementById('yearBtn').addEventListener('click', () => {
-  let año = document.getElementById('year');
-  const resultadoValores = WorldBank.filterYears(inData, parseInt(año.value));
+  let inputYear = document.getElementById('year');
+  const resultadoValores = WorldBank.filterYears(inData, parseInt(inputYear.value));
   for (let i = 0; i < inData.length; i++) {
     const resultadoIndicadores = inData[i].indicatorName;
     if (resultadoValores[i] != 0) { // Condición para imprimir solo indicadores con valores
@@ -79,21 +86,32 @@ const sortIndic = indicadores.sort();
   `
   })
  
-// Funcionalidad para mostrar tabla de indicadores y datos según años
+/* 
+// Funcionalidad para mostrar tabla de años y datos según indicador
 document.getElementById('sortBy').addEventListener('click', () => {
-  const opSelected = document.getElementById('indicators').value;
-  let indSelectedData = [];
+  const indicSelected = document.getElementById('indicators').value;
+  const typeSelected = document.getElementById('data-type').value;
+  const orderSelected = document.getElementById('order-type').value;
+  let newInData = '';
   for (let i = 0; i < inData.length; i++) {
-    if (inData[i].indicatorName === opSelected) {
-          indSelectedData.push(inData[i].data);
+    if (inData[i].indicatorName === indicSelected) {
+      newInData = Object.assign(inData[i].data);
     }
   }  
-  for (let i = 0; i < indSelectedData[0].length; i++) {
-    document.getElementById('table4sort').innerHTML += `
-    <tr>
-      <td>${Object.keys(indSelectedData[0].i)}</td>
-      <td>${Object.values(indSelectedData[0].i)} %</td>
-    </tr>
-    `; 
-  }
-})  
+  let outputSort = WorldBank.sortData(newInData, typeSelected, orderSelected);
+  let yearType = ''; // Variable para años
+  let valueType = ''; // Variable para valores o porcentajes
+  yearType = Object.keys(outputSort);
+  valueType = Object.values(outputSort); 
+  for (let i = 0; i < yearType.length; i++) {
+    if (valueType[i] !== '') { // Condición para imprimir solo años que contengan valores
+      document.getElementById('table4sort').innerHTML += `
+        <tr>
+          <td>${yearType[i]}</td>  
+          <td>${valueType[i]}</td>
+        </tr>
+        `;
+    }
+  }  
+});  
+*/ 
