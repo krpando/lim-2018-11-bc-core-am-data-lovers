@@ -20,20 +20,25 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     }  
   }
 });
+
 // Funcionalidad de búsqueda por temas
 /*let btn = '';
 document.getElementById('education').addEventListener('click', () => {
-  switch (id){
+  switch (education){
     case education: 
     btn = 'SE';
     break;
-    case social-dev:
-    btn = 'SL';
-    break;
   }
-  const result = WorldBank.filt
-}*/
-/*document.getElementById('education').addEventListener('click', () => { // Tema: Educación
+  const result = WorldBank.filterThemes(inData, btn);
+  for(let i = 0; i<result.length; i++){
+    document.getElementById('result').innerHTML = `
+    <ul>
+      <li>${result[i]}</li>
+    </ul>
+    `;
+  }
+  });*/
+document.getElementById('education').addEventListener('click', () => { // Tema: Educación
   (WorldBank.filterThemes(inData,'SE')).forEach(resultado)
 }); 
 document.getElementById('social-dev').addEventListener('click', () => { // Tema: Desarrollo Social
@@ -45,16 +50,18 @@ document.getElementById('gender').addEventListener('click', () => { // Tema: Gé
   (WorldBank.filterThemes(inData,'SH')).forEach(resultado)
 });
 document.getElementById('economy').addEventListener('click', () => { // Tema: Economía 
+  
   (WorldBank.filterThemes(inData,'DT')).forEach(resultado);
   (WorldBank.filterThemes(inData,'HD')).forEach(resultado);
   (WorldBank.filterThemes(inData,'IC')).forEach(resultado);
   (WorldBank.filterThemes(inData,'pe')).forEach(resultado)
 });
-const resultado = (inData) => document.getElementById('result').innerHTML += `
+
+const resultado = (themes) => document.getElementById('result').innerHTML += `
   <ul>
-    <li>${[i]]}</li>
+    <li>${themes}</li>
   </ul>
-  `;*/
+  `;
 
 // Funcionalidad para mostrar tabla de indicadores y datos según años
 document.getElementById('yearBtn').addEventListener('click', () => {
