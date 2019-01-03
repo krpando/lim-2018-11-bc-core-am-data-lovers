@@ -29,14 +29,7 @@ document.getElementById('social-dev').addEventListener('click', () => { // Tema:
 });
 document.getElementById('gender').addEventListener('click', () => { // Tema: Género 
   (WorldBank.filterThemes(inData,'SP')).forEach(resultado);
-  (WorldBank.filterThemes(inData,'SG')).forEach(resultado);
-  (WorldBank.filterThemes(inData,'SH')).forEach(resultado)
-});
-document.getElementById('economy').addEventListener('click', () => { // Tema: Desarrollo economico 
-  (WorldBank.filterThemes(inData,'DT')).forEach(resultado);
-  (WorldBank.filterThemes(inData,'HD')).forEach(resultado);
-  (WorldBank.filterThemes(inData,'IC')).forEach(resultado);
-  (WorldBank.filterThemes(inData,'pe')).forEach(resultado)
+  (WorldBank.filterThemes(inData,'SG')).forEach(resultado)
 });
 const resultado = (themes) => document.getElementById('result').innerHTML += `
   <ul>
@@ -71,7 +64,7 @@ const sortIndic = indicadores.sort();
     <select>  
       <option>${indicador}</option>
     </select>
-  `;
+  `
   })
  
 // Funcionalidad para mostrar tabla de indicadores y datos según años
