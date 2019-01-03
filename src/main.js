@@ -21,6 +21,27 @@ document.getElementById('searchBtn').addEventListener('click', () => {
   }
 });
 // Funcionalidad de búsqueda por temas
+/*let btn = '';
+document.getElementById('education').addEventListener('click', () => {
+  switch (id){
+    case education: 
+    btn = 'SE';
+    break;
+    case social-dev:
+    btn = 'SL';
+    break;
+    case gender:
+    btn = 'SP' || 'SG' || 'SH';
+    break;
+    case economy:
+    btn = 'DT'
+    btn = 'HD'
+    btn = 'IC'
+    btn = 'MS'
+    btn = 'pe'
+    break;
+  }
+}*/
 /*document.getElementById('education').addEventListener('click', () => { // Tema: Educación
   (WorldBank.filterThemes(inData,'SE')).forEach(resultado)
 }); 
