@@ -27,12 +27,12 @@ const inputSearch = 'mujeres';
 const outputSearch = ['Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)'];
 
 describe('filterSearch es una función', () => {
-  it('is a function', () => {
+  it('Deberia ser una función', () => {
     expect(typeof WorldBank.filterIndicators).toBe('function');
   });
 
-  it('returns `outputSearch`', () => {
-    expect(WorldBank.filterSearch(miniData, inputSearch)).toEqual(outputSearch);
+it('returns `deberia regresar la lista de indicadores filtrados por palabra clave`', () => {
+    expect(WorldBank.filterIndicators(miniData, inputSearch)).toEqual(outputSearch);
   });
 });
 
@@ -46,8 +46,8 @@ const outputThemes = [
   'Fuerza laboral con educación intermedia, varones (% de la fuerza laboral masculina)'
 ];
 
-describe('Worldbank.filterThemes', () => {
-  it('Should be a function', () => {
+describe('filterThemes es una función', () => {
+  it('Debería ser una función', () => {
     expect(typeof WorldBank.filterThemes).toBe('function');
   });
 

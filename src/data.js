@@ -18,7 +18,7 @@ window.WorldBank = {
     return yearData;
   },
 // Función ordenando data por años o valores
-  sortData : (dataBase, añosOValores) => { // 'orden' es el tercer parámetro pero aun no se ha incluído
+  /* sortData : (dataBase, añosOValores) => { // 'orden' es el tercer parámetro pero aun no se ha incluído
     const sorted = [];
     if(añosOValores === 'años') {
       const newData = (Object.values(dataBase.data)).assign();
@@ -28,7 +28,7 @@ window.WorldBank = {
       sorted.push(newData.sort());
     }
     return sorted; 
-  },
+  },*/
 // Funcion filtrando data por codigo
   filterThemes : (dataBase, codeSlice) => {
    const codeData=[]; 
