@@ -3,13 +3,14 @@
 
 // Variable a usarse para todas las funciones
 const inData = WORLDBANK.PER.indicators;
+
 // Funcionalidad de búsqueda rápida
 document.getElementById('searchBtn').addEventListener('click', () => {
   let palabraClave = document.getElementById('word');
-  if (WorldBank.filterIndicators(inData, palabraClave.value).join() === '') {
+  if (WorldBank.filterIndicatorsSearch(inData, palabraClave.value).join() === '') {
     document.getElementById('result').innerHTML = 'No se encontraron registros';
   } else {
-    const resultado = WorldBank.filterIndicators(inData, palabraClave.value);
+    const resultado = WorldBank.filterIndicatorsSearch(inData, palabraClave.value);
     for (let i = 0; i < resultado.length; i++) {
       document.getElementById('result').innerHTML += `
         <ul>
@@ -19,7 +20,22 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     }  
   }
 });
-// Funcionalidad de búsqueda por temas (en construcción - Kimberly)
+// Funcionalidad de búsqueda por temas
+document.getElementById('education').addEventListener('click', () => { // Tema: Educación
+  (WorldBank.filterThemes(inData,'SE')).forEach(resultado)
+}); 
+document.getElementById('social-dev').addEventListener('click', () => { // Tema: Desarrollo Social
+  (WorldBank.filterThemes(inData,'SL')).forEach(resultado)
+});
+document.getElementById('gender').addEventListener('click', () => { // Tema: Género 
+  (WorldBank.filterThemes(inData,'SP')).forEach(resultado);
+  (WorldBank.filterThemes(inData,'SG')).forEach(resultado)
+});
+const resultado = (themes) => document.getElementById('result').innerHTML += `
+  <ul>
+    <li>${themes.indicatorName}</li>
+  </ul>
+  `;
 
 // Funcionalidad para mostrar tabla de indicadores y datos según años
 document.getElementById('yearBtn').addEventListener('click', () => {

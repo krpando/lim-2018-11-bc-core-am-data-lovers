@@ -1,29 +1,33 @@
 window.WorldBank = {
+  
   // Función filtrado para búsqueda rápida
-  filterIndicators : (dataBase, palabra) => {
+  filterSearch : (dataBase, word) => {
     const indicadores = dataBase.map((arr) => {
       return arr.indicatorName;
     });
     return indicadores.filter((x) => {
-      return x.toLowerCase().indexOf(palabra.toLowerCase()) > -1;
+      return x.toLowerCase().indexOf(word.toLowerCase()) > -1;
     });
   },
 
-  // Función filtrado para búsqueda por temas (en construcción - Kimberly)
+  // Función filtrado para búsqueda por temas
+  filterThemes : (dataBase, themeCode) => {
+    return dataBase.filter(themes => themes.indicatorCode.slice(0,2) === themeCode);
+  },
 
   // Función filtrado por años
-  filterYears : (dataBase, año) => {
+  filterYears : (dataBase, year) => {
     const yearData = [];
     for (let i = 0; i < dataBase.length; i++) {
-      yearData.push(dataBase[i].data[año]);
+      yearData.push(dataBase[i].data[year]);
     }
     return yearData;
   },
 
   // Función ordenando data por años o valores (en construcción - Karla)
-  sortData : (dataBase, añosOValores) => { // 'orden' es el tercer parámetro pero aun no se ha incluído
+/*   sortData : (dataBase, dataType) => { // 'orden' es el tercer parámetro pero aun no se ha incluído
     const sorted = [];
-    if(añosOValores === 'años') {
+    if(dataType === 'años') {
       const newData = (Object.keys(dataBase.data)).assign();
       sorted.push(newData.sort());
     } else {
@@ -31,5 +35,5 @@ window.WorldBank = {
       sorted.push(newData.sort());
     }
     return sorted;
-  }
+  } */
 };

@@ -6,14 +6,23 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+<!--Sección Search Fast-->    
     <input id="word"/>
     <button type="button" id="searchBtn">Buscar</button>
+<!--Sección Search Themes-->
+    <div>
+      <button type="button" id="gender">Género</button>
+      <button type="button" id="education">Educación</button>
+      <button type="button" id="social-dev">Desarrollo Social</button>
+      <button type="button" id="economy">Economía</button>
+    </div>    
     <div class="result-container">
       <p id="result"></p>
     </div>
-      <input id="year"/>
-      <button type="button" id="yearBtn">Buscar</button>
-      <div class="result-container">
+<!--Sección By Years-->
+    <input id="year"/>
+    <button type="button" id="yearBtn">Buscar</button>
+    <div class="result-container">
       <table id="table">
         <tr>
           <td>Indicadores</td>
@@ -21,6 +30,7 @@
         </tr>
       </table>
     </div>
+<!--Sección Sort By-->    
     <div class="result-container">
       <div>
         <select id="indicators">
