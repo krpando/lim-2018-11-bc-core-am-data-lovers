@@ -21,7 +21,7 @@ document.getElementById('searchBtn').addEventListener('click', () => {
   }
 });
 // Funcionalidad de búsqueda por temas
-document.getElementById('education').addEventListener('click', () => { // Tema: Educación
+/*document.getElementById('education').addEventListener('click', () => { // Tema: Educación
   (WorldBank.filterThemes(inData,'SE')).forEach(resultado)
 }); 
 document.getElementById('social-dev').addEventListener('click', () => { // Tema: Desarrollo Social
@@ -31,11 +31,11 @@ document.getElementById('gender').addEventListener('click', () => { // Tema: Gé
   (WorldBank.filterThemes(inData,'SP')).forEach(resultado);
   (WorldBank.filterThemes(inData,'SG')).forEach(resultado)
 });
-const resultado = (themes) => document.getElementById('result').innerHTML += `
+const resultado = document.getElementById('result').innerHTML += `
   <ul>
     <li>${themes.indicatorName}</li>
   </ul>
-  `;
+  `;*/
 
 // Funcionalidad para mostrar tabla de indicadores y datos según años
 document.getElementById('yearBtn').addEventListener('click', () => {
