@@ -17,6 +17,22 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const one = WORLDBANK.PER.indicators;
 const resultado = (themes) => document.getElementById("cuadro").innerHTML += 
 `<ul><li>${themes.indicatorName}</li></ul>`;
