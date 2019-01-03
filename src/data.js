@@ -30,7 +30,7 @@ window.WorldBank = {
     return sorted; 
   },
 // Funcion filtrando data por codigo
-  filterCode : (dataBase, codeSlice) => {
+  filterThemes : (dataBase, codeSlice) => {
   return dataBase.filter(themes =>themes.indicatorCode.slice(0,2)===codeSlice);
   },
 };

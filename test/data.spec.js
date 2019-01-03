@@ -46,8 +46,8 @@ const outputThemes = [
   'Fuerza laboral con educación intermedia, varones (% de la fuerza laboral masculina)'
 ];
 
-describe('filterThemes es una función', () => {
-  it('is a function', () => {
+describe('Worldbank.filterThemes', () => {
+  it('Should be a function', () => {
     expect(typeof WorldBank.filterThemes).toBe('function');
   });
 
