@@ -28,7 +28,7 @@ const outputSearch = ['Empleo de tiempo parcial, mujeres (% del total de mujeres
 
 describe('filterSearch es una función', () => {
   it('is a function', () => {
-    expect(typeof WorldBank.filterSearch).toBe('function');
+    expect(typeof WorldBank.filterIndicators).toBe('function');
   });
 
   it('returns `outputSearch`', () => {
@@ -51,7 +51,7 @@ describe('Worldbank.filterThemes', () => {
     expect(typeof WorldBank.filterThemes).toBe('function');
   });
 
-  it('returns `outputThemes`', () => {
+  it('returns `deberia regresar una lista con los indicadores filtrados por codigo`', () => {
     expect(WorldBank.filterThemes(miniData, inputThemes)).toEqual(outputThemes);
   });
 });

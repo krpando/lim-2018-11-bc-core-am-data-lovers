@@ -31,6 +31,12 @@ window.WorldBank = {
   },
 // Funcion filtrando data por codigo
   filterThemes : (dataBase, codeSlice) => {
-  return dataBase.filter(themes =>themes.indicatorCode.slice(0,2)===codeSlice);
-  },
+   const codeData=[]; 
+   for(let i = 0; i < dataBase.length; i++) {
+   if(dataBase.filter(themes =>themes.indicatorCode.slice(0,2)===codeSlice)){
+     codeData.push(dataBase[i].indicatorName);
+   }
+  } 
+  return codeData;
+},
 };
