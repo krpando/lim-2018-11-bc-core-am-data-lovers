@@ -20,7 +20,7 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     }  
   }
 });
-// Funcionalidad de búsqueda por temas
+/* // Funcionalidad de búsqueda por temas
 document.getElementById('education').addEventListener('click', () => { // Tema: Educación
   (WorldBank.filterThemes(inData,'SE')).forEach(resultado)
 }); 
@@ -42,7 +42,7 @@ const resultado = (inData) => document.getElementById('result').innerHTML += `
   <ul>
     <li>${[i]]}</li>
   </ul>
-  `;
+  `; */
 
 // Funcionalidad para mostrar tabla de indicadores y datos según años
 document.getElementById('yearBtn').addEventListener('click', () => {
