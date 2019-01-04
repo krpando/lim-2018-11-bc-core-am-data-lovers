@@ -20,24 +20,7 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     }  
   }
 });
-
-// Funcionalidad de búsqueda por temas
-/*let btn = '';
-document.getElementById('education').addEventListener('click', () => {
-  switch (education){
-    case education: 
-    btn = 'SE';
-    break;
-  }
-  const result = WorldBank.filterThemes(inData, btn);
-  for(let i = 0; i<result.length; i++){
-    document.getElementById('result').innerHTML = `
-    <ul>
-      <li>${result[i]}</li>
-    </ul>
-    `;
-  }
-  });*/
+/* // Funcionalidad de búsqueda por temas
 document.getElementById('education').addEventListener('click', () => { // Tema: Educación
   (WorldBank.filterThemes(inData,'SE')).forEach(resultado)
 }); 
@@ -61,7 +44,7 @@ const resultado = (themes) => document.getElementById('result').innerHTML += `
   <ul>
     <li>${themes}</li>
   </ul>
-  `;
+  `; */
 
 // Funcionalidad para mostrar tabla de indicadores y datos según años
 document.getElementById('yearBtn').addEventListener('click', () => {
