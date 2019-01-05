@@ -20,6 +20,7 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     }  
   }
 });
+
 // ---------------- Funcionalidad de búsqueda por temas ----------------//
 document.getElementById('education').addEventListener('click', () => { // Tema: Educación
   (WorldBank.filterThemes(inData,'SE')).forEach(resultado)
@@ -98,10 +99,6 @@ document.getElementById('sortBy').addEventListener('click', () => {
   for (let values in newInData) { 
     inDataIndicator.push({"year" : values, "value" : newInData[values]});
   }
-  let inDataValues = [];
-  for(let i = 0; i < inDataIndicator.length; i++){
-   inDataValues.push(Object.values(inDataIndicator[i][1]));
-   }
   // Impresión en tablas
     let outputSort = WorldBank.sortData(inDataIndicator, typeSelected, orderSelected); 
     let yearType = [];
