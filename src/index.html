@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-<!--Sección Search Fast-->    
-    <input id="word"/>
-    <button type="button" id="searchBtn">Buscar</button>
-<!--Sección Search Themes-->
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!--Sección Search Fast-->
+  <input id="word" />
+  <button type="button" id="searchBtn">Buscar</button>
+  <!--Sección Search Themes-->
+  <div>
+    <button type="button" id="gender">Género</button>
+    <button type="button" id="education">Educación</button>
+    <button type="button" id="social-dev">Desarrollo Social</button>
+    <button type="button" id="economy">Economía</button>
+  </div>
+  <div class="result-container">
+    <p id="result"></p>
+  </div>
+  <!--Sección By Years-->
+  <input id="year" />
+  <button type="button" id="yearBtn">Buscar</button>
+  <div class="result-container">
+    <table id="table">
+      <tr>
+        <td>Indicadores</td>
+        <td>Datos</td>
+      </tr>
+    </table>
+  </div>
+  <!--Sección Sort By-->
+  <div class="result-container">
     <div>
-      <button type="button" id="gender">Género</button>
-      <button type="button" id="education">Educación</button>
-      <button type="button" id="social-dev">Desarrollo Social</button>
-      <button type="button" id="economy">Economía</button>
-    </div>    
-    <div class="result-container">
-      <p id="result"></p>
-    </div>
-<!--Sección By Years-->
-    <input id="year"/>
-    <button type="button" id="yearBtn">Buscar</button>
-    <div class="result-container">
-      <table id="table">
-        <tr>
-          <td>Indicadores</td>
-          <td>Datos</td>
-        </tr>
-      </table>
-    </div>
-<!--Sección Sort By-->    
-    <div class="result-container">
-      <div>
-        <select id="indicators">
-          <option>Selecciona un indicador...</option>
-        </select>
-      </div> 
-      <select id="data-type">
-        <option id="isYear">Años</option> 
-        <option id="isValue">Valores</option>  
+      <select id="indicators">
+        <option>Selecciona un indicador...</option>
       </select>
-      <select id="order-type">
-          <option id="isGreater">Mayor</option> 
-          <option id="isLower">Menor</option>  
-      </select>   
-      <button type="button" id="sortBy">Aplicar</button>
-      <table id="table4sort">
-        <tr>
+    </div>
+    <select id="data-type">
+      <option id="isYear">Años</option>
+      <option id="isValue">Valores</option>
+    </select>
+    <select id="order-type">
+      <option id="isGreater">Mayor</option>
+      <option id="isLower">Menor</option>
+    </select>
+    <button type="button" id="sortBy">Aplicar</button>
+    <table id="table4sort">
+      <tr>
         <td>Años</td>
         <td>Valores</td>
-        </tr>
-      </table>
-      <button type="button" id="computeStat">Promediar</button>
-      <p id = "compute"></p>
-    </div>
-    <script src="./data/worldbank/worldbank.js"></script>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+      </tr>
+    </table>
+    <button type="button" id="computeStat">Promediar</button>
+    <p id="compute"></p>
+  </div>
+  <script src="./data/worldbank/worldbank.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
