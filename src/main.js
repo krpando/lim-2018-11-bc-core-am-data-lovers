@@ -14,7 +14,7 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     for (let i = 0; i < outputSearch.length; i++) {
       document.getElementById('result').innerHTML += `
         <ul>
-          <li>${outputSearch[i]}</li>
+          <li><a href="">${outputSearch[i]}<a></li>
         </ul>
         `;
     }  
@@ -51,15 +51,22 @@ document.getElementById('yearBtn').addEventListener('click', () => {
   const resultadoValores = WorldBank.filterYears(inData, parseInt(inputYear.value));
   for (let i = 0; i < inData.length; i++) {
     const resultadoIndicadores = inData[i].indicatorName;
-    if (resultadoValores[i] != 0) { // Condición para imprimir solo indicadores con valores
+    if ((resultadoValores[i].toString())[1] === '.' || (resultadoValores[i].toString())[2] === '.') { //Condición para imprimir solo indicadores con valores
+        document.getElementById('table').innerHTML += `
+        <tr>
+        <td>${resultadoIndicadores}</td>
+        <td>${resultadoValores[i].toFixed(2)} %</td>
+        </tr>
+        `;
+      } else if (resultadoValores[i] !== '') { // Condición para imprimir solo indicadores con valores
       document.getElementById('table').innerHTML += `
         <tr>
-            <td>${resultadoIndicadores}</td>
-            <td>${resultadoValores[i].toFixed(2)} %</td>
+          <td>${resultadoIndicadores}</td>
+          <td>${resultadoValores[i]}</td>
         </tr>
-        ` ;
-    }
-  }
+        `;
+      }
+    }  
 });
 
 // ---------------- Funcionalidad para mostrar tabla de años y datos según indicador ---------------- //
