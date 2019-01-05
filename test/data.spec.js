@@ -40,9 +40,7 @@ describe('filterSearch es una función', () => {
 // Para parámetro 'themeCode'
 const inputThemes = 'SL';
 // Resultado esperado para filterThemes
-const outputThemes = [
-  'Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)'
-];
+const outputThemes = ['Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)'];
 
 describe('filterThemes es una función', () => {
   it('debería ser una función', () => {
@@ -113,7 +111,7 @@ const inputDataValue = [45.04, 30.45, 15.36];
 const outputDataValue = 30.28333333333333;
 
 describe('averageCompute es una función', () => {
-  it('is a function', () => {
+  it('debería ser una función', () => {
     expect(typeof WorldBank.averageCompute).toBe('function');
   });
 
