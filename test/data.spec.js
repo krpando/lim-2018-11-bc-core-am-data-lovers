@@ -110,7 +110,7 @@ describe('sortData es una función', () => {
 // Para parámetro 'dataBase'
 const inputDataValue = [45.04, 30.45, 15.36];
 // Resultado esperado para averageCompute
-const outputDataValue = 30.2833;
+const outputDataValue = 30.28333333333333;
 
 describe('averageCompute es una función', () => {
   it('is a function', () => {
