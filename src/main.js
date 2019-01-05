@@ -91,10 +91,6 @@ document.getElementById('sortBy').addEventListener('click', () => {
   for (let values in newInData) { 
     inDataIndicator.push({"year" : values, "value" : newInData[values]});
   }
-  let inDataValues = [];
-  for(let i = 0; i < inDataIndicator.length; i++){
-   inDataValues.push(Object.values(inDataIndicator[i][1]));
-   }
   // Impresión en tablas
     let outputSort = WorldBank.sortData(inDataIndicator, typeSelected, orderSelected); 
     let yearType = [];
@@ -111,4 +107,28 @@ document.getElementById('sortBy').addEventListener('click', () => {
             `;
       } 
     }
+  });
+document.getElementById('computeStat').addEventListener('click', () => {
+    // Extraer nueva data en función a indicador elegido en lista desplegable 
+  const indicSelected = document.getElementById('indicators').value;
+  let newInData = '';
+  for (let i = 0; i < inData.length; i++) {
+    if (inData[i].indicatorName === indicSelected) {
+      newInData = Object.assign(inData[i].data);
+    }
+  }  
+  // Cambia objeto en newInData en objetos individuales con nombres de propiedades comunes
+  let inDataIndicator = [];
+  for (let values in newInData) { 
+    inDataIndicator.push({"year" : values, "value" : newInData[values]});
+  }
+  let inDataValues = [];
+  for(let i = 0; i < inDataIndicator.length; i++){
+    if(inDataIndicator[i].value !== ''){
+ inDataValues.push(inDataIndicator[i].value);
+  }}
+   let outputCompute = WorldBank.averageCompute(inDataValues);
+      document.getElementById('compute').innerHTML +=`
+        <p>${outputCompute.toFixed(2)} %</p>
+      `;
 });
