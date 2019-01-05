@@ -104,5 +104,20 @@ describe('sortData es una función', () => {
 
   it('returns `valoresMenor`', () => {
     expect(WorldBank.sortData(dataData, inputSort2, inputOrder2)).toEqual(valoresMenor);
-  }); 
-}); 
+  });
+});
+// ----------- Testeando averageCompute ----------- //
+// Para parámetro 'dataBase'
+const inputDataValue = [45.04, 30.45, 15.36];
+// Resultado esperado para averageCompute
+const outputDataValue = 30.2833;
+
+describe('averageCompute es una función', () => {
+  it('is a function', () => {
+    expect(typeof WorldBank.averageCompute).toBe('function');
+  });
+
+  it('returns `deberia retornar el promedio de los porcentajes ingresados`', () => {
+    expect(WorldBank.averageCompute(inputDataValue)).toEqual(outputDataValue);
+  });
+});
