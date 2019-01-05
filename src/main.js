@@ -14,7 +14,7 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     for (let i = 0; i < outputSearch.length; i++) { 
       document.getElementById('result').innerHTML += `
         <ul>
-          <li><a href="#sortSection">${outputSearch[i]}<a></li>
+          <li><a href="#sortSection">${outputSearch[i]}</a></li>
         </ul>
         `;
     }  
@@ -41,7 +41,7 @@ document.getElementById('economy').addEventListener('click', () => { // Tema: Ec
 });
 const resultado = (themes) => document.getElementById('result').innerHTML += `
   <ul>
-    <li>${themes}</li>
+    <li><a href="#sortSection">${themes}</a></li>
   </ul>
   `;
 
