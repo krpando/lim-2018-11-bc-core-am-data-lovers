@@ -11,10 +11,10 @@ window.WorldBank = {
   },
 
   // Función filtrado para búsqueda por temas
-  filterThemes : (dataBase, codeSlice) => {
+  filterThemes : (dataBase, themeCode) => {
     const codeData = []; 
     for(let i = 0; i < dataBase.length; i++) {
-      if((dataBase[i].indicatorCode).slice(0,2) === codeSlice) {
+      if((dataBase[i].indicatorCode).slice(0,2) === themeCode) {
         codeData.push(dataBase[i].indicatorName);
       }
     } 
@@ -52,5 +52,13 @@ window.WorldBank = {
           break;
         }
     return sorted;
-      }
+    },
+  // Función promedio de porcentajes
+  averageCompute : (dataBase) => {
+    const sumatoria = dataBase.reduce(function(a,b) {
+      return a+b;
+    });
+    let promedio = sumatoria/dataBase.length;
+    return promedio;
   }
+}
