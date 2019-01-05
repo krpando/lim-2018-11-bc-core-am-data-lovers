@@ -6,6 +6,9 @@ const inData = WORLDBANK.PER.indicators;
 
 // ---------------- Funcionalidad de búsqueda rápida ---------------- //
 document.getElementById('searchBtn').addEventListener('click', () => {
+  if(document.getElementById('result').value !== '') {
+    document.getElementById('result').innerHTML = '';
+  }
   let inputWord = document.getElementById('word');
   if (WorldBank.filterSearch(inData, inputWord.value).join() === '') {
     document.getElementById('result').innerHTML = 'No se encontraron registros';
@@ -14,7 +17,7 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     for (let i = 0; i < outputSearch.length; i++) {
       document.getElementById('result').innerHTML += `
         <ul>
-          <li><a href="">${outputSearch[i]}<a></li>
+          <li><a href=''>${outputSearch[i]}<a></li>
         </ul>
         `;
     }  
@@ -39,6 +42,7 @@ document.getElementById('economy').addEventListener('click', () => { // Tema: Ec
   (WorldBank.filterThemes(inData,'IC')).forEach(resultado);
   (WorldBank.filterThemes(inData,'pe')).forEach(resultado)
 });
+
 const resultado = (themes) => document.getElementById('result').innerHTML += `
   <ul>
     <li>${themes}</li>
@@ -47,6 +51,9 @@ const resultado = (themes) => document.getElementById('result').innerHTML += `
 
 // ---------------- Funcionalidad para mostrar tabla de indicadores y datos según años ---------------- //
 document.getElementById('yearBtn').addEventListener('click', () => {
+  if(document.getElementById('table').value !== '') {
+    document.getElementById('table').innerHTML = '';
+  }
   let inputYear = document.getElementById('year');
   const resultadoValores = WorldBank.filterYears(inData, parseInt(inputYear.value));
   for (let i = 0; i < inData.length; i++) {
@@ -100,6 +107,9 @@ document.getElementById('sortBy').addEventListener('click', () => {
     inDataIndicator.push({"year" : values, "value" : newInData[values]});
   }
   // Impresión en tablas
+    if(document.getElementById('table4sort').value !== '') { //Limpiado de caja antes de impresión
+      document.getElementById('table4sort').innerHTML = '';
+    }
     let outputSort = WorldBank.sortData(inDataIndicator, typeSelected, orderSelected); 
     let yearType = [];
     let valueType = [];
