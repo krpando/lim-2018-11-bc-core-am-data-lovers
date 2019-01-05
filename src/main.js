@@ -11,10 +11,10 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     document.getElementById('result').innerHTML = 'No se encontraron registros';
   } else {
     const outputSearch = WorldBank.filterSearch(inData, inputWord.value);
-    for (let i = 0; i < outputSearch.length; i++) {
+    for (let i = 0; i < outputSearch.length; i++) { 
       document.getElementById('result').innerHTML += `
         <ul>
-          <li><a href="">${outputSearch[i]}<a></li>
+          <li><a href="#sortSection">${outputSearch[i]}<a></li>
         </ul>
         `;
     }  
