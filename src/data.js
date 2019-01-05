@@ -33,16 +33,24 @@ window.WorldBank = {
   // Función ordenando data por años o valores (en construcción - Karla)
   sortData : (dataBase, dataType, orderType) => { 
     let sorted = [];
-    if(dataType === 'valores') {
+    if(dataType === 'Valores') {
       switch (orderType) {
-        case 'mayor' :
-        sorted = dataBase.sort((valueA, valueB) => valueA.value < valueB.value ? 1 : -1)
+        case 'Mayor' :
+        sorted = dataBase.sort((valorA, valorB) => valorA.value < valorB.value ? 1 : -1);
         break;
-        case 'menor' :
-        sorted = dataBase.sort((valueA, valueB) => valueA.value > valueB.value ? 1 : -1)
+        case 'Menor' :
+        sorted = dataBase.sort((valorA, valorB) => valorA.value > valorB.value ? 1 : -1);
         break;
-      }
+      }  
+    } else 
+        switch (orderType) {
+          case 'Mayor' :
+          sorted = dataBase.sort((añoA, añoB) => añoA.year < añoB.year ? 1 : -1);
+          break;
+          case 'Menor' :
+          sorted = dataBase.sort((añoA, añoB) => añoA.year > añoB.year ? 1 : -1);
+          break;
+        }
     return sorted;
-    }
-  }  
-}
+      }
+  }
