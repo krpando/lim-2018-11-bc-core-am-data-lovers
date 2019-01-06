@@ -138,9 +138,7 @@ document.getElementById('computeStat').addEventListener('click', () => {
     }
   }
   let outputCompute = WorldBank.averageCompute(inDataValues);
-  /* const outComToString = outputCompute.toString();
-  for (let i = 0; i < outComToString.length; i++) {
-    */if ((outputCompute.toString())[1] === '.' || (outputCompute.toString())[2] === '.') { 
+  if ((outputCompute.toString())[1] === '.' || (outputCompute.toString())[2] === '.') { 
     document.getElementById('compute').innerHTML += `
     <p>${outputCompute.toFixed(2)} %</p>
     `;
