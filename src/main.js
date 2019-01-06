@@ -188,11 +188,13 @@ document.getElementById('computeStat').addEventListener('click', () => {
 
 // <<<<<<<<<<<< Copiado de referencia tipo APA >>>>>>>>>>>> //
 document.getElementById('apa-btn').addEventListener('click', () => {
+  const inputTemporal = document.createElement('input');
   let fecha = new Date(); 
-  document.getElementById('reference').innerHTML =
-`"Banco Mundial. (${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear()}). Indicadores del Desarrollo Mundial: Perú. Obtenido de  https://datos.bancomundial.org/pais/peru?view=chart"`; 
-  const referencetxt = document.getElementById('reference').value;
-  referencetxt.select();
-  document.execCommand('copy');
+  inputTemporal.type = 'text';
+  inputTemporal.value = `"Banco Mundial. (${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear()}). Indicadores del Desarrollo Mundial: Perú. Obtenido de  https://datos.bancomundial.org/pais/peru?view=chart"`; 
+  document.body.appendChild(inputTemporal);
+  inputTemporal.select();
+  document.execCommand('Copy');
+  document.body.removeChild(inputTemporal);
   alert('El texto para referenciar la presente página en formato APA ha sido copiado');
 }); 
