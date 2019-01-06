@@ -1,62 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="ES">
 
 <head>
-  <meta charset = "utf-8">
+  <meta charset="utf-8">
   <title>BANCO MUNDIAL | Base de datos</title>
-  <link rel = "stylesheet" href = "style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <!--Encabezado-->
   <header>
-    <div class = "header-container">
-      <div class = "header-item">
-          <img alt="BancoMundialLogo" class="wb-logo" src="https://i.ibb.co/PmJMJ9K/logo-banco-mundial.jpg"/>
+    <div class="header-container">
+      <div class="header-item">
+        <img alt="BancoMundialLogo" class="wb-logo" src="https://i.ibb.co/PmJMJ9K/logo-banco-mundial.jpg" />
       </div>
-      <div class = "menu-container">
+      <div class="menu-container">
         <!--Elección de países-->
-        <div class = "menu-item">
-          <select id = "country" onchange = "paises()">
-              <option id = "BRA">BRASIL</option>
-              <option id = "CHI">CHILE</option>
-              <option id = "MEX">MÉXICO</option>
-              <option id = "PER" selected = "selected">PERÚ</option>
+        <div class="menu-item">
+          <select id="country" onchange="paises()">
+            <option id="BRA">BRASIL</option>
+            <option id="CHI">CHILE</option>
+            <option id="MEX">MÉXICO</option>
+            <option id="PER" selected="selected">PERÚ</option>
           </select>
         </div>
         <!--Menú de opciones-->
-        <div class = "menu-item">
-          <input id = "menu-display" type = "checkbox"></input>
-          <label for = "menu-display">
-            <img alt = "DisplayMenuIcon" class = "menu-icon" src = "https://i.ibb.co/p4Z1Cf5/menu-alt-512.png"/>
+        <div class="menu-item">
+          <input id="menu-display" type="checkbox"></input>
+          <label for="menu-display">
+            <img alt="DisplayMenuIcon" class="menu-icon" src="https://i.ibb.co/p4Z1Cf5/menu-alt-512.png" />
           </label>
           <nav>
-            <ul>
-              <li><a>Instrucciones</a></li>
-              <li><a>Preguntas frecuentes</a></li>
-              <li><a>Ayuda</a></li>
-            </ul>    
+            <ul class="menu-list">
+              <li class="menu-options"><a>Instrucciones</a></li>
+              <li class="menu-options"><a>Preguntas frecuentes</a></li>
+              <li class="menu-options"><a>Ayuda</a></li>
+            </ul>
           </nav>
         </div>
       </div>
     </div>
   </header>
+  <!--Sección Búsqueda-->
+  <div class="search-container">
+    <!--Búsqueda Rápida (FilterSearch)-->
+    <div class="search-fast">
+      <label class="search-txt-fast">Búsqueda de indicadores</label>
+      <form class="search-form">
+        <input class="search-input" placeholder="Ejemplo: educación, género, desempleo" id="word"/>
+        <button type="button" id="search-btn"></button>
+      </form>
+    </div>
+    <hr></hr>
+    <!--Búsqueda por temas (SearchThemes)-->
+    <div class="search-topic">  
+      <label class="search-txt-topic">Búsqueda por temas</label>
+      <form class="search-form">
+        <button type="button" class="topic-btn" id="gender">GÉNERO</button>
+        <button type="button" class="topic-btn" id="education">EDUCACIÓN</button>
+        <button type="button" class="topic-btn" id="social-dev">DESARROLLO SOCIAL</button>
+        <button type="button" class="topic-btn" id="economy">ECONOMÍA</button> 
+      </form>  
+    </div>   
+  </div>   
 
 
 
 
 
 
-  <!--Sección Search Fast-->
-  <input id="word" />
-  <button type="button" id="searchBtn">Buscar</button>
-  <!--Sección Search Themes-->
-  <div>
-    <button type="button" id="gender">Género</button>
-    <button type="button" id="education">Educación</button>
-    <button type="button" id="social-dev">Desarrollo Social</button>
-    <button type="button" id="economy">Economía</button>
-  </div>
+
   <div class="result-container">
     <p id="result"></p>
   </div>
@@ -71,23 +84,23 @@
       </tr>
     </table>
   </div>
-<!--Sección Sort By-->    
+  <!--Sección Sort By-->
   <div>
     <select id="indicators">
       <option>Selecciona un indicador...</option>
     </select>
-  </div>  
+  </div>
   <select id="data-type">
-    <option id="isYear">Años</option> 
-    <option id="isValue">Valores</option> 
+    <option id="isYear">Años</option>
+    <option id="isValue">Valores</option>
   </select>
-</div>
-<select id="order-type">
-  <option id="isGreater">Mayor</option>
-  <option id="isLower">Menor</option>
-</select>
-<button type="button" id="sortBy">Aplicar</button>
-<div class="result-container" id="sortSection">   
+  </div>
+  <select id="order-type">
+    <option id="isGreater">Mayor</option>
+    <option id="isLower">Menor</option>
+  </select>
+  <button type="button" id="sortBy">Aplicar</button>
+  <div class="result-container" id="sortSection">
     <table id="table4sort">
       <tr>
         <td>Años</td>
@@ -96,18 +109,18 @@
     </table>
   </div>
   <button type="button" id="computeStat">Promediar</button>
-    <p id="compute"></p>
+  <p id="compute"></p>
   <footer>
     <div class="copyright">
       <img alt="WorldBankLogo-Black&White" src="https://i.ibb.co/Scv1sHW/World-Nabck.png" class="wb-logo-bw">
       <p class="copyright-txt"> | Base de Datos © 2018</p>
-    </div>  
+    </div>
     <div class="btn-referencia">
       <button type="button" id="apa-btn">CITAR DATA EN APA</button>
-    </div>   
-  <script src="./data/worldbank/worldbank.js"></script>
-  <script src="data.js"></script>
-  <script src="main.js"></script>
+    </div>
+    <script src="./data/worldbank/worldbank.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

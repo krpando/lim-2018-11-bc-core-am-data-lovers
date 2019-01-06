@@ -22,7 +22,7 @@ const paises = () => {
 };
 
 // ------------------------------ Funcionalidad de búsqueda rápida ------------------------------ //
-document.getElementById('searchBtn').addEventListener('click', () => {
+document.getElementById('search-btn').addEventListener('click', () => {
   document.getElementById('result').innerHTML = ''; // Limpiado de caja antes de impresión
   let inputWord = document.getElementById('word');
   if (WorldBank.filterSearch(inData, inputWord.value).join() === '') {
