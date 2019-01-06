@@ -1,8 +1,25 @@
 /* global WORLDBANK*/
 /* global WorldBank*/
+/* exported paises*/
 
-// Variable a usarse para todas las funciones
-const inData = WORLDBANK.PER.indicators;
+// Elección de países para uso general de variable inData
+let inData = WORLDBANK.PER.indicators;
+const paises = () => {
+  switch (document.getElementById('country').value) {
+  case 'BRASIL' :
+    inData = WORLDBANK.BRA.indicators;
+    break;
+  case 'CHILE' :
+    inData = WORLDBANK.CHL.indicators;
+    break;  
+  case 'MÉXICO' :
+    inData = WORLDBANK.MEX.indicators;
+    break;
+  default :
+    inData = WORLDBANK.PER.indicators;
+  }
+  return inData;
+};
 
 // ------------------------------ Funcionalidad de búsqueda rápida ------------------------------ //
 document.getElementById('searchBtn').addEventListener('click', () => {
@@ -15,7 +32,7 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     for (let i = 0; i < outputSearch.length; i++) {
       document.getElementById('result').innerHTML += `
         <ul>
-          <li><a href=''>${outputSearch[i]}<a></li>
+          <li><a href=''>${outputSearch[i]}</a></li>
         </ul>
         `;
     }
@@ -47,7 +64,7 @@ document.getElementById('economy').addEventListener('click', () => { // Tema: Ec
 // Impresión de resultados en página
 const resultado = (themes) => document.getElementById('result').innerHTML += `
     <ul>
-      <li>${themes}</li>
+      <li><a href=''>${themes}</a></li>
     </ul>
     `;
 // -------------- Funcionalidad para mostrar tabla de indicadores y datos según años -------------- //

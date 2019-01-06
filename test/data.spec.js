@@ -4,17 +4,17 @@ require('../src/data.js');
 // Para parámetro 'data'
 const miniData = [
   {
-    'data': {'1960':'', '1990':30.45, '2010':15.3567},
+    'data': {'1960': '', '1990': 30.45, '2010': 15.3567},
     'indicatorName': 'Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)',
     'indicatorCode': 'SL.TLF.PART.FE.ZS'
   },
   {
-    'data': {'1960':'', '1990':20.55555,'2010':55.008},
+    'data': {'1960': '', '1990': 20.55555, '2010': 55.008},
     'indicatorName': 'Fuerza laboral con educación intermedia (% del total)',
     'indicatorCode': 'SE.TLF.INTM.ZS'
   },
   {
-    'data': {'1960':'', '1990':3.5,'2010':0.56},
+    'data': {'1960': '', '1990': 3.5, '2010': 0.56},
     'indicatorName': 'Fuerza laboral con educación intermedia, varones (% de la fuerza laboral masculina)',
     'indicatorCode': 'SE.TLF.INTM.MA.ZS'
   }
@@ -70,7 +70,7 @@ describe('filterYears es una función', () => {
  
 // ----------- Testeando sortData ----------- //
 // Para parámetro 'dataBase'
-const dataData = [{year: "1960", value: 45.04}, {year: "1990", value: 15.3567}, {year: "2000", value: 30.45}];
+const dataData = [{year: '1960', value: 45.04}, {year: '1990', value: 15.3567}, {year: '2000', value: 30.45}];
 // Para parámetro 'dataType'
 const inputSort1 = 'Años';
 const inputSort2 = 'Valores';
@@ -78,10 +78,10 @@ const inputSort2 = 'Valores';
 const inputOrder1 = 'Mayor';
 const inputOrder2 = 'Menor';
 // Resultados esperados para sortData
-const añosMayor = [{year: "2000", value: 30.45}, {year: "1990", value: 15.3567}, {year: "1960", value: 45.04}];
-const añosMenor = [{year: "1960", value: 45.04}, {year: "1990", value: 15.3567}, {year: "2000", value: 30.45}];
-const valoresMayor = [{year: "1960", value: 45.04}, {year: "2000", value: 30.45}, {year: "1990", value: 15.3567}];
-const valoresMenor = [{year: "1990", value: 15.3567},{year: "2000", value: 30.45}, {year: "1960", value: 45.04}];
+const añosMayor = [{year: '2000', value: 30.45}, {year: '1990', value: 15.3567}, {year: '1960', value: 45.04}];
+const añosMenor = [{year: '1960', value: 45.04}, {year: '1990', value: 15.3567}, {year: '2000', value: 30.45}];
+const valoresMayor = [{year: '1960', value: 45.04}, {year: '2000', value: 30.45}, {year: '1990', value: 15.3567}];
+const valoresMenor = [{year: '1990', value: 15.3567}, {year: '2000', value: 30.45}, {year: '1960', value: 45.04}];
 
 describe('sortData es una función', () => {
   it('debería ser una función', () => {

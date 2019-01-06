@@ -30,7 +30,7 @@ window.WorldBank = {
     return yearData;
   },
 
-  // Función ordenando data por años o valores (en construcción - Karla)
+  // Función ordenando data por años o valores
   sortData: (dataBase, dataType, orderType) => {
     let sorted = [];
     if (dataType === 'Valores') {
