@@ -22,7 +22,7 @@ a {
 }
 
 /*Encabezado*/
-header {
+/*header {
   height: 46px;
   width: auto;
 }
@@ -123,7 +123,120 @@ li a:hover {
     background-color:#B88C1D;
     color: #ffffff;
     cursor: pointer;
-} 
+}*/ 
+/* ----------------SECCION WEB/ IMPRESION DE RESULTADOS------------ */
+/*Encabezado para Web*/
+header {
+    height: 140px;
+    width: auto;
+  }
+  
+  .header-container {
+    height: 150px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+  
+  .header-item {
+      align-self: center;
+  }
+  
+  .wb-logo {
+    width: 350px;
+    height: auto;
+    padding-left: 8px;
+  }
+  
+  .menu-container {
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: center;
+  }
+  
+  .menu-item {
+      align-self: center;
+  }
+  
+  select {
+    border: 0px transparent;
+    margin: 0 auto;
+    color: #002244;
+    height: 40px;
+    cursor: pointer;
+    background: 295px 12px no-repeat #ffffff;
+    text-align-last: center;
+    width: 100px;
+  }
+  
+  select:hover {
+    border-radius: 8px;
+    background-color: #009FDA;
+    color: #ffffff;
+  }
+  
+  option {
+    background-color: #ffffff;
+    color: #002244;
+    cursor: pointer;
+  }
+  
+  .menu-icon {
+    height: 33px;
+    padding: 15px;
+    cursor: pointer;
+  }
+  
+  #menu-display {
+      display: none;
+  }
+  
+  nav {
+      visibility: hidden;
+      opacity: 0;
+      transition: all 1s;
+  }
+  
+  #menu-display:checked ~ nav {
+      visibility: visible;
+      opacity: 1;
+  }
+  
+  ul {
+      height: 117px;
+      width: 100%;
+      list-style-type: none;
+      margin: 0 0 0 -84%;
+      padding: 0;
+      background-color:#002244;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  li a {
+      display: block;
+      padding: 13.5px 20px;
+      color: #ffffff;
+      text-align: right;
+      font-size: 11px;
+      text-decoration: none;
+      border-top: 1px solid #009FDA;
+  }
+  
+  li a:hover {
+      background-color:#B88C1D;
+      color: #ffffff;
+      cursor: pointer;
+  } 
+/*Cuerpo para Web*/
+.main-container{
+    width: auto;
+    background-color: #002244;
+    height: 600px;
+
+}
+
 
 
 
