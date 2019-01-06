@@ -185,3 +185,14 @@ document.getElementById('computeStat').addEventListener('click', () => {
    <p>${outputCompute}</p>
    `;
 });
+
+// <<<<<<<<<<<< Copiado de referencia tipo APA >>>>>>>>>>>> //
+document.getElementById('apa-btn').addEventListener('click', () => {
+  let fecha = new Date(); 
+  document.getElementById('reference').innerHTML =
+`"Banco Mundial. (${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear()}). Indicadores del Desarrollo Mundial: Perú. Obtenido de  https://datos.bancomundial.org/pais/peru?view=chart"`; 
+  const referencetxt = document.getElementById('reference').value;
+  referencetxt.select();
+  document.execCommand('copy');
+  alert('El texto para referenciar la presente página en formato APA ha sido copiado');
+}); 

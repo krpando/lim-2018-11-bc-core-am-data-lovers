@@ -8,7 +8,8 @@ body {
 
 /*Para font-type general*/
 select,
-option {
+option,
+p {
   font-family: AndesRoundedW01-Regular;
   font-weight: normal;
   text-align: center;
@@ -35,7 +36,7 @@ header {
 }
 
 .header-item {
-    align-self: center;
+  align-self: center;
 }
 
 .wb-logo {
@@ -45,13 +46,13 @@ header {
 }
 
 .menu-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
 }
 
 .menu-item {
-    align-self: center;
+  align-self: center;
 }
 
 select {
@@ -83,47 +84,87 @@ option {
 }
 
 #menu-display {
-    display: none;
+  display: none;
 }
 
 nav {
-    visibility: hidden;
-    opacity: 0;
-    transition: all 1s;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s;
 }
 
-#menu-display:checked ~ nav {
-    visibility: visible;
-    opacity: 1;
+#menu-display:checked~nav {
+  visibility: visible;
+  opacity: 1;
 }
 
 ul {
-    height: 117px;
-    width: 100%;
-    list-style-type: none;
-    margin: 0 0 0 -84%;
-    padding: 0;
-    background-color:#002244;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
+  height: 117px;
+  width: 100%;
+  list-style-type: none;
+  margin: 0 0 0 -84%;
+  padding: 0;
+  background-color: #002244;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
 }
 
 li a {
-    display: block;
-    padding: 13.5px 20px;
-    color: #ffffff;
-    text-align: right;
-    font-size: 11px;
-    text-decoration: none;
-    border-top: 1px solid #009FDA;
+  display: block;
+  padding: 13.5px 20px;
+  color: #ffffff;
+  text-align: right;
+  font-size: 11px;
+  text-decoration: none;
+  border-top: 1px solid #009FDA;
 }
 
 li a:hover {
-    background-color:#B88C1D;
-    color: #ffffff;
-    cursor: pointer;
-} 
+  background-color: #B88C1D;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+
+/*Pie de página*/
+footer {
+  height: 40px;
+  justify-content: space-around;
+  display: flex;
+}
+
+.copyright {
+  width: 225px;
+  display: flex;
+  font-size: 10px;
+  justify-content: space-between;
+}
+
+.copyright-txt,
+.btn-referencia,
+.wb-logo-bw {
+  align-self: center;
+  cursor: context-menu;
+}
+
+.wb-logo-bw {
+  height: 19px;
+}
+
+#apa-btn {
+  width: 84px;
+  height: 21px;
+  border-radius: 7px;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 7px;
+}
+
+#apa-btn:hover {
+  background-color: #B88C1D;
+  cursor: pointer;
+}
 
 
 
