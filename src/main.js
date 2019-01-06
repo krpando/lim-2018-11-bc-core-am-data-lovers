@@ -182,6 +182,6 @@ document.getElementById('computeStat').addEventListener('click', () => {
     <p>${outputCompute.toFixed(2)} %</p>
     `;
   } else document.getElementById('compute').innerHTML += `
-   <p>${outputCompute} </p>
+   <p>${outputCompute}</p>
    `;
 });
