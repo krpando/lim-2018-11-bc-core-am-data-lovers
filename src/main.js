@@ -133,11 +133,18 @@ document.getElementById('sortBy').addEventListener('click', () => {
   for (let i = 0; i < outputSort.length; i++) {
     yearType.push(Object.values(outputSort[i])[0]); // Variable para años
     valueType.push(Object.values(outputSort[i])[1]); // Variable para valores o porcentajes
-    if (valueType[i] !== '') { // Condición para imprimir solo años que contengan valores y obviar vacíos
+    if ((valueType[i].toString())[1] === '.' || (valueType[i].toString())[2] === '.') {
+      document.getElementById('table4sort').innerHTML += `
+      <tr>
+        <td>${yearType[i]}</td>  
+        <td>${valueType[i].toFixed(2)} %</td>
+      </tr>
+      `;
+    } else if (valueType[i] !== '') { // Condición para imprimir solo años que contengan valores y obviar vacíos
       document.getElementById('table4sort').innerHTML += `
             <tr>
               <td>${yearType[i]}</td>  
-              <td>${valueType[i].toFixed(2)} %</td>
+              <td>${valueType[i]}</td>
             </tr>
             `;
     }
