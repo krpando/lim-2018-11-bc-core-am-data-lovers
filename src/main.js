@@ -32,7 +32,7 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     for (let i = 0; i < outputSearch.length; i++) {
       document.getElementById('result').innerHTML += `
         <ul>
-          <li><a href=''>${outputSearch[i]}</a></li>
+          <li><a href="#sortSection">${outputSearch[i]}</a></li>
         </ul>
         `;
     }
@@ -63,10 +63,11 @@ document.getElementById('economy').addEventListener('click', () => { // Tema: Ec
 });
 // Impresión de resultados en página
 const resultado = (themes) => document.getElementById('result').innerHTML += `
-    <ul>
-      <li><a href=''>${themes}</a></li>
-    </ul>
-    `;
+  <ul>
+    <li><a href="#sortSection">${themes}</a></li>
+  </ul>
+  `;
+
 // -------------- Funcionalidad para mostrar tabla de indicadores y datos según años -------------- //
 document.getElementById('yearBtn').addEventListener('click', () => {
   document.getElementById('table').innerHTML = ''; // Limpiado de caja antes de impresión
@@ -150,6 +151,7 @@ document.getElementById('sortBy').addEventListener('click', () => {
     }
   }
 });
+
 // ----------------------------- Funcionalidad de cálculo del promedio ----------------------------- //
 document.getElementById('computeStat').addEventListener('click', () => {
   // Extraer nueva data en función a indicador elegido en lista desplegable 
@@ -174,9 +176,12 @@ document.getElementById('computeStat').addEventListener('click', () => {
       inDataValues.push(inDataIndicator[i].value);
     }
   }
-  document.getElementById('compute').innerHTML = ''; // Limpiado de caja antes de impresión
   let outputCompute = WorldBank.averageCompute(inDataValues);
-  document.getElementById('compute').innerHTML += `
-      <p>${outputCompute.toFixed(2)} %</p>
-      `;
+  if ((outputCompute.toString())[1] === '.' || (outputCompute.toString())[2] === '.') { 
+    document.getElementById('compute').innerHTML += `
+    <p>${outputCompute.toFixed(2)} %</p>
+    `;
+  } else document.getElementById('compute').innerHTML += `
+   <p>${outputCompute} </p>
+   `;
 });
