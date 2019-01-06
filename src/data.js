@@ -30,7 +30,7 @@ window.WorldBank = {
     return yearData;
   },
 
-  // Función ordenando data por años o valores (en construcción - Karla)
+  // Función ordenando data por años o valores
   sortData: (dataBase, dataType, orderType) => {
     let sorted = [];
     if (dataType === 'Valores') {
@@ -40,7 +40,6 @@ window.WorldBank = {
         break;
       case 'Menor':
         sorted = dataBase.sort((valorA, valorB) => valorA.value > valorB.value ? 1 : -1);
-        break;
       }
     } else
       switch (orderType) {
@@ -49,10 +48,10 @@ window.WorldBank = {
         break;
       case 'Menor':
         sorted = dataBase.sort((añoA, añoB) => añoA.year > añoB.year ? 1 : -1);
-        break;
       }
     return sorted;
   },
+
   // Función promedio de porcentajes
   averageCompute: (dataBase) => {
     const sumatoria = dataBase.reduce(function(acumulator, nextValue) {
