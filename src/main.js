@@ -11,33 +11,33 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     document.getElementById('result').innerHTML = 'No se encontraron registros';
   } else {
     const outputSearch = WorldBank.filterSearch(inData, inputWord.value);
-    for (let i = 0; i < outputSearch.length; i++) { 
+    for (let i = 0; i < outputSearch.length; i++) {
       document.getElementById('result').innerHTML += `
         <ul>
           <li><a href="#sortSection">${outputSearch[i]}</a></li>
         </ul>
         `;
-    }  
+    }
   }
 });
 
 // ---------------- Funcionalidad de búsqueda por temas ----------------//
 document.getElementById('education').addEventListener('click', () => { // Tema: Educación
-  (WorldBank.filterThemes(inData,'SE')).forEach(resultado)
-}); 
+  (WorldBank.filterThemes(inData, 'SE')).forEach(resultado);
+});
 document.getElementById('social-dev').addEventListener('click', () => { // Tema: Desarrollo Social
-  (WorldBank.filterThemes(inData,'SL')).forEach(resultado)
+  (WorldBank.filterThemes(inData, 'SL')).forEach(resultado);
 });
 document.getElementById('gender').addEventListener('click', () => { // Tema: Género 
-  (WorldBank.filterThemes(inData,'SP')).forEach(resultado);
-  (WorldBank.filterThemes(inData,'SG')).forEach(resultado);
-  (WorldBank.filterThemes(inData,'SH')).forEach(resultado)
+  (WorldBank.filterThemes(inData, 'SP')).forEach(resultado);
+  (WorldBank.filterThemes(inData, 'SG')).forEach(resultado);
+  (WorldBank.filterThemes(inData, 'SH')).forEach(resultado);
 });
 document.getElementById('economy').addEventListener('click', () => { // Tema: Economía 
-  (WorldBank.filterThemes(inData,'DT')).forEach(resultado);
-  (WorldBank.filterThemes(inData,'HD')).forEach(resultado);
-  (WorldBank.filterThemes(inData,'IC')).forEach(resultado);
-  (WorldBank.filterThemes(inData,'pe')).forEach(resultado)
+  (WorldBank.filterThemes(inData, 'DT')).forEach(resultado);
+  (WorldBank.filterThemes(inData, 'HD')).forEach(resultado);
+  (WorldBank.filterThemes(inData, 'IC')).forEach(resultado);
+  (WorldBank.filterThemes(inData, 'pe')).forEach(resultado);
 });
 const resultado = (themes) => document.getElementById('result').innerHTML += `
   <ul>
@@ -51,22 +51,23 @@ document.getElementById('yearBtn').addEventListener('click', () => {
   const resultadoValores = WorldBank.filterYears(inData, parseInt(inputYear.value));
   for (let i = 0; i < inData.length; i++) {
     const resultadoIndicadores = inData[i].indicatorName;
-    if ((resultadoValores[i].toString())[1] === '.' || (resultadoValores[i].toString())[2] === '.') { //Condición para imprimir solo indicadores con valores
-        document.getElementById('table').innerHTML += `
+    if ((resultadoValores[i].toString())[1] === '.' || (resultadoValores[i].toString())[2] === '.') { 
+      // Condición para imprimir solo indicadores con valores
+      document.getElementById('table').innerHTML += `
         <tr>
         <td>${resultadoIndicadores}</td>
         <td>${resultadoValores[i].toFixed(2)} %</td>
         </tr>
         `;
-      } else if (resultadoValores[i] !== '') { // Condición para imprimir solo indicadores con valores
+    } else if (resultadoValores[i] !== '') { // Condición para imprimir solo indicadores con valores
       document.getElementById('table').innerHTML += `
         <tr>
           <td>${resultadoIndicadores}</td>
           <td>${resultadoValores[i]}</td>
         </tr>
         `;
-      }
-    }  
+    }
+  }
 });
 
 // ---------------- Funcionalidad para mostrar tabla de años y datos según indicador ---------------- //
@@ -80,7 +81,7 @@ sortIndic.forEach((indicador) => {
     <select>  
       <option>${indicador}</option>
     </select>
-  `
+  `;
 });
 // Aplicación de la función para impresión en página
 document.getElementById('sortBy').addEventListener('click', () => {
@@ -93,50 +94,57 @@ document.getElementById('sortBy').addEventListener('click', () => {
     if (inData[i].indicatorName === indicSelected) {
       newInData = Object.assign(inData[i].data);
     }
-  }  
+  }
   // Cambia objeto en newInData en objetos individuales con nombres de propiedades comunes
   let inDataIndicator = [];
-  for (let values in newInData) { 
-    inDataIndicator.push({"year" : values, "value" : newInData[values]});
+  for (let values in newInData) {
+    inDataIndicator.push({ 'year': values, 'value': newInData[values] });
   }
   // Impresión en tablas
-    let outputSort = WorldBank.sortData(inDataIndicator, typeSelected, orderSelected); 
-    let yearType = [];
-    let valueType = [];
-    for (let i = 0; i < outputSort.length; i++) {
-      yearType.push(Object.values(outputSort[i])[0]); // Variable para años
-      valueType.push(Object.values(outputSort[i])[1]); // Variable para valores o porcentajes
-      if (valueType[i] !== '') { // Condición para imprimir solo años que contengan valores y obviar vacíos
-          document.getElementById('table4sort').innerHTML += `
+  let outputSort = WorldBank.sortData(inDataIndicator, typeSelected, orderSelected);
+  let yearType = [];
+  let valueType = [];
+  for (let i = 0; i < outputSort.length; i++) {
+    yearType.push(Object.values(outputSort[i])[0]); // Variable para años
+    valueType.push(Object.values(outputSort[i])[1]); // Variable para valores o porcentajes
+    if (valueType[i] !== '') { // Condición para imprimir solo años que contengan valores y obviar vacíos
+      document.getElementById('table4sort').innerHTML += `
             <tr>
               <td>${yearType[i]}</td>  
               <td>${valueType[i].toFixed(2)} %</td>
             </tr>
             `;
-      } 
     }
-  });
+  }
+});
 document.getElementById('computeStat').addEventListener('click', () => {
-    // Extraer nueva data en función a indicador elegido en lista desplegable 
+  // Extraer nueva data en función a indicador elegido en lista desplegable 
   const indicSelected = document.getElementById('indicators').value;
   let newInData = '';
   for (let i = 0; i < inData.length; i++) {
     if (inData[i].indicatorName === indicSelected) {
       newInData = Object.assign(inData[i].data);
     }
-  }  
+  }
   // Cambia objeto en newInData en objetos individuales con nombres de propiedades comunes
   let inDataIndicator = [];
-  for (let values in newInData) { 
-    inDataIndicator.push({"year" : values, "value" : newInData[values]});
+  for (let values in newInData) {
+    inDataIndicator.push({ 'year': values, 'value': newInData[values] });
   }
   let inDataValues = [];
-  for(let i = 0; i < inDataIndicator.length; i++){
-    if(inDataIndicator[i].value !== ''){
- inDataValues.push(inDataIndicator[i].value);
-  }}
-   let outputCompute = WorldBank.averageCompute(inDataValues);
-      document.getElementById('compute').innerHTML +=`
-        <p>${outputCompute.toFixed(2)} %</p>
-      `;
+  for (let i = 0; i < inDataIndicator.length; i++) {
+    if (inDataIndicator[i].value !== '') {
+      inDataValues.push(inDataIndicator[i].value);
+    }
+  }
+  let outputCompute = WorldBank.averageCompute(inDataValues);
+  /* const outComToString = outputCompute.toString();
+  for (let i = 0; i < outComToString.length; i++) {
+    */if ((outputCompute.toString())[1] === '.' || (outputCompute.toString())[2] === '.') { 
+    document.getElementById('compute').innerHTML += `
+    <p>${outputCompute.toFixed(2)} %</p>
+    `;
+  } else document.getElementById('compute').innerHTML += `
+   <p>${outputCompute} </p>
+   `;
 });
