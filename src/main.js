@@ -1,6 +1,45 @@
 /* global WORLDBANK*/
 /* global WorldBank*/
 /* exported paises*/
+/* exported backToStart*/
+
+// Disposición inicial de secciones
+document.getElementById('section-search').style.display = 'none'; 
+document.getElementById('section-years').style.display = 'none';
+document.getElementById('section-sort').style.display = 'none';
+document.getElementById('section-average').style.display = 'none';
+
+// Uso del botón VOLVER AL INICIO para cada sección
+document.getElementById('from-search').addEventListener('click', () => {
+  document.getElementById('section-search').style.display = 'none';
+  document.getElementById('section-options').style.display = 'block';
+});
+document.getElementById('from-years').addEventListener('click', () => {
+  document.getElementById('section-years').style.display = 'none';
+  document.getElementById('section-options').style.display = 'block';
+});
+document.getElementById('from-sort').addEventListener('click', () => {
+  document.getElementById('section-sort').style.display = 'none';
+  document.getElementById('section-options').style.display = 'block';
+});
+document.getElementById('from-average').addEventListener('click', () => {
+  document.getElementById('section-average').style.display = 'none';
+  document.getElementById('section-options').style.display = 'block';
+});
+
+// Funcionalidad de botones para opciones de navegación
+document.getElementById('nav-years').addEventListener('click', () => {
+  document.getElementById('section-options').style.display = 'none';
+  document.getElementById('section-years').style.display = 'block';
+});
+document.getElementById('nav-sort').addEventListener('click', () => {
+  document.getElementById('section-options').style.display = 'none';
+  document.getElementById('section-sort').style.display = 'block';
+});
+document.getElementById('nav-average').addEventListener('click', () => {
+  document.getElementById('section-options').style.display = 'none';
+  document.getElementById('section-average').style.display = 'block';
+});
 
 // Elección de países para uso general de variable inData
 let inData = WORLDBANK.PER.indicators;
@@ -23,6 +62,8 @@ const paises = () => {
 
 // ------------------------------ Funcionalidad de búsqueda rápida ------------------------------ //
 document.getElementById('search-btn').addEventListener('click', () => {
+  document.getElementById('section-options').style.display = 'none'; // Disposición de secciones
+  document.getElementById('section-search').style.display = 'block';
   document.getElementById('result').innerHTML = ''; // Limpiado de caja antes de impresión
   let inputWord = document.getElementById('word');
   if (WorldBank.filterSearch(inData, inputWord.value).join() === '') {
@@ -41,20 +82,28 @@ document.getElementById('search-btn').addEventListener('click', () => {
 
 // ---------------------------- Funcionalidad de búsqueda por temas ---------------------------- //
 document.getElementById('education').addEventListener('click', () => { // Tema: Educación
+  document.getElementById('section-options').style.display = 'none';
+  document.getElementById('section-search').style.display = 'block';
   document.getElementById('result').innerHTML = '';
   (WorldBank.filterThemes(inData, 'SE')).forEach(resultado);
 });
 document.getElementById('social-dev').addEventListener('click', () => { // Tema: Desarrollo Social
+  document.getElementById('section-options').style.display = 'none';
+  document.getElementById('section-search').style.display = 'block';
   document.getElementById('result').innerHTML = '';
   (WorldBank.filterThemes(inData, 'SL')).forEach(resultado);
 });
 document.getElementById('gender').addEventListener('click', () => { // Tema: Género 
+  document.getElementById('section-options').style.display = 'none';
+  document.getElementById('section-search').style.display = 'block';
   document.getElementById('result').innerHTML = '';
   (WorldBank.filterThemes(inData, 'SP')).forEach(resultado);
   (WorldBank.filterThemes(inData, 'SG')).forEach(resultado);
   (WorldBank.filterThemes(inData, 'SH')).forEach(resultado);
 });
 document.getElementById('economy').addEventListener('click', () => { // Tema: Economía 
+  document.getElementById('section-options').style.display = 'none';
+  document.getElementById('section-search').style.display = 'block';
   document.getElementById('result').innerHTML = '';
   (WorldBank.filterThemes(inData, 'DT')).forEach(resultado);
   (WorldBank.filterThemes(inData, 'HD')).forEach(resultado);
@@ -70,20 +119,20 @@ const resultado = (themes) => document.getElementById('result').innerHTML += `
 
 // -------------- Funcionalidad para mostrar tabla de indicadores y datos según años -------------- //
 document.getElementById('yearBtn').addEventListener('click', () => {
-  document.getElementById('table').innerHTML = ''; // Limpiado de caja antes de impresión
+  document.getElementById('table-years').innerHTML = ''; // Limpiado de caja antes de impresión
   let inputYear = document.getElementById('year');
   const resultadoValores = WorldBank.filterYears(inData, parseInt(inputYear.value));
   for (let i = 0; i < inData.length; i++) {
     const resultadoIndicadores = inData[i].indicatorName;
     if ((resultadoValores[i].toString())[1] === '.' || (resultadoValores[i].toString())[2] === '.') { // Condición para imprimir solo indicadores con valores
-      document.getElementById('table').innerHTML += `
+      document.getElementById('table-years').innerHTML += `
         <tr>
         <td>${resultadoIndicadores}</td>
         <td>${resultadoValores[i].toFixed(2)} %</td>
         </tr>
         `;
     } else if (resultadoValores[i] !== '') { // Condición para imprimir solo indicadores con valores
-      document.getElementById('table').innerHTML += `
+      document.getElementById('table-years').innerHTML += `
         <tr>
           <td>${resultadoIndicadores}</td>
           <td>${resultadoValores[i]}</td>

@@ -192,7 +192,8 @@ hr {
   border-radius: 5px;
   border-color: transparent;
   margin: 2px;
-  font-size: 0.6em;;
+  font-size: 0.6em;
+  ;
   color: #ffffff;
 }
 
@@ -202,9 +203,13 @@ hr {
 }
 
 /*Resultados de búsqueda*/
-.section-search {
+#section-search,
+#section-years,
+#section-sort,
+#section-average {
   text-align: center;
 }
+
 .result-container {
   margin: 0.8em auto 0.8em auto;
   width: 320px;
@@ -213,16 +218,17 @@ hr {
   border: 5px solid #002244;
   box-sizing: border-box;
   border-radius: 8px;
-} 
+}
 
 a.result {
-  font-size:12px;
-  color:#002244;
+  font-size: 12px;
+  color: #002244;
   text-decoration-color: #009FDA;
 }
 
 p#result {
-margin: auto;
+  margin: auto;
+  text-align: initial;
 }
 
 ul.result {
@@ -233,12 +239,15 @@ ul.result li::before {
   content: "\25b8";
   color: #002244;
   font-weight: bold;
-  display: inline-block; 
+  display: inline-block;
   width: 1em;
   margin-left: -1em;
 }
 
-#back-search {
+#from-search,
+#from-years,
+#from-sort,
+#from-average {
   width: 80%;
   background-color: #002244;
   border-radius: 5px;
@@ -247,7 +256,10 @@ ul.result li::before {
   color: #ffffff;
 }
 
-#back-search:hover {
+#from-search:hover,
+#from-years:hover,
+#from-sort:hover,
+#from-average:hover {
   cursor: pointer;
   box-shadow: 5px 5px 5px 0px #000000;
   font-weight: bold;

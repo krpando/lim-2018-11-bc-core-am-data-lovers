@@ -43,7 +43,7 @@
   </header>
   <!--Sección Búsqueda-->
   <div class="search-container">
-    <!--Búsqueda Rápida (FilterSearch)-->
+    <!--Búsqueda Rápida (filterSearch)-->
     <div class="search-fast">
       <label class="search-txt-fast">Búsqueda de indicadores</label>
       <form class="search-form">
@@ -52,7 +52,7 @@
       </form>
     </div>
     <hr></hr>
-    <!--Búsqueda por temas (SearchThemes)-->
+    <!--Búsqueda por temas (filterThemes)-->
     <div class="search-topic">  
       <label class="search-txt-topic">Búsqueda por temas</label>
       <form class="search-form">
@@ -64,40 +64,56 @@
     </div>   
   </div>   
   <!--Resultados de búsqueda-->
-  <div class="section-search">
+  <div id="section-search">
     <div class="result-container">
       <p id="result"></p>
     </div>
-    <button type="button" id="back-search">VOLVER AL INICIO</button>
+    <button type="button" id="from-search">VOLVER AL INICIO</button>
   </div>  
   <!--Menú de opciones-->
+  <div id="section-options">
+    <div id="nav-years">
+      <button type="button">FILTRADO POR AÑOS</button>
+    </div>
+    <div id="nav-sort">
+      <button type="button">ORDENAR DATOS SEGÚN INDICADOR</button>
+    </div>
+    <div id="nav-average">
+      <button type="button">SACAR PROMEDIO SEGÚN INDICADOR</button>
+    </div>
+  </div>  
+  <!--Resultados de filtrado por años (filterYears)-->
+  <div id="section-years">
+    <div class="result-container">
+      <table id="table-years">
+        <tr>
+          <td>Indicadores</td>
+          <td>Datos</td>
+        </tr>
+      </table>
+    </div>
+    <button type="button" id="from-years">VOLVER AL INICIO</button>
+  </div> 
+  <!--Resultados de ordenamiento de datos según indicadores (sortData)-->
+  <div id="section-sort">
+    <div class="result-container">
+      <table id="table-sort">
+        <tr>
+          <td>Años</td>
+          <td>Valores</td>
+        </tr>
+      </table>
+    </div>
+    <button type="button" id="from-sort">VOLVER AL INICIO</button>
+  </div>
+<!--Resultados de ordenamiento de datos según indicadores (sortData)-->
+  <div id="section-average">
+    <div class="result-container">
+      <p id="compute"></p>
+    </div>
+    <button type="button" id="from-average">VOLVER AL INICIO</button>
+  </div>
   
-
-
-
-
-
-
-
-
-
-  <div class="result-container">
-    <table id="table">
-      <tr>
-        <td>Indicadores</td>
-        <td>Datos</td>
-      </tr>
-    </table>
-  </div>
-  <div class="result-container" id="sortSection">
-    <table id="table4sort">
-      <tr>
-        <td>Años</td>
-        <td>Valores</td>
-      </tr>
-    </table>
-  </div>
-  <p id="compute"></p>
 
 
 
