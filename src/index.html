@@ -63,6 +63,15 @@
       </form>  
     </div>   
   </div>   
+  <!--Resultados de búsqueda-->
+  <div class="section-search">
+    <div class="result-container">
+      <p id="result"></p>
+    </div>
+    <button type="button" id="back-search">VOLVER AL INICIO</button>
+  </div>  
+  <!--Menú de opciones-->
+  
 
 
 
@@ -70,12 +79,8 @@
 
 
 
-  <div class="result-container">
-    <p id="result"></p>
-  </div>
-  <!--Sección By Years-->
-  <input id="year" />
-  <button type="button" id="yearBtn">Buscar</button>
+
+
   <div class="result-container">
     <table id="table">
       <tr>
@@ -84,6 +89,22 @@
       </tr>
     </table>
   </div>
+  <div class="result-container" id="sortSection">
+    <table id="table4sort">
+      <tr>
+        <td>Años</td>
+        <td>Valores</td>
+      </tr>
+    </table>
+  </div>
+  <p id="compute"></p>
+
+
+
+  <!--Sección By Years-->
+  <input id="year" />
+  <button type="button" id="yearBtn">Buscar</button>
+  
   <!--Sección Sort By-->
   <div>
     <select id="indicators">
@@ -100,16 +121,9 @@
     <option id="isLower">Menor</option>
   </select>
   <button type="button" id="sortBy">Aplicar</button>
-  <div class="result-container" id="sortSection">
-    <table id="table4sort">
-      <tr>
-        <td>Años</td>
-        <td>Valores</td>
-      </tr>
-    </table>
-  </div>
+  
   <button type="button" id="computeStat">Promediar</button>
-  <p id="compute"></p>
+  
   <footer>
     <div class="copyright">
       <img alt="WorldBankLogo-Black&White" src="https://i.ibb.co/Scv1sHW/World-Nabck.png" class="wb-logo-bw">

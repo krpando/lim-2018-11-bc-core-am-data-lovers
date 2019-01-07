@@ -31,8 +31,8 @@ document.getElementById('search-btn').addEventListener('click', () => {
     const outputSearch = WorldBank.filterSearch(inData, inputWord.value);
     for (let i = 0; i < outputSearch.length; i++) {
       document.getElementById('result').innerHTML += `
-        <ul>
-          <li><a href="#sortSection">${outputSearch[i]}</a></li>
+        <ul class="result">
+          <li><a href="#sortSection" class="result">${outputSearch[i]}</a></li>
         </ul>
         `;
     }
@@ -63,8 +63,8 @@ document.getElementById('economy').addEventListener('click', () => { // Tema: Ec
 });
 // Impresión de resultados en página
 const resultado = (themes) => document.getElementById('result').innerHTML += `
-  <ul>
-    <li><a href="#sortSection">${themes}</a></li>
+  <ul class="result">
+    <li><a href="#sortSection" class="result">${themes}</a></li>
   </ul>
   `;
 
