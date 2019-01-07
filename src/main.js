@@ -22,7 +22,7 @@ const paises = () => {
 };
 
 // ------------------------------ Funcionalidad de búsqueda rápida ------------------------------ //
-document.getElementById('searchBtn').addEventListener('click', () => {
+document.getElementById('search-btn').addEventListener('click', () => {
   document.getElementById('result').innerHTML = ''; // Limpiado de caja antes de impresión
   let inputWord = document.getElementById('word');
   if (WorldBank.filterSearch(inData, inputWord.value).join() === '') {
@@ -31,8 +31,8 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     const outputSearch = WorldBank.filterSearch(inData, inputWord.value);
     for (let i = 0; i < outputSearch.length; i++) {
       document.getElementById('result').innerHTML += `
-        <ul>
-          <li><a href="#sortSection">${outputSearch[i]}</a></li>
+        <ul class="result">
+          <li><a href="#sortSection" class="result">${outputSearch[i]}</a></li>
         </ul>
         `;
     }
@@ -63,8 +63,8 @@ document.getElementById('economy').addEventListener('click', () => { // Tema: Ec
 });
 // Impresión de resultados en página
 const resultado = (themes) => document.getElementById('result').innerHTML += `
-  <ul>
-    <li><a href="#sortSection">${themes}</a></li>
+  <ul class="result">
+    <li><a href="#sortSection" class="result">${themes}</a></li>
   </ul>
   `;
 
@@ -185,3 +185,16 @@ document.getElementById('computeStat').addEventListener('click', () => {
    <p>${outputCompute}</p>
    `;
 });
+
+// <<<<<<<<<<<< Copiado de referencia tipo APA >>>>>>>>>>>> //
+document.getElementById('apa-btn').addEventListener('click', () => {
+  const inputTemporal = document.createElement('input');
+  let fecha = new Date(); 
+  inputTemporal.type = 'text';
+  inputTemporal.value = `"Banco Mundial. (${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear()}). Indicadores del Desarrollo Mundial: Perú. Obtenido de  https://datos.bancomundial.org/pais/peru?view=chart"`; 
+  document.body.appendChild(inputTemporal);
+  inputTemporal.select();
+  document.execCommand('Copy');
+  document.body.removeChild(inputTemporal);
+  alert('El texto para referenciar la presente página en formato APA ha sido copiado');
+}); 
