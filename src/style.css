@@ -157,7 +157,8 @@ nav {
   display: none;
 }
 
-.search-form {
+.search-form,
+.years-form {
   display: flex;
   justify-content: center;
   padding-top: 3px;
@@ -194,20 +195,29 @@ hr {
   opacity: 0.8;
 }
 
-.topic-btn {
+.topic-btn,
+#yearBtn {
   width: auto;
   background-color: #009FDA;
   border-radius: 5px;
   border-color: transparent;
   margin: 2px;
-  font-size: 0.6em;
-  ;
+  font-size: 9.5px;
   color: #ffffff;
 }
 
-.topic-btn:hover {
+.topic-btn:hover,
+#yearBtn:hover {
   cursor: pointer;
   background-color: #B88C1D;
+}
+
+#year {
+  font-size: 11px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  align-self: auto;
+  margin-right: 3px;
 }
 
 /*Menú de opciones*/
