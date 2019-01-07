@@ -6,7 +6,7 @@
 * [Historias de usuario](#Historias de usuario)
 * [Diseño de la Interfaz de Usuario](#Diseño de la Interfaz de Usuario)
 * [ Implementación de la Interfaz de Usuario (HTML/CSS/JS)](#Implementación de la Interfaz de Usuario (HTML/CSS/JS))
-* [Pruebas unitarias](#Pruebas unitarias)
+
 
 ***
 
@@ -28,7 +28,7 @@ YO COMO estudiante universitaria NECESITO obtener el promedio de los valores seg
 A traves de estas historias pudimos conocer las necesidades y empezar a buscar posibles soluciones para estas.
 ## Diseño de la Interfaz de Usuario
 ### Prototipo de baja fidelidad
-(https:D:\finalito\lim-2018-11-bc-core-am-data-lovers\img.jpg)
+![alt text](https:D:\finalito\lim-2018-11-bc-core-am-data-lovers\img.jpg)
 ### Prototipo de alta fidelidad
 Prototipos exportados a Zeplim
 https://app.zeplin.io/project/5c1f1ba659c181af589b822a
