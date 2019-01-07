@@ -1,7 +1,6 @@
 /* global WORLDBANK*/
 /* global WorldBank*/
 /* exported paises*/
-/* exported backToStart*/
 
 // Disposición inicial de secciones
 document.getElementById('section-search').style.display = 'none'; 
@@ -119,6 +118,7 @@ const resultado = (themes) => document.getElementById('result').innerHTML += `
 
 // -------------- Funcionalidad para mostrar tabla de indicadores y datos según años -------------- //
 document.getElementById('yearBtn').addEventListener('click', () => {
+  document.getElementById('search-container').style.display = 'none';
   document.getElementById('table-years').innerHTML = ''; // Limpiado de caja antes de impresión
   let inputYear = document.getElementById('year');
   const resultadoValores = WorldBank.filterYears(inData, parseInt(inputYear.value));

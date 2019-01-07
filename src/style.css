@@ -11,7 +11,10 @@ select,
 option,
 label,
 .search-fast,
-.copyright-txt {
+.copyright-txt, 
+#nav-years,
+#nav-sort,
+#nav-average {
   font-family: AndesRoundedW01-Regular;
   font-weight: normal;
   text-align: center;
@@ -130,7 +133,9 @@ nav {
 }
 
 /*Sección búsqueda*/
-.search-container {
+#search-container,
+#years-container,
+#sort-container {
   height: 117px;
   background-color: #002244;
 }
@@ -140,7 +145,10 @@ nav {
   padding: 8px;
 }
 
-.search-txt-fast {
+.search-txt-fast,
+.years-txt,
+#sort-txt,
+#average-txt {
   font-size: 14px;
   color: #ffffff;
 }
@@ -200,6 +208,32 @@ hr {
 .topic-btn:hover {
   cursor: pointer;
   background-color: #B88C1D;
+}
+
+/*Menú de opciones*/
+#section-options {
+  display: grid;
+  grid-template-rows: auto auto auto;
+}
+
+.nav-years,
+.nav-sort,
+.nav-average {
+  height: 145px;
+  background-color: #009fda;
+  display: inline-block;
+  text-align: center;
+}
+
+#nav-years,
+#nav-sort,
+#nav-average {
+  background-color: #ffffff;
+  border-color: transparent;
+  color: #009FDA;
+  font-size: 18px;
+  border-radius: 8px;
+  margin-top: 18%;
 }
 
 /*Resultados de búsqueda*/
