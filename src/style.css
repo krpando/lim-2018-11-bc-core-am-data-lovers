@@ -35,7 +35,7 @@ header {
   grid-template-columns: auto auto;
   grid-auto-rows: 46px;
   justify-content: space-between;
-}*/
+}
 
 .header-item {
   align-self: center;
