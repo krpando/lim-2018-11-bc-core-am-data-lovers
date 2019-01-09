@@ -104,7 +104,7 @@ nav {
   height: 117px;
   width: 100%;
   list-style-type: none;
-  margin: 0 0 0 -84%;
+  margin: -5px 0 0 -85%;
   padding: 0;
   background-color: #002244;
   position: absolute;
@@ -128,48 +128,72 @@ nav {
   cursor: pointer;
 }
 
+/*Menú de secciones*/
 .search-container,
 .themes-container,
 .years-container,
 .sort-container,
 .average-container{
-  height:105px;
-  width: 360px;
+  height: 102px;
+  width: 100%;
   background-color: #002244;
-  font-size: 20px;
-  color: #ffffff;
-  font-family: AndesRoundedW01-Regular;
-  text-align: center;
   margin-bottom: 6px;
+  background-size: cover;
+  background-position: center; 
+  display: grid;
+  grid-template-columns: 250px auto;
+  align-content: center;
+  justify-content: center;
 }
 
+.menu-txt {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  align-self: center;
+}
 .arrow-btn {
-    width: 22px;
-    height: 45.9px;
+    height: 35px;
 }
 
+.search-container {
+  background-image: linear-gradient(rgba(0, 34, 68, .7),rgba(0, 34, 68, .7)), url(https://i.ibb.co/T0srBSV/IBRDCampaign-Page-3-Education.png);  
+}
 
+.themes-container {
+  background-image: linear-gradient(rgba(0, 34, 68, .7),rgba(0, 34, 68, .7)), url(https://i.ibb.co/D9vwwWt/images-2.jpg);
+}
 
+.years-container {
+  background-image: linear-gradient(rgba(0, 34, 68, .7),rgba(0, 34, 68, .7)), url(https://i.ibb.co/8svmWrq/Mujeres-acomodando-sus-cosechas-sureste-de-Guatemala-Barbara-Coello.jpg); 
+}
 
+.sort-container {
+  background-image: linear-gradient(rgba(0, 34, 68, .7),rgba(0, 34, 68, .7)), url(https://i.ibb.co/T05zLK8/fragility-SP.png);
+}
+
+.average-container {
+  background-image: linear-gradient(rgba(0, 34, 68, .7),rgba(0, 34, 68, .7)), url(https://i.ibb.co/DVmp8Cq/IBRD-Learn-More-Tiles-ABC-SP.png);  
+  margin-bottom: 0px;
+}
 
 /*Pie de página*/
 footer {
-  height: 39px;
+  height: 40px;
   justify-content: space-around;
-  display: block;
+  display: flex;
 }
 
 .copyright {
-  width: 225px;
-  display: block;
+  display: flex;
   font-size: 10px;
-  justify-content: space-between;
 }
 
 .copyright-txt,
 .btn-referencia,
 .wb-logo-bw {
   align-self: center;
+  margin:0 5px 0 5px;
   cursor: context-menu;
 }
 
@@ -184,8 +208,6 @@ footer {
   background-color: #000000;
   color: #ffffff;
   font-size: 7px;
-  margin: 12px;
-  float: initial;
 }
 
 #apa-btn:hover {
