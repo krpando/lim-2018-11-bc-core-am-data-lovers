@@ -1,47 +1,8 @@
 /* global WORLDBANK*/
 /* global WorldBank*/
 /* exported paises*/
-/* exported backToStart*/
 
-// Disposición inicial de secciones
-document.getElementById('section-search').style.display = 'none'; 
-document.getElementById('section-years').style.display = 'none';
-document.getElementById('section-sort').style.display = 'none';
-document.getElementById('section-average').style.display = 'none';
-
-// Uso del botón VOLVER AL INICIO para cada sección
-document.getElementById('from-search').addEventListener('click', () => {
-  document.getElementById('section-search').style.display = 'none';
-  document.getElementById('section-options').style.display = 'block';
-});
-document.getElementById('from-years').addEventListener('click', () => {
-  document.getElementById('section-years').style.display = 'none';
-  document.getElementById('section-options').style.display = 'block';
-});
-document.getElementById('from-sort').addEventListener('click', () => {
-  document.getElementById('section-sort').style.display = 'none';
-  document.getElementById('section-options').style.display = 'block';
-});
-document.getElementById('from-average').addEventListener('click', () => {
-  document.getElementById('section-average').style.display = 'none';
-  document.getElementById('section-options').style.display = 'block';
-});
-
-// Funcionalidad de botones para opciones de navegación
-document.getElementById('nav-years').addEventListener('click', () => {
-  document.getElementById('section-options').style.display = 'none';
-  document.getElementById('section-years').style.display = 'block';
-});
-document.getElementById('nav-sort').addEventListener('click', () => {
-  document.getElementById('section-options').style.display = 'none';
-  document.getElementById('section-sort').style.display = 'block';
-});
-document.getElementById('nav-average').addEventListener('click', () => {
-  document.getElementById('section-options').style.display = 'none';
-  document.getElementById('section-average').style.display = 'block';
-});
-
-// Elección de países para uso general de variable inData
+// -------------------- Elección de países para uso general de variable inData -------------------- //
 let inData = WORLDBANK.PER.indicators;
 const paises = () => {
   switch (document.getElementById('country').value) {
@@ -60,7 +21,7 @@ const paises = () => {
   return inData;
 };
 
-// ------------------------------ Funcionalidad de búsqueda rápida ------------------------------ //
+// ----------------------------------***** BÚSQUEDA RÁPIDA *****---------------------------------- //
 document.getElementById('search-btn').addEventListener('click', () => {
   document.getElementById('section-options').style.display = 'none'; // Disposición de secciones
   document.getElementById('section-search').style.display = 'block';
@@ -80,7 +41,7 @@ document.getElementById('search-btn').addEventListener('click', () => {
   }
 });
 
-// ---------------------------- Funcionalidad de búsqueda por temas ---------------------------- //
+// ---------------------------------***** BÚSQUEDA POR TEMAS *****-------------------------------- //
 document.getElementById('education').addEventListener('click', () => { // Tema: Educación
   document.getElementById('section-options').style.display = 'none';
   document.getElementById('section-search').style.display = 'block';
@@ -117,8 +78,9 @@ const resultado = (themes) => document.getElementById('result').innerHTML += `
   </ul>
   `;
 
-// -------------- Funcionalidad para mostrar tabla de indicadores y datos según años -------------- //
+// ----------------------------------***** FILTRADO POR AÑOS *****--------------------------------- //
 document.getElementById('yearBtn').addEventListener('click', () => {
+  document.getElementById('search-container').style.display = 'none';
   document.getElementById('table-years').innerHTML = ''; // Limpiado de caja antes de impresión
   let inputYear = document.getElementById('year');
   const resultadoValores = WorldBank.filterYears(inData, parseInt(inputYear.value));
@@ -142,7 +104,7 @@ document.getElementById('yearBtn').addEventListener('click', () => {
   }
 });
 
-// --------------- Funcionalidad para mostrar tabla de años y datos según indicador --------------- //
+// -------------------------***** ORDENADO DE DATA SEGÚN INDICADORES *****------------------------- //
 // Mostrar indicadores en lista desplegable
 const indicadores = inData.map((arr) => {
   return arr.indicatorName;
@@ -176,7 +138,7 @@ document.getElementById('sortBy').addEventListener('click', () => {
     });
   }
   // Impresión en tablas
-  document.getElementById('table4sort').innerHTML = ''; // Limpiado de caja antes de impresión
+  document.getElementById('table-sort').innerHTML = ''; // Limpiado de caja antes de impresión
   let outputSort = WorldBank.sortData(inDataIndicator, typeSelected, orderSelected);
   let yearType = [];
   let valueType = [];
@@ -184,14 +146,14 @@ document.getElementById('sortBy').addEventListener('click', () => {
     yearType.push(Object.values(outputSort[i])[0]); // Variable para años
     valueType.push(Object.values(outputSort[i])[1]); // Variable para valores o porcentajes
     if ((valueType[i].toString())[1] === '.' || (valueType[i].toString())[2] === '.') {
-      document.getElementById('table4sort').innerHTML += `
+      document.getElementById('table-sort').innerHTML += `
       <tr>
         <td>${yearType[i]}</td>  
         <td>${valueType[i].toFixed(2)} %</td>
       </tr>
       `;
     } else if (valueType[i] !== '') { // Condición para imprimir solo años que contengan valores y obviar vacíos
-      document.getElementById('table4sort').innerHTML += `
+      document.getElementById('table-sort').innerHTML += `
             <tr>
               <td>${yearType[i]}</td>  
               <td>${valueType[i]}</td>
@@ -201,7 +163,7 @@ document.getElementById('sortBy').addEventListener('click', () => {
   }
 });
 
-// ----------------------------- Funcionalidad de cálculo del promedio ----------------------------- //
+// -----------------------------***** PROMEDIO SEGÚN INDICADORES *****----------------------------- //
 document.getElementById('computeStat').addEventListener('click', () => {
   // Extraer nueva data en función a indicador elegido en lista desplegable 
   const indicSelected = document.getElementById('indicators').value;
@@ -235,7 +197,7 @@ document.getElementById('computeStat').addEventListener('click', () => {
    `;
 });
 
-// <<<<<<<<<<<< Copiado de referencia tipo APA >>>>>>>>>>>> //
+// -------------------------------- Copiado de referencia tipo APA -------------------------------- //
 document.getElementById('apa-btn').addEventListener('click', () => {
   const inputTemporal = document.createElement('input');
   let fecha = new Date(); 
