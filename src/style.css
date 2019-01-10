@@ -100,6 +100,7 @@ nav {
   visibility: visible;
   opacity: 1;
 }
+
 .menu-list {
   height: 117px;
   width: 100%;
@@ -133,13 +134,13 @@ nav {
 .themes-container,
 .years-container,
 .sort-container,
-.average-container{
+.average-container {
   height: 102px;
   width: 100%;
   background-color: #002244;
   margin-bottom: 6px;
   background-size: cover;
-  background-position: center; 
+  background-position: center;
   display: grid;
   grid-template-columns: 250px auto;
   align-content: center;
@@ -152,28 +153,29 @@ nav {
   color: #ffffff;
   align-self: center;
 }
+
 .arrow-btn {
-    height: 35px;
+  height: 35px;
 }
 
 .search-container {
-  background-image: linear-gradient(rgba(0, 34, 68, .7),rgba(0, 34, 68, .7)), url(https://i.ibb.co/T0srBSV/IBRDCampaign-Page-3-Education.png);  
+  background-image: linear-gradient(rgba(0, 34, 68, .7), rgba(0, 34, 68, .7)), url(https://i.ibb.co/T0srBSV/IBRDCampaign-Page-3-Education.png);
 }
 
 .themes-container {
-  background-image: linear-gradient(rgba(0, 34, 68, .7),rgba(0, 34, 68, .7)), url(https://i.ibb.co/D9vwwWt/images-2.jpg);
+  background-image: linear-gradient(rgba(0, 34, 68, .7), rgba(0, 34, 68, .7)), url(https://i.ibb.co/D9vwwWt/images-2.jpg);
 }
 
 .years-container {
-  background-image: linear-gradient(rgba(0, 34, 68, .7),rgba(0, 34, 68, .7)), url(https://i.ibb.co/8svmWrq/Mujeres-acomodando-sus-cosechas-sureste-de-Guatemala-Barbara-Coello.jpg); 
+  background-image: linear-gradient(rgba(0, 34, 68, .7), rgba(0, 34, 68, .7)), url(https://i.ibb.co/8svmWrq/Mujeres-acomodando-sus-cosechas-sureste-de-Guatemala-Barbara-Coello.jpg);
 }
 
 .sort-container {
-  background-image: linear-gradient(rgba(0, 34, 68, .7),rgba(0, 34, 68, .7)), url(https://i.ibb.co/T05zLK8/fragility-SP.png);
+  background-image: linear-gradient(rgba(0, 34, 68, .7), rgba(0, 34, 68, .7)), url(https://i.ibb.co/T05zLK8/fragility-SP.png);
 }
 
 .average-container {
-  background-image: linear-gradient(rgba(0, 34, 68, .7),rgba(0, 34, 68, .7)), url(https://i.ibb.co/DVmp8Cq/IBRD-Learn-More-Tiles-ABC-SP.png);  
+  background-image: linear-gradient(rgba(0, 34, 68, .7), rgba(0, 34, 68, .7)), url(https://i.ibb.co/DVmp8Cq/IBRD-Learn-More-Tiles-ABC-SP.png);
   margin-bottom: 0px;
 }
 
@@ -193,7 +195,7 @@ footer {
 .btn-referencia,
 .wb-logo-bw {
   align-self: center;
-  margin:0 5px 0 5px;
+  margin: 0 5px 0 5px;
   cursor: context-menu;
 }
 
@@ -214,55 +216,92 @@ footer {
   background-color: #B88C1D;
   cursor: pointer;
 }
+
 /*-----SECCION DESKTOP-----*/
-/*
-@media only screen and (min-width : 641px) { 
-*/
-/* Encabezado DESKTOP */
-/*header {
-    height: 135px;
-}
-.header-container {
-    grid-auto-rows: 135px;
-}  
-.wb-logo {
-    width: 370px;
-    padding-left: 20px;
-}
-select {
+@media only screen and (min-width : 641px) {
+
+  /* Encabezado desktop */
+  header {
+    height: 100%;
+  }
+
+  .header-container {
+    display: grid;
+    grid-auto-rows: auto;
+  }
+
+  .wb-logo {
+    width: auto;
+    height: 50px;
+  }
+
+  select {
     height: 35px;
     width: 90px;
     font-size: 16px;
-}
-.menu-icon {
+  }
+
+  .menu-icon {
     height: 33px;
-}
-.menu-list {
+  }
+
+  .menu-list {
     width: 240px;
     margin: 0 0 0 -10%;
-}
-.menu-options a {
+  }
+
+  .menu-options a {
     font-size: 15px;
   }
- */
+
+  /*Menú de secciones*/
+  .search-container,
+  .themes-container,
+  .years-container,
+  .sort-container,
+  .average-container {
+    height: 105px;
+    width: 425px;
+    font-size: 22px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 310px auto;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .arrow-btn {
+    width: 49px;
+    height: 45.9px;
+  }
+
+  label {
+    align-self: center;
+  }
+
   /*Pie de página*/
-/*footer {
-    height: 50px;
-    bottom: 0;
+  footer {
+    height: auto;
+    width: auto;
   }
-  
-.copyright {
-    width: 290px;
+
+  .copyright {
+    width: 100%;
     font-size: 13.5px;
+    display: flex;
+    justify-content: center;
   }
-  
+
   .wb-logo-bw {
     height: 25px;
   }
-  
+
   #apa-btn {
     width: 140px;
     height: 30px;
     font-size: 11px;
+    display: grid;
+    grid-auto-columns: auto auto auto;
   }
-  */
+
+}
