@@ -2,6 +2,15 @@
 /* global WorldBank*/
 /* exported paises*/
 
+// ----------------------------- Disposición inicial de las secciones----------------------------- //
+document.getElementById('total-result-section').style.display = 'none';
+
+// -------------------------------- Desplazamiento entre secciones-------------------------------- //
+document.getElementById('searchfast-btn').addEventListener('click', () => { 
+  document.getElementById('sections-menu').style.display = 'none';
+  document.getElementById('total-result-section').style.display = 'block';
+});
+ 
 // -------------------- Elección de países para uso general de variable inData -------------------- //
 let inData = WORLDBANK.PER.indicators;
 const paises = () => {
@@ -23,16 +32,14 @@ const paises = () => {
 
 // ----------------------------------***** BÚSQUEDA RÁPIDA *****---------------------------------- //
 document.getElementById('search-btn').addEventListener('click', () => {
-  document.getElementById('section-options').style.display = 'none'; // Disposición de secciones
-  document.getElementById('section-search').style.display = 'block';
-  document.getElementById('result').innerHTML = ''; // Limpiado de caja antes de impresión
+  document.getElementById('result-box').innerHTML = ''; // Limpiado de caja antes de impresión
   let inputWord = document.getElementById('word');
   if (WorldBank.filterSearch(inData, inputWord.value).join() === '') {
-    document.getElementById('result').innerHTML = 'No se encontraron registros';
+    document.getElementById('result-box').innerHTML = 'No se encontraron registros';
   } else {
     const outputSearch = WorldBank.filterSearch(inData, inputWord.value);
     for (let i = 0; i < outputSearch.length; i++) {
-      document.getElementById('result').innerHTML += `
+      document.getElementById('result-box').innerHTML += `
         <ul class="result">
           <li><a href="#sortSection" class="result">${outputSearch[i]}</a></li>
         </ul>
@@ -40,7 +47,7 @@ document.getElementById('search-btn').addEventListener('click', () => {
     }
   }
 });
-
+/*
 // ---------------------------------***** BÚSQUEDA POR TEMAS *****-------------------------------- //
 document.getElementById('education').addEventListener('click', () => { // Tema: Educación
   document.getElementById('section-options').style.display = 'none';
@@ -71,6 +78,7 @@ document.getElementById('economy').addEventListener('click', () => { // Tema: Ec
   (WorldBank.filterThemes(inData, 'IC')).forEach(resultado);
   (WorldBank.filterThemes(inData, 'pe')).forEach(resultado);
 });
+
 // Impresión de resultados en página
 const resultado = (themes) => document.getElementById('result').innerHTML += `
   <ul class="result">
@@ -208,4 +216,4 @@ document.getElementById('apa-btn').addEventListener('click', () => {
   document.execCommand('Copy');
   document.body.removeChild(inputTemporal);
   alert('El texto para referenciar la presente página en formato APA ha sido copiado');
-}); 
+});  */

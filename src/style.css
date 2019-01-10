@@ -156,6 +156,7 @@ nav {
 
 .arrow-btn {
   height: 35px;
+  cursor: pointer;
 }
 
 .search-container {
@@ -253,6 +254,7 @@ ul.result li::before {
   margin: auto;
   border-radius: 10px;
   border: 5px solid #002244;
+  overflow: scroll;
 }
 
 .menu-back {
