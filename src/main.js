@@ -12,7 +12,47 @@ document.getElementById('searchfast-btn').addEventListener('click', () => {
   document.getElementById('sections-menu').style.display = 'none';
   document.getElementById('total-result-section').style.display = 'block';
   document.getElementById('search-container').style.display = 'block';
+  document.getElementById('themes-container').style.display = 'none';
+  document.getElementById('years-container').style.display = 'none';
+  document.getElementById('sort-container').style.display = 'none';
+  document.getElementById('average-container').style.display = 'none';
 });
+document.getElementById('themes-btn').addEventListener('click', () => { 
+  document.getElementById('sections-menu').style.display = 'none';
+  document.getElementById('total-result-section').style.display = 'block';
+  document.getElementById('themes-container').style.display = 'block';
+  document.getElementById('years-container').style.display = 'none';
+  document.getElementById('sort-container').style.display = 'none';
+  document.getElementById('average-container').style.display = 'none';
+});
+document.getElementById('years-btn').addEventListener('click', () => { 
+  document.getElementById('sections-menu').style.display = 'none';
+  document.getElementById('total-result-section').style.display = 'block';
+  document.getElementById('years-container').style.display = 'block';
+  document.getElementById('themes-container').style.display = 'none';
+  document.getElementById('sort-container').style.display = 'none';
+  document.getElementById('average-container').style.display = 'none';
+  document.getElementById('search-container').style.display = 'none';
+});
+document.getElementById('sort-btn').addEventListener('click', () => { 
+  document.getElementById('sections-menu').style.display = 'none';
+  document.getElementById('total-result-section').style.display = 'block';
+  document.getElementById('sort-container').style.display = 'block';
+  document.getElementById('themes-container').style.display = 'none';
+  document.getElementById('average-container').style.display = 'none';
+  document.getElementById('search-container').style.display = 'none';
+  document.getElementById('years-container').style.display = 'none';
+});
+document.getElementById('average-btn').addEventListener('click', () => { 
+  document.getElementById('sections-menu').style.display = 'none';
+  document.getElementById('total-result-section').style.display = 'block';
+  document.getElementById('average-container').style.display = 'block';
+  document.getElementById('themes-container').style.display = 'none';
+  document.getElementById('sort-container').style.display = 'none';
+  document.getElementById('search-container').style.display = 'none';
+  document.getElementById('years-container').style.display = 'none';
+});
+
  
 // -------------------- Elección de países para uso general de variable inData -------------------- //
 let inData = WORLDBANK.PER.indicators;
@@ -80,20 +120,27 @@ const resultado = (themes) => document.getElementById('result-box').innerHTML +=
     <li><a href="#sortSection" class="result">${themes}</a></li>
   </ul>
   `;
-/*
+
 // ----------------------------------***** FILTRADO POR AÑOS *****--------------------------------- //
-document.getElementById('yearBtn').addEventListener('click', () => {
-  document.getElementById('search-container').style.display = 'none';
-  document.getElementById('table-years').innerHTML = ''; // Limpiado de caja antes de impresión
+document.getElementById('searchyears-btn').addEventListener('click', () => {
+  document.getElementById('result-box').innerHTML = ''; // Limpiado de caja antes de impresión
   let inputYear = document.getElementById('year');
+  document.getElementById('result-box').innerHTML = `
+  <table id = 'table-years'>
+    <tr>
+      <td>Indicadores</td>
+      <td>Valores</td>
+    </tr>
+  </table>
+  `;
   const resultadoValores = WorldBank.filterYears(inData, parseInt(inputYear.value));
   for (let i = 0; i < inData.length; i++) {
     const resultadoIndicadores = inData[i].indicatorName;
     if ((resultadoValores[i].toString())[1] === '.' || (resultadoValores[i].toString())[2] === '.') { // Condición para imprimir solo indicadores con valores
       document.getElementById('table-years').innerHTML += `
         <tr>
-        <td>${resultadoIndicadores}</td>
-        <td>${resultadoValores[i].toFixed(2)} %</td>
+          <td>${resultadoIndicadores}</td>
+          <td>${resultadoValores[i].toFixed(2)} %</td>
         </tr>
         `;
     } else if (resultadoValores[i] !== '') { // Condición para imprimir solo indicadores con valores
@@ -107,8 +154,7 @@ document.getElementById('yearBtn').addEventListener('click', () => {
   }
 });
 
-// -------------------------***** ORDENADO DE DATA SEGÚN INDICADORES *****------------------------- //
-// Mostrar indicadores en lista desplegable
+// Mostrar indicadores en lista desplegable para sortData y averageCompute
 const indicadores = inData.map((arr) => {
   return arr.indicatorName;
 });
@@ -119,9 +165,16 @@ sortIndic.forEach((indicador) => {
       <option>${indicador}</option>
     </select>
   `;
+  document.getElementById('indicators-average').innerHTML += `
+  <select>  
+    <option>${indicador}</option>
+  </select>
+`;
 });
+
+// -------------------------***** ORDENADO DE DATA SEGÚN INDICADORES *****------------------------- //
 // Aplicación de la función para impresión en página
-document.getElementById('sortBy').addEventListener('click', () => {
+document.getElementById('sortBy-btn').addEventListener('click', () => {
   // Extraer nueva data en función a indicador elegido en lista desplegable 
   const indicSelected = document.getElementById('indicators').value;
   const typeSelected = document.getElementById('data-type').value;
@@ -141,7 +194,15 @@ document.getElementById('sortBy').addEventListener('click', () => {
     });
   }
   // Impresión en tablas
-  document.getElementById('table-sort').innerHTML = ''; // Limpiado de caja antes de impresión
+  document.getElementById('result-box').innerHTML = ''; // Limpiado de caja antes de impresión
+  document.getElementById('result-box').innerHTML = `
+  <table id='table-sort'>
+    <tr>
+      <td>Años</td>
+      <td>Valores</td>
+    </tr>  
+  </table>
+  `;
   let outputSort = WorldBank.sortData(inDataIndicator, typeSelected, orderSelected);
   let yearType = [];
   let valueType = [];
@@ -167,9 +228,10 @@ document.getElementById('sortBy').addEventListener('click', () => {
 });
 
 // -----------------------------***** PROMEDIO SEGÚN INDICADORES *****----------------------------- //
-document.getElementById('computeStat').addEventListener('click', () => {
+
+document.getElementById('averageBtn').addEventListener('click', () => {
   // Extraer nueva data en función a indicador elegido en lista desplegable 
-  const indicSelected = document.getElementById('indicators').value;
+  const indicSelected = document.getElementById('indicators-average').value;
   let newInData = '';
   for (let i = 0; i < inData.length; i++) {
     if (inData[i].indicatorName === indicSelected) {
@@ -192,10 +254,10 @@ document.getElementById('computeStat').addEventListener('click', () => {
   }
   let outputCompute = WorldBank.averageCompute(inDataValues);
   if ((outputCompute.toString())[1] === '.' || (outputCompute.toString())[2] === '.') { 
-    document.getElementById('compute').innerHTML += `
+    document.getElementById('result-box').innerHTML += `
     <p>${outputCompute.toFixed(2)} %</p>
     `;
-  } else document.getElementById('compute').innerHTML += `
+  } else document.getElementById('result-box').innerHTML += `
    <p>${outputCompute}</p>
    `;
 });
@@ -211,4 +273,4 @@ document.getElementById('apa-btn').addEventListener('click', () => {
   document.execCommand('Copy');
   document.body.removeChild(inputTemporal);
   alert('El texto para referenciar la presente página en formato APA ha sido copiado');
-});  */
+}); 
