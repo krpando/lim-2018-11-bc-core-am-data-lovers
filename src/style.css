@@ -11,10 +11,7 @@ select,
 option,
 label,
 .search-fast,
-.copyright-txt, 
-#nav-years,
-#nav-sort,
-#nav-average {
+.copyright-txt {
   font-family: AndesRoundedW01-Regular;
   font-weight: normal;
   text-align: center;
@@ -29,14 +26,14 @@ input {
 
 /*Encabezado*/
 header {
-  height: 46px;
+  height: 45px;
   width: auto;
 }
 
 .header-container {
   display: grid;
   grid-template-columns: auto auto;
-  grid-auto-rows: 46px;
+  grid-auto-rows: 50px;
   justify-content: space-between;
 }
 
@@ -45,7 +42,7 @@ header {
 }
 
 .wb-logo {
-  width: 125px;
+  width: 145px;
   height: auto;
   padding-left: 8px;
 }
@@ -108,7 +105,7 @@ nav {
   height: 117px;
   width: 100%;
   list-style-type: none;
-  margin: 0 0 0 -84%;
+  margin: -5px 0 0 -85%;
   padding: 0;
   background-color: #002244;
   position: absolute;
@@ -132,60 +129,97 @@ nav {
   cursor: pointer;
 }
 
-/*Sección búsqueda*/
-#search-container,
-#years-container,
-#sort-container {
-  height: 117px;
+/*Menú de secciones*/
+.search-container,
+.themes-container,
+.years-container,
+.sort-container,
+.average-container {
+  height: 102px;
+  width: 100%;
   background-color: #002244;
+  margin-bottom: 6px;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-columns: 250px auto;
+  align-content: center;
+  justify-content: center;
 }
 
-.search-fast {
+.menu-txt {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  align-self: center;
+}
+
+.arrow-btn {
+  height: 35px;
+  cursor: pointer;
+}
+
+.search-container {
+  background-image: linear-gradient(rgba(0, 34, 68, .7), rgba(0, 34, 68, .7)), url(https://i.ibb.co/T0srBSV/IBRDCampaign-Page-3-Education.png);
+}
+
+.themes-container {
+  background-image: linear-gradient(rgba(0, 34, 68, .7), rgba(0, 34, 68, .7)), url(https://i.ibb.co/D9vwwWt/images-2.jpg);
+}
+
+.years-container {
+  background-image: linear-gradient(rgba(0, 34, 68, .7), rgba(0, 34, 68, .7)), url(https://i.ibb.co/8svmWrq/Mujeres-acomodando-sus-cosechas-sureste-de-Guatemala-Barbara-Coello.jpg);
+}
+
+.sort-container {
+  background-image: linear-gradient(rgba(0, 34, 68, .7), rgba(0, 34, 68, .7)), url(https://i.ibb.co/T05zLK8/fragility-SP.png);
+}
+
+.average-container {
+  background-image: linear-gradient(rgba(0, 34, 68, .7), rgba(0, 34, 68, .7)), url(https://i.ibb.co/DVmp8Cq/IBRD-Learn-More-Tiles-ABC-SP.png);
+  margin-bottom: 0px;
+}
+
+/*Sección de resultados*/
+#search-container {
+  height: 105px;
+  justify-content: center;
+  display: grid;
+  grid-template-rows: 45% 35%;
+}
+
+label {
   text-align: center;
   padding: 8px;
+  font-size: 16px;
+  font-weight: 560;
+  color: #002244;
+  align-self: center;
 }
 
-.search-txt-fast,
-.years-txt,
-#sort-txt,
-#average-txt {
-  font-size: 14px;
-  color: #ffffff;
-}
-
-.search-txt-topic {
-  display: none;
-}
-
-.search-form,
-.years-form {
+.search-form {
   display: flex;
   justify-content: center;
   padding-top: 3px;
 }
 
-hr {
-  width: 290px;
-  margin-bottom: 4px;
-  margin-top: 4px;
-}
-
 .search-input {
   width: 225px;
-  height: 24px;
+  height: 30px;
   font-size: 11px;
   background-color: #ffffff;
+  border-color: #002244;
   border-radius: 8px;
   align-self: auto;
   margin-right: 3px;
 }
 
 #search-btn {
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   background-image: url(https://i.ibb.co/f4CDkWY/search-enter-display-573173-color.png);
   background-position: center;
-  background-size: 30px;
+  background-size: 36px;
   border-radius: 8px;
   border-color: #009FDA;
 }
@@ -195,88 +229,10 @@ hr {
   opacity: 0.8;
 }
 
-.topic-btn,
-#yearBtn {
-  width: auto;
-  background-color: #009FDA;
-  border-radius: 5px;
-  border-color: transparent;
-  margin: 2px;
-  font-size: 9.5px;
-  color: #ffffff;
-}
-
-.topic-btn:hover,
-#yearBtn:hover {
-  cursor: pointer;
-  background-color: #B88C1D;
-}
-
-#year {
-  font-size: 11px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  align-self: auto;
-  margin-right: 3px;
-}
-
-/*Menú de opciones*/
-#section-options {
-  display: grid;
-  grid-template-rows: auto auto auto;
-}
-
-.nav-years,
-.nav-sort,
-.nav-average {
-  height: 145px;
-  background-color: #009fda;
-  display: inline-block;
-  text-align: center;
-}
-
-#nav-years,
-#nav-sort,
-#nav-average {
-  background-color: #ffffff;
-  border-color: transparent;
-  color: #009FDA;
-  font-size: 18px;
-  border-radius: 8px;
-  margin-top: 18%;
-}
-
-/*Resultados de búsqueda*/
-#section-search,
-#section-years,
-#section-sort,
-#section-average {
-  text-align: center;
-}
-
-.result-container {
-  margin: 0.8em auto 0.8em auto;
-  width: 320px;
-  height: 370px;
-  overflow: auto;
-  border: 5px solid #002244;
-  box-sizing: border-box;
-  border-radius: 8px;
-}
-
-a.result {
-  font-size: 12px;
-  color: #002244;
-  text-decoration-color: #009FDA;
-}
-
-p#result {
-  margin: auto;
-  text-align: initial;
-}
-
+/*Impresión de listas*/
 ul.result {
   list-style: none;
+  font-size: 0.7em;
 }
 
 ul.result li::before {
@@ -288,25 +244,40 @@ ul.result li::before {
   margin-left: -1em;
 }
 
-#from-search,
-#from-years,
-#from-sort,
-#from-average {
+.result-container {
+  height: 400px;
+  display: block;
+}
+
+#result-box {
+  height: 95%;
+  width: 85%;
+  margin: auto;
+  border-radius: 10px;
+  border: 5px solid #002244;
+  overflow: scroll;
+}
+
+.menu-back {
+  height: 35px;
+  display: grid;
+}
+
+#back-btn {
   width: 80%;
+  height: 75%;
   background-color: #002244;
   border-radius: 5px;
   border-color: transparent;
   font-size: 12px;
   color: #ffffff;
+  justify-self: center;
 }
 
-#from-search:hover,
-#from-years:hover,
-#from-sort:hover,
-#from-average:hover {
+#back-btn:hover {
   cursor: pointer;
-  box-shadow: 5px 5px 5px 0px #000000;
   font-weight: bold;
+  background-color: #009FDA;
 }
 
 /*Pie de página*/
@@ -317,16 +288,15 @@ footer {
 }
 
 .copyright {
-  width: 225px;
   display: flex;
   font-size: 10px;
-  justify-content: space-between;
 }
 
 .copyright-txt,
 .btn-referencia,
 .wb-logo-bw {
   align-self: center;
+  margin: 0 5px 0 5px;
   cursor: context-menu;
 }
 
@@ -348,4 +318,91 @@ footer {
   cursor: pointer;
 }
 
-@media only screen and (min-width : 361px) {}
+/*-----SECCION DESKTOP-----*/
+@media only screen and (min-width : 641px) {
+
+  /* Encabezado desktop */
+  header {
+    height: 100%;
+  }
+
+  .header-container {
+    display: grid;
+    grid-auto-rows: auto;
+  }
+
+  .wb-logo {
+    width: auto;
+    height: 50px;
+  }
+
+  select {
+    height: 35px;
+    width: 90px;
+    font-size: 16px;
+  }
+
+  .menu-icon {
+    height: 33px;
+  }
+
+  .menu-list {
+    width: 240px;
+    margin: 0 0 0 -10%;
+  }
+
+  .menu-options a {
+    font-size: 15px;
+  }
+
+  /*Menú de secciones*/
+  .search-container,
+  .themes-container,
+  .years-container,
+  .sort-container,
+  .average-container {
+    height: 105px;
+    width: 425px;
+    font-size: 22px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 310px auto;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .arrow-btn {
+    width: 49px;
+    height: 45.9px;
+  }
+
+  label {
+    align-self: center;
+  }
+
+  /*Pie de página*/
+  footer {
+    height: auto;
+    width: auto;
+  }
+
+  .copyright {
+    width: 100%;
+    font-size: 13.5px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .wb-logo-bw {
+    height: 25px;
+  }
+
+  #apa-btn {
+    width: 140px;
+    height: 30px;
+    font-size: 11px;
+    display: grid;
+    grid-auto-columns: auto auto auto;
+  }
+
+}

@@ -2,45 +2,16 @@
 /* global WorldBank*/
 /* exported paises*/
 
-// Disposición inicial de secciones
-document.getElementById('section-search').style.display = 'none'; 
-document.getElementById('section-years').style.display = 'none';
-document.getElementById('section-sort').style.display = 'none';
-document.getElementById('section-average').style.display = 'none';
+// ----------------------------- Disposición inicial de las secciones----------------------------- //
+document.getElementById('total-result-section').style.display = 'none';
 
-// Uso del botón VOLVER AL INICIO para cada sección
-document.getElementById('from-search').addEventListener('click', () => {
-  document.getElementById('section-search').style.display = 'none';
-  document.getElementById('section-options').style.display = 'block';
+// -------------------------------- Desplazamiento entre secciones-------------------------------- //
+document.getElementById('searchfast-btn').addEventListener('click', () => { 
+  document.getElementById('sections-menu').style.display = 'none';
+  document.getElementById('total-result-section').style.display = 'block';
 });
-document.getElementById('from-years').addEventListener('click', () => {
-  document.getElementById('section-years').style.display = 'none';
-  document.getElementById('section-options').style.display = 'block';
-});
-document.getElementById('from-sort').addEventListener('click', () => {
-  document.getElementById('section-sort').style.display = 'none';
-  document.getElementById('section-options').style.display = 'block';
-});
-document.getElementById('from-average').addEventListener('click', () => {
-  document.getElementById('section-average').style.display = 'none';
-  document.getElementById('section-options').style.display = 'block';
-});
-
-// Funcionalidad de botones para opciones de navegación
-document.getElementById('nav-years').addEventListener('click', () => {
-  document.getElementById('section-options').style.display = 'none';
-  document.getElementById('section-years').style.display = 'block';
-});
-document.getElementById('nav-sort').addEventListener('click', () => {
-  document.getElementById('section-options').style.display = 'none';
-  document.getElementById('section-sort').style.display = 'block';
-});
-document.getElementById('nav-average').addEventListener('click', () => {
-  document.getElementById('section-options').style.display = 'none';
-  document.getElementById('section-average').style.display = 'block';
-});
-
-// Elección de países para uso general de variable inData
+ 
+// -------------------- Elección de países para uso general de variable inData -------------------- //
 let inData = WORLDBANK.PER.indicators;
 const paises = () => {
   switch (document.getElementById('country').value) {
@@ -59,18 +30,16 @@ const paises = () => {
   return inData;
 };
 
-// ------------------------------ Funcionalidad de búsqueda rápida ------------------------------ //
+// ----------------------------------***** BÚSQUEDA RÁPIDA *****---------------------------------- //
 document.getElementById('search-btn').addEventListener('click', () => {
-  document.getElementById('section-options').style.display = 'none'; // Disposición de secciones
-  document.getElementById('section-search').style.display = 'block';
-  document.getElementById('result').innerHTML = ''; // Limpiado de caja antes de impresión
+  document.getElementById('result-box').innerHTML = ''; // Limpiado de caja antes de impresión
   let inputWord = document.getElementById('word');
   if (WorldBank.filterSearch(inData, inputWord.value).join() === '') {
-    document.getElementById('result').innerHTML = 'No se encontraron registros';
+    document.getElementById('result-box').innerHTML = 'No se encontraron registros';
   } else {
     const outputSearch = WorldBank.filterSearch(inData, inputWord.value);
     for (let i = 0; i < outputSearch.length; i++) {
-      document.getElementById('result').innerHTML += `
+      document.getElementById('result-box').innerHTML += `
         <ul class="result">
           <li><a href="#sortSection" class="result">${outputSearch[i]}</a></li>
         </ul>
@@ -79,7 +48,7 @@ document.getElementById('search-btn').addEventListener('click', () => {
   }
 });
 
-// ---------------------------- Funcionalidad de búsqueda por temas ---------------------------- //
+// ---------------------------------***** BÚSQUEDA POR TEMAS *****-------------------------------- //
 document.getElementById('education').addEventListener('click', () => { // Tema: Educación
   document.getElementById('section-options').style.display = 'none';
   document.getElementById('section-search').style.display = 'block';
@@ -115,8 +84,7 @@ const resultado = (themes) => document.getElementById('result').innerHTML += `
     <li><a href="#sortSection" class="result">${themes}</a></li>
   </ul>
   `;
-
-// -------------- Funcionalidad para mostrar tabla de indicadores y datos según años -------------- //
+// ----------------------------------***** FILTRADO POR AÑOS *****--------------------------------- //
 document.getElementById('yearBtn').addEventListener('click', () => {
   document.getElementById('search-container').style.display = 'none';
   document.getElementById('table-years').innerHTML = ''; // Limpiado de caja antes de impresión
@@ -141,8 +109,7 @@ document.getElementById('yearBtn').addEventListener('click', () => {
     }
   }
 });
-
-// --------------- Funcionalidad para mostrar tabla de años y datos según indicador --------------- //
+// -------------------------***** ORDENADO DE DATA SEGÚN INDICADORES *****------------------------- //
 // Mostrar indicadores en lista desplegable
 const indicadores = inData.map((arr) => {
   return arr.indicatorName;
@@ -200,8 +167,7 @@ document.getElementById('sortBy').addEventListener('click', () => {
     }
   }
 });
-
-// ----------------------------- Funcionalidad de cálculo del promedio ----------------------------- //
+// -----------------------------***** PROMEDIO SEGÚN INDICADORES *****----------------------------- //
 document.getElementById('computeStat').addEventListener('click', () => {
   // Extraer nueva data en función a indicador elegido en lista desplegable 
   const indicSelected = document.getElementById('indicators').value;
@@ -234,8 +200,7 @@ document.getElementById('computeStat').addEventListener('click', () => {
    <p>${outputCompute}</p>
    `;
 });
-
-// <<<<<<<<<<<< Copiado de referencia tipo APA >>>>>>>>>>>> //
+// -------------------------------- Copiado de referencia tipo APA -------------------------------- //
 document.getElementById('apa-btn').addEventListener('click', () => {
   const inputTemporal = document.createElement('input');
   let fecha = new Date(); 
