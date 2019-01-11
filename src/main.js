@@ -24,6 +24,8 @@ document.getElementById('themes-btn').addEventListener('click', () => {
   document.getElementById('years-container').style.display = 'none';
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
+  document.getElementById('search-container').style.display = 'none';
+
 });
 document.getElementById('years-btn').addEventListener('click', () => { 
   document.getElementById('sections-menu').style.display = 'none';
@@ -52,8 +54,11 @@ document.getElementById('average-btn').addEventListener('click', () => {
   document.getElementById('search-container').style.display = 'none';
   document.getElementById('years-container').style.display = 'none';
 });
+document.getElementById('back-btn').addEventListener('click', () => { 
+  document.getElementById('sections-menu').style.display = 'block';
+  document.getElementById('total-result-section').style.display = 'none';
+});
 
- 
 // -------------------- Elección de países para uso general de variable inData -------------------- //
 let inData = WORLDBANK.PER.indicators;
 const paises = () => {
