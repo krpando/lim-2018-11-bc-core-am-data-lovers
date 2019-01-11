@@ -232,6 +232,7 @@ label {
 /*Impresión de listas*/
 ul.result {
   list-style: none;
+  font-size: 0.7em;
 }
 
 ul.result li::before {
