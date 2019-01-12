@@ -1,4 +1,3 @@
-/*Responsive para dispositivo móvil [360px - 640px]*/
 body {
   width: 100%;
   height: auto;
@@ -327,7 +326,7 @@ footer {
 }
 
 /*-----SECCION DESKTOP-----*/
-@media only screen and (min-width : 641px) {
+@media only screen and (min-width : 361px) {
 
   /* Encabezado desktop */
   header {
