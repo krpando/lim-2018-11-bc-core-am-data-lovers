@@ -25,7 +25,6 @@ document.getElementById('themes-btn').addEventListener('click', () => {
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
-
 });
 document.getElementById('years-btn').addEventListener('click', () => { 
   document.getElementById('sections-menu').style.display = 'none';
@@ -57,6 +56,7 @@ document.getElementById('average-btn').addEventListener('click', () => {
 document.getElementById('back-btn').addEventListener('click', () => { 
   document.getElementById('sections-menu').style.display = 'block';
   document.getElementById('total-result-section').style.display = 'none';
+  document.getElementById('result-box').innerHTML = '';
 });
 
 // -------------------- Elección de países para uso general de variable inData -------------------- //
@@ -77,7 +77,12 @@ const paises = () => {
   }
   return inData;
 };
-
+// Probando funcion para href
+function searchHrefToSort() {
+  document.getElementById('search-container').style.display = 'none';
+  document.getElementById('sort-container').style.display = 'block'; 
+  document.getElementById('result-box').innerHTML = '';
+}
 // ----------------------------------***** BÚSQUEDA RÁPIDA *****---------------------------------- //
 document.getElementById('search-btn').addEventListener('click', () => {
   document.getElementById('result-box').innerHTML = ''; // Limpiado de caja antes de impresión
@@ -89,16 +94,17 @@ document.getElementById('search-btn').addEventListener('click', () => {
     for (let i = 0; i < outputSearch.length; i++) {
       document.getElementById('result-box').innerHTML += `
         <ul class="result">
-          <li><a href="#sortSection" class="result">${outputSearch[i]}</a></li>
+          <li><a href = "javascript:searchHrefToSort()">${outputSearch[i]}</a></li>
         </ul>
         `;
     }
   }
 });
-<<<<<<< HEAD
-=======
-
->>>>>>> 0af653314c3a2015f3698a1662da1c41c13332b7
+function themesHrefToSort() {
+  document.getElementById('themes-container').style.display = 'none';
+  document.getElementById('sort-container').style.display = 'block'; 
+  document.getElementById('result-box').innerHTML = '';
+}
 // ---------------------------------***** BÚSQUEDA POR TEMAS *****-------------------------------- //
 document.getElementById('education').addEventListener('click', () => { // Tema: Educación
   document.getElementById('result-box').innerHTML = '';
@@ -125,7 +131,7 @@ document.getElementById('economy').addEventListener('click', () => { // Tema: Ec
 // Impresión de resultados en página
 const resultado = (themes) => document.getElementById('result-box').innerHTML += `
   <ul class="result">
-    <li><a href="#sortSection" class="result">${themes}</a></li>
+    <li><a href="javascript:themesHrefToSort()">${themes}</a></li>
   </ul>
   `;
 // ----------------------------------***** FILTRADO POR AÑOS *****--------------------------------- //

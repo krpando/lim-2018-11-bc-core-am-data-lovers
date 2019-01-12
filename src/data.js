@@ -40,6 +40,9 @@ window.WorldBank = {
         break;
       case 'Menor':
         sorted = dataBase.sort((valorA, valorB) => valorA.value > valorB.value ? 1 : -1);
+        break;
+      default:
+        alert('Seleccione un tipo de orden.');
       }
     } else
       switch (orderType) {
@@ -48,6 +51,9 @@ window.WorldBank = {
         break;
       case 'Menor':
         sorted = dataBase.sort((añoA, añoB) => añoA.year > añoB.year ? 1 : -1);
+        break;
+      default:
+        alert('Seleccione un tipo de orden.');
       }
     return sorted;
   },
