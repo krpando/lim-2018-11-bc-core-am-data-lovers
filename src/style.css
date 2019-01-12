@@ -32,7 +32,7 @@ header {
 .header-container {
   display: grid;
   grid-template-columns: auto auto;
-  grid-auto-rows: 46px;
+  grid-auto-rows: 50px;
   justify-content: space-between;
 }
 
@@ -41,7 +41,7 @@ header {
 }
 
 .wb-logo {
-  width: 125px;
+  width: 145px;
   height: auto;
   padding-left: 8px;
 }
@@ -231,6 +231,7 @@ label {
 /*Impresión de listas*/
 ul.result {
   list-style: none;
+  font-size: 0.7em;
 }
 
 ul.result li::before {
@@ -277,15 +278,6 @@ ul.result li::before {
   font-weight: bold;
   background-color: #009FDA;
 }
-
-#from-search:hover,
-#from-years:hover,
-#from-sort:hover,
-#from-average:hover {
-  cursor: pointer;
-  box-shadow: 5px 5px 5px 0px #000000;
-  font-weight: bold;
-}
 */
 /*Pie de página*/
 footer {
@@ -326,7 +318,7 @@ footer {
 }
 
 /*-----SECCION DESKTOP-----*/
-@media only screen and (min-width : 361px) {
+@media only screen and (min-width : 641px) {
 
   /* Encabezado desktop */
   header {

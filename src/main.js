@@ -47,7 +47,6 @@ document.getElementById('search-btn').addEventListener('click', () => {
     }
   }
 });
-/*
 // ---------------------------------***** BÚSQUEDA POR TEMAS *****-------------------------------- //
 document.getElementById('education').addEventListener('click', () => { // Tema: Educación
   document.getElementById('section-options').style.display = 'none';
@@ -85,7 +84,6 @@ const resultado = (themes) => document.getElementById('result').innerHTML += `
     <li><a href="#sortSection" class="result">${themes}</a></li>
   </ul>
   `;
-
 // ----------------------------------***** FILTRADO POR AÑOS *****--------------------------------- //
 document.getElementById('yearBtn').addEventListener('click', () => {
   document.getElementById('search-container').style.display = 'none';
@@ -111,7 +109,6 @@ document.getElementById('yearBtn').addEventListener('click', () => {
     }
   }
 });
-
 // -------------------------***** ORDENADO DE DATA SEGÚN INDICADORES *****------------------------- //
 // Mostrar indicadores en lista desplegable
 const indicadores = inData.map((arr) => {
@@ -170,7 +167,6 @@ document.getElementById('sortBy').addEventListener('click', () => {
     }
   }
 });
-
 // -----------------------------***** PROMEDIO SEGÚN INDICADORES *****----------------------------- //
 document.getElementById('computeStat').addEventListener('click', () => {
   // Extraer nueva data en función a indicador elegido en lista desplegable 
@@ -204,7 +200,6 @@ document.getElementById('computeStat').addEventListener('click', () => {
    <p>${outputCompute}</p>
    `;
 });
-
 // -------------------------------- Copiado de referencia tipo APA -------------------------------- //
 document.getElementById('apa-btn').addEventListener('click', () => {
   const inputTemporal = document.createElement('input');
@@ -216,4 +211,4 @@ document.getElementById('apa-btn').addEventListener('click', () => {
   document.execCommand('Copy');
   document.body.removeChild(inputTemporal);
   alert('El texto para referenciar la presente página en formato APA ha sido copiado');
-});  */
+});  
