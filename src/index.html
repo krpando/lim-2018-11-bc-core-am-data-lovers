@@ -67,6 +67,7 @@
   </aside>
   <!--Resultados-->
   <section class="total-result-section" id= "total-result-section">
+    <!--Parametro para Search-->
     <div id="search-container">
       <label>BÚSQUEDA RÁPIDA DE INDICADORES</label>
       <form class="search-form">
@@ -74,6 +75,50 @@
         <button type="button" id="search-btn"></button>
       </form>
     </div>
+    <!--Parametro para Themes-->
+    <div id="themes-container">
+        <label>BÚSQUEDA DE INDICADORES POR TEMAS</label>
+        <form class="themes-form">
+          <button type="button" class="topic-btn" id="gender">GÉNERO</button>
+          <button type="button" class="topic-btn" id="education">EDUCACIÓN</button>
+          <button type="button" class="topic-btn" id="social-dev">DESARROLLO SOCIAL</button>
+          <button type="button" class="topic-btn" id="economy">ECONOMÍA</button> 
+        </form>
+    </div>    
+    <!--Parametro para Years-->
+    <div id="years-container">
+        <label>BÚSQUEDA DE INDICADORES POR AÑO</label>
+        <form class="years-form">
+          <input class="years-input" type="number" min="1960" max="2017" id="year" />
+          <button type="button" id="searchyears-btn">BUSCAR</button>
+        </form>
+    </div> 
+    <!--Parametro para Sort-->
+    <div id="sort-container">
+        <label>ORDENAMIENTO DE DATOS</label>
+        <form class="sort-form">
+          <select id="indicators"></select>
+          <select id="data-type">
+            <option>Valores</option>
+            <option>Año</option>
+          </select>  
+          <select id="order-type">
+              <option>Mayor</option>
+              <option>Menor</option>
+            </select> 
+          <button type="button" id="sortBy-btn">APLICAR</button>
+        </form>
+    </div>
+    <!--Parametro para Average-->
+    <div id="average-container">
+        <label>CÁLCULO DE PROMEDIO DE DATOS</label>
+        <form class="average-form">
+          <select id="indicators-average"></select>
+          <button type="button" id="averageBtn">PROMEDIAR</button>
+        </form>
+    </div>   
+
+    <!--Results-->
     <div class="result-container">
       <div id="result-box"></div>
     </div>
