@@ -8,11 +8,12 @@
 </head>
 
 <body>
+
   <!--Encabezado-->
   <header>
     <div class="header-container">
       <div class="header-item">
-        <img alt="BancoMundialLogo" class="wb-logo" src="https://i.ibb.co/PmJMJ9K/logo-banco-mundial.jpg" />
+        <img alt="Banco-Mundial-logo" class="wb-logo" src="https://i.ibb.co/PmJMJ9K/logo-banco-mundial.jpg" />
       </div>
       <div class="menu-container">
         <!--Elección de países-->
@@ -26,7 +27,7 @@
         </div>
         <!--Menú de opciones-->
         <div class="menu-item">
-          <input id="menu-display" type="checkbox"/>
+          <input id="menu-display" type="checkbox" />
           <label for="menu-display">
             <img alt="DisplayMenuIcon" class="menu-icon" src="https://i.ibb.co/p4Z1Cf5/menu-alt-512.png" />
           </label>
@@ -41,32 +42,32 @@
       </div>
     </div>
   </header>
-  
+
   <!--Menú de opciones (Sections)-->
   <aside class="sections-container" id="sections-menu">
     <div class="search-container">
       <label class="menu-txt">BÚSQUEDA RÁPIDA</label>
-      <img alt="flecha-ingresar" id="searchfast-btn" class="arrow-btn" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/> 
+      <img alt="flecha-ingresar" id="searchfast-btn" class="arrow-btn" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png" />
     </div>
     <div class="themes-container">
       <label class="menu-txt">BÚSQUEDA POR TEMAS</label>
-      <img alt="flecha-ingresar" id="themes-btn" class="arrow-btn" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/> 
+      <img alt="flecha-ingresar" id="themes-btn" class="arrow-btn" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png" />
     </div>
     <div class="years-container">
       <label class="menu-txt">BÚSQUEDA POR AÑO</label>
-      <img alt="flecha-ingresar" id="years-btn" class="arrow-btn" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/> 
+      <img alt="flecha-ingresar" id="years-btn" class="arrow-btn" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png" />
     </div>
     <div class="sort-container">
       <label class="menu-txt">ORDENAMIENTO DE DATOS</label>
-      <img alt="flecha-ingresar" id="sort-btn" class="arrow-btn" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/> 
+      <img alt="flecha-ingresar" id="sort-btn" class="arrow-btn" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png" />
     </div>
     <div class="average-container">
       <label class="menu-txt">PROMEDIO DE DATOS</label>
-      <img alt="flecha-ingresar" id="average-btn" class="arrow-btn" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png"/> 
+      <img alt="flecha-ingresar" id="average-btn" class="arrow-btn" src="https://i.ibb.co/B4JmywX/punta-de-flecha-a-la-derecha.png" />
     </div>
   </aside>
   <!--Resultados-->
-  <section class="total-result-section" id= "total-result-section">
+  <section class="total-result-section" id="total-result-section">
     <!--Parametro para Search-->
     <div id="search-container">
       <label>BÚSQUEDA RÁPIDA DE INDICADORES</label>
@@ -77,46 +78,46 @@
     </div>
     <!--Parametro para Themes-->
     <div id="themes-container">
-        <label>BÚSQUEDA DE INDICADORES POR TEMAS</label>
-        <form class="themes-form">
-          <button type="button" class="topic-btn" id="gender">GÉNERO</button>
-          <button type="button" class="topic-btn" id="education">EDUCACIÓN</button>
-          <button type="button" class="topic-btn" id="social-dev">DESARROLLO SOCIAL</button>
-          <button type="button" class="topic-btn" id="economy">ECONOMÍA</button> 
-        </form>
-    </div>    
+      <label>BÚSQUEDA DE INDICADORES POR TEMAS</label>
+      <form class="themes-form">
+        <button type="button" class="topic-btn" id="gender">GÉNERO</button>
+        <button type="button" class="topic-btn" id="education">EDUCACIÓN</button>
+        <button type="button" class="topic-btn" id="social-dev">DESARROLLO SOCIAL</button>
+        <button type="button" class="topic-btn" id="economy">ECONOMÍA</button>
+      </form>
+    </div>
     <!--Parametro para Years-->
     <div id="years-container">
-        <label>BÚSQUEDA DE INDICADORES POR AÑO</label>
-        <form class="years-form">
-          <input class="years-input" type="number" min="1960" max="2017" id="year" />
-          <button type="button" id="searchyears-btn">BUSCAR</button>
-        </form>
-    </div> 
+      <label>BÚSQUEDA DE INDICADORES POR AÑO</label>
+      <form class="years-form">
+        <input class="years-input" type="number" min="1960" max="2017" id="year" />
+        <button type="button" id="searchyears-btn">BUSCAR</button>
+      </form>
+    </div>
     <!--Parametro para Sort-->
     <div id="sort-container">
-        <label>ORDENAMIENTO DE DATOS</label>
-        <form class="sort-form">
-          <select id="indicators"></select>
-          <select id="data-type">
-            <option>Valores</option>
-            <option>Año</option>
-          </select>  
-          <select id="order-type">
-              <option>Mayor</option>
-              <option>Menor</option>
-            </select> 
-          <button type="button" id="sortBy-btn">APLICAR</button>
-        </form>
+      <label>ORDENAMIENTO DE DATOS</label>
+      <form class="sort-form">
+        <select class="indicatorSelect" id="indicators"></select>
+        <select id="data-type">
+          <option>Valores</option>
+          <option>Año</option>
+        </select>
+        <select id="order-type">
+          <option>Mayor</option>
+          <option>Menor</option>
+        </select>
+        <button type="button" id="sortBy-btn">APLICAR</button>
+      </form>
     </div>
     <!--Parametro para Average-->
     <div id="average-container">
-        <label>CÁLCULO DE PROMEDIO DE DATOS</label>
-        <form class="average-form">
-          <select id="indicators-average"></select>
-          <button type="button" id="averageBtn">PROMEDIAR</button>
-        </form>
-    </div>   
+      <label>CÁLCULO DE PROMEDIO DE DATOS</label>
+      <form class="average-form">
+        <select class="indicatorSelect"  id="indicators-average"></select>
+        <button type="button" id="averageBtn">PROMEDIAR</button>
+      </form>
+    </div>
 
     <!--Results-->
     <div class="result-container">
@@ -137,7 +138,7 @@
       </div>
     </div>
   </footer>
-  
+
   <!--Enlace de documentos-->
   <script src="./data/worldbank/worldbank.js"></script>
   <script src="data.js"></script>

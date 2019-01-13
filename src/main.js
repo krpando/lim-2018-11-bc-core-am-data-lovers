@@ -2,58 +2,61 @@
 /* global WorldBank*/
 /* exported paises*/
 
-// ----------------------------- Disposición inicial de las secciones----------------------------- //
+// ------------------------ Disposición inicial de las secciones (mobiel) ------------------------ //
 document.getElementById('total-result-section').style.display = 'none';
-document.getElementById('search-container').style.display = 'none';
-document.getElementById('themes-container').style.display = 'block';
 
 // -------------------------------- Desplazamiento entre secciones-------------------------------- //
+// Desplegar sección Búsqueda rápida
 document.getElementById('searchfast-btn').addEventListener('click', () => { 
   document.getElementById('sections-menu').style.display = 'none';
   document.getElementById('total-result-section').style.display = 'block';
-  document.getElementById('search-container').style.display = 'block';
+  document.getElementById('search-container').style.display = 'grid';
   document.getElementById('themes-container').style.display = 'none';
   document.getElementById('years-container').style.display = 'none';
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
 });
+// Desplegar sección Búsqueda por temas
 document.getElementById('themes-btn').addEventListener('click', () => { 
   document.getElementById('sections-menu').style.display = 'none';
   document.getElementById('total-result-section').style.display = 'block';
-  document.getElementById('themes-container').style.display = 'block';
+  document.getElementById('themes-container').style.display = 'grid';
   document.getElementById('years-container').style.display = 'none';
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
-
 });
+// Desplegar sección Búsqueda por años
 document.getElementById('years-btn').addEventListener('click', () => { 
   document.getElementById('sections-menu').style.display = 'none';
   document.getElementById('total-result-section').style.display = 'block';
-  document.getElementById('years-container').style.display = 'block';
+  document.getElementById('years-container').style.display = 'grid';
   document.getElementById('themes-container').style.display = 'none';
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
 });
+// Desplegar sección Ordenamiento de datos
 document.getElementById('sort-btn').addEventListener('click', () => { 
   document.getElementById('sections-menu').style.display = 'none';
   document.getElementById('total-result-section').style.display = 'block';
-  document.getElementById('sort-container').style.display = 'block';
+  document.getElementById('sort-container').style.display = 'grid';
   document.getElementById('themes-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
   document.getElementById('years-container').style.display = 'none';
 });
+// Desplegar sección Promedio de datos
 document.getElementById('average-btn').addEventListener('click', () => { 
   document.getElementById('sections-menu').style.display = 'none';
   document.getElementById('total-result-section').style.display = 'block';
-  document.getElementById('average-container').style.display = 'block';
+  document.getElementById('average-container').style.display = 'grid';
   document.getElementById('themes-container').style.display = 'none';
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
   document.getElementById('years-container').style.display = 'none';
 });
+// Botón Volver al menú principal (sólo mobile): Desplegar menú de opciones 
 document.getElementById('back-btn').addEventListener('click', () => { 
   document.getElementById('sections-menu').style.display = 'block';
   document.getElementById('total-result-section').style.display = 'none';
@@ -133,8 +136,8 @@ document.getElementById('searchyears-btn').addEventListener('click', () => {
   document.getElementById('result-box').innerHTML = `
   <table id = 'table-years'>
     <tr>
-      <td>Indicadores</td>
-      <td>Valores</td>
+      <th>Indicadores</th>
+      <th>Valores</th>
     </tr>
   </table>
   `;
