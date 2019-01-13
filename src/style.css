@@ -1,7 +1,5 @@
-/*Responsive para dispositivo móvil [360px - 640px]*/
+/* Responsive para dispositivo móvil [360px - 640px] */
 body {
-  width: 100%;
-  height: auto;
   margin: 0;
   background-color: #ffffff;
 }
@@ -10,10 +8,13 @@ body {
 select,
 option,
 label,
+h2,
 .search-fast,
-.copyright-txt, 
+.copyright-txt,
 button,
-th {
+th, 
+p, 
+span {
   font-family: AndesRoundedW01-Regular;
   font-weight: normal;
   text-align: center;
@@ -90,7 +91,7 @@ nav {
   transition: all 1s;
 }
 
-#menu-display:checked ~ nav {
+#menu-display:checked~nav {
   visibility: visible;
   opacity: 1;
 }
@@ -123,8 +124,8 @@ nav {
 .years-container,
 .sort-container,
 .average-container {
-  height: 104px;
-  width: 360px;
+  height: 6.4em;
+  width: 100%;
   background-color: #002244;
   margin-bottom: 6px;
   background-size: cover;
@@ -147,60 +148,59 @@ nav {
 }
 
 .search-container {
-  background-image: linear-gradient(rgba(0, 34, 68, .7), 
-  rgba(0, 34, 68, .7)), 
-  url(https://i.ibb.co/T0srBSV/IBRDCampaign-Page-3-Education.png);
+  background-image: linear-gradient(rgba(0, 34, 68, .7),
+    rgba(0, 34, 68, .7)),
+    url(https://i.ibb.co/T0srBSV/IBRDCampaign-Page-3-Education.png);
 }
 
 .themes-container {
-  background-image: linear-gradient(rgba(0, 34, 68, .7), 
-  rgba(0, 34, 68, .7)), 
-  url(https://i.ibb.co/D9vwwWt/images-2.jpg);
+  background-image: linear-gradient(rgba(0, 34, 68, .7),
+    rgba(0, 34, 68, .7)),
+    url(https://i.ibb.co/D9vwwWt/images-2.jpg);
 }
 
 .years-container {
-  background-image: linear-gradient(rgba(0, 34, 68, .7), 
-  rgba(0, 34, 68, .7)), 
-  url(https://i.ibb.co/8svmWrq/Mujeres-acomodando-sus-cosechas-sureste-de-Guatemala-Barbara-Coello.jpg);
+  background-image: linear-gradient(rgba(0, 34, 68, .7),
+    rgba(0, 34, 68, .7)),
+    url(https://i.ibb.co/8svmWrq/Mujeres-acomodando-sus-cosechas-sureste-de-Guatemala-Barbara-Coello.jpg);
 }
 
 .sort-container {
-  background-image: linear-gradient(rgba(0, 34, 68, .7), 
-  rgba(0, 34, 68, .7)), 
-  url(https://i.ibb.co/T05zLK8/fragility-SP.png);
+  background-image: linear-gradient(rgba(0, 34, 68, .7),
+    rgba(0, 34, 68, .7)),
+    url(https://i.ibb.co/T05zLK8/fragility-SP.png);
 }
 
 .average-container {
-  background-image: linear-gradient(rgba(0, 34, 68, .7), 
-  rgba(0, 34, 68, .7)), 
-  url(https://i.ibb.co/DVmp8Cq/IBRD-Learn-More-Tiles-ABC-SP.png);
-  margin-bottom: 0px;
+  background-image: linear-gradient(rgba(0, 34, 68, .7),
+    rgba(0, 34, 68, .7)),
+    url(https://i.ibb.co/DVmp8Cq/IBRD-Learn-More-Tiles-ABC-SP.png);
 }
 
-/*Secciones*/
+/*Parámetros de secciones*/
 #search-container,
 #themes-container,
 #years-container,
 #sort-container,
 #average-container {
   height: 105px;
-  display: grid;
 }
 
-label {
+h2 {
   text-align: center;
   font-size: 16px;
   font-weight: 570;
   color: #002244;
   align-self: center;
+  margin: 0;
 }
 
-.search-form, 
+.search-form,
 .themes-form,
 .years-form,
 .sort-form {
   justify-content: center;
-  display:grid;
+  display: grid;
 }
 
 .search-form {
@@ -242,6 +242,7 @@ label {
   background-color: #009FDA;
   color: #ffffff;
   border-radius: 8px;
+  border-color: transparent;
 }
 
 .years-form {
@@ -257,28 +258,30 @@ label {
 }
 
 .sort-form {
-  grid-template-columns: 100px 100px 100px;
+  grid-template-columns: 28% 28% 20% 2%;
   grid-template-rows: 45% 45%;
-  grid-template-areas: 'indicators indicators indicators'
-                       'dataT orderT apply';
+  grid-column-gap: 10px;
+  grid-template-areas: 'ind ind ind ind'
+    'dataT orderT apply espacio';
 }
 
 .indicatorSelect {
   width: 100%;
-  height: 90%;
   border-radius: 8px;
   border: 1px solid #002244;
-  grid-area: indicators;
+  grid-area: ind;
 }
 
-#data-type{
+#data-type {
   grid-area: dataT;
   border-bottom: 1px solid #009FDA;
+  height: 90%;
 }
 
 #order-type {
   grid-area: orderT;
   border-bottom: 1px solid #009FDA;
+  height: 90%;
 }
 
 #sortBy-btn {
@@ -288,12 +291,17 @@ label {
 .average-form {
   text-align: center;
   align-self: center;
-} 
+}
 
-#indicators-average{
-  width: 80%;
-  height: 50%;
+#indicators-average {
+  width: 85%;
   margin-bottom: 5px;
+  display: block;
+}
+
+#averageBtn {
+  display: flex;
+  margin: auto;
 }
 
 /*Impresión de resultados: listas y tablas*/
@@ -368,7 +376,7 @@ table td.tableYear {
   text-align: center;
 }
 
-td.tableValues{
+td.tableValues {
   padding: 0;
   text-align: center;
   font-weight: bold;
@@ -390,9 +398,32 @@ td.tableValues{
   justify-self: center;
 }
 
+hr {
+  border:1px solid #002244;
+  width: 80%;
+}
+
+#result div {
+  text-align: center;
+}
+
+.indicator-txt {
+font-size:12px;
+text-align: center;
+margin:6%;
+}
+.pais-txt {
+color:#009FDA;
+font-size: 15px;
+margin-right: 12px;
+}
+.value-txt {
+color:#002244;
+font-size: 20px;
+}
+
 /*Pie de página*/
 footer {
-  height: 35px;
   justify-content: space-around;
   display: flex;
 }
@@ -407,7 +438,6 @@ footer {
 .wb-logo-bw {
   align-self: center;
   margin: 0 5px 0 5px;
-  cursor: context-menu;
 }
 
 .wb-logo-bw {
@@ -419,56 +449,42 @@ footer {
   height: 21px;
   border-radius: 7px;
   background-color: #002244;
+  border-color: transparent;
   color: #ffffff;
   font-size: 7px;
 }
 
-/*-----SECCION DESKTOP-----*/
+/* Responsive para tablets o pantallas de resolución similar */
 @media only screen and (min-width : 361px) {
 
-  /* Encabezado desktop */
-  header {
-    height: 100%;
-  }
-
-  .header-container {
-    display: grid;
-    grid-auto-rows: auto;
-  }
-
-  .wb-logo {
-    width: auto;
-    height: 50px;
-  }
-
-  select {
-    height: 35px;
-    width: 90px;
-    font-size: 16px;
-  }
-  
-  select:hover {
-    border-radius: 8px;
-    background-color: #009FDA;
-    color: #ffffff;
-  }
-
   .menu-icon {
-    height: 33px;
+    display: none;
+  }
+
+  nav,
+  li {
+    visibility: visible;
+    opacity: 1;
+    transition: unset;
   }
 
   .menu-list {
-    width: 240px;
-    margin: 0 0 0 -10%;
+    margin: auto;
+    padding: 0;
+    background-color: #009FDA;
+    position: unset;
+    display: flex;
+    flex-direction: row;
   }
 
   .menu-options a {
-    font-size: 15px;
-  }
-
-  .menu-options a:hover {
-    background-color: #002244;
-    color: #ffffff;
+    display: block;
+    padding:unset;
+    color: #002244;
+    text-align: right;
+    font-size: 11px;
+    text-decoration: none;
+    border-top: 1px solid #ffffff;
   }
 
   /*Menú de secciones*/
@@ -477,62 +493,13 @@ footer {
   .years-container,
   .sort-container,
   .average-container {
-    height: 105px;
-    width: 425px;
-    font-size: 22px;
-    text-align: center;
+    background-color: #002244;
+    margin-bottom: 6px;
+    background-size: cover;
+    background-position: center;
     display: grid;
-    grid-template-columns: 310px auto;
+    grid-template-columns: 270px auto;
     align-content: center;
     justify-content: center;
-  }
-
-  .arrow-btn {
-    width: 49px;
-    height: 45.9px;
-  }
-
-  label {
-    align-self: center;
-  }
-
-  #search-btn:hover {
-    cursor: pointer;
-    opacity: 0.8;
-  }
-
-#back-btn:hover {
-  cursor: pointer;
-  background-color: #009FDA;
-}
-
-  /*Pie de página*/
-  footer {
-    height: auto;
-    width: auto;
-  }
-
-  .copyright {
-    width: 100%;
-    font-size: 13.5px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .wb-logo-bw {
-    height: 25px;
-  }
-
-  #apa-btn {
-    width: 140px;
-    height: 30px;
-    font-size: 11px;
-    display: grid;
-    grid-auto-columns: auto auto auto;
-  }
-
-  #apa-btn:hover {
-    background-color: #009FDA;
-    cursor: pointer;
   }
 }

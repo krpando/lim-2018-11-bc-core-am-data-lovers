@@ -2,7 +2,7 @@
 /* global WorldBank*/
 /* exported paises*/
 
-// ------------------------ Disposición inicial de las secciones (mobiel) ------------------------ //
+// ------------------------ Disposición inicial de las secciones (mobile) ------------------------ //
 document.getElementById('total-result-section').style.display = 'none';
 
 // -------------------------------- Desplazamiento entre secciones-------------------------------- //
@@ -260,13 +260,20 @@ document.getElementById('averageBtn').addEventListener('click', () => {
       inDataValues.push(inDataIndicator[i].value);
     }
   }
+  document.getElementById('result-box').innerHTML = ''; // Limpiado de caja antes de impresión
   let outputCompute = WorldBank.averageCompute(inDataValues);
   if ((outputCompute.toString())[1] === '.' || (outputCompute.toString())[2] === '.') {
     document.getElementById('result-box').innerHTML += `
-    <p>${outputCompute.toFixed(2)} %</p>
+    <p class='indicator-txt'>${indicSelected}</p>
+    <hr/>
+    <div align='center'><span class='pais-txt'>${document.getElementById('country').value}</span>
+    <span class='value-txt'>${outputCompute.toFixed(2)} %</span></div>
     `;
   } else document.getElementById('result-box').innerHTML += `
-   <p>${outputCompute}</p>
+    <p class='indicator-txt'>${indicSelected}</p>
+    <hr/>
+    <div align='center'><span class='pais-txt'>${document.getElementById('country').value}</span>
+    <span class='value-txt'>${outputCompute}</span></div>
    `;
 });
 
