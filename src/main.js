@@ -1,6 +1,8 @@
 /* global WORLDBANK*/
 /* global WorldBank*/
 /* exported paises*/
+/* exported searchHrefToSort*/
+/* exported themesHrefToSort*/
 
 // ----------------------------- Disposición inicial de las secciones----------------------------- //
 document.getElementById('total-result-section').style.display = 'none';
@@ -78,11 +80,11 @@ const paises = () => {
   return inData;
 };
 // Probando funcion para href
-function searchHrefToSort() {
+const searchHrefToSort = () => {
   document.getElementById('search-container').style.display = 'none';
   document.getElementById('sort-container').style.display = 'block'; 
   document.getElementById('result-box').innerHTML = '';
-}
+};
 // ----------------------------------***** BÚSQUEDA RÁPIDA *****---------------------------------- //
 document.getElementById('search-btn').addEventListener('click', () => {
   document.getElementById('result-box').innerHTML = ''; // Limpiado de caja antes de impresión
@@ -100,11 +102,11 @@ document.getElementById('search-btn').addEventListener('click', () => {
     }
   }
 });
-function themesHrefToSort() {
+const themesHrefToSort = () => {
   document.getElementById('themes-container').style.display = 'none';
   document.getElementById('sort-container').style.display = 'block'; 
   document.getElementById('result-box').innerHTML = '';
-}
+};
 // ---------------------------------***** BÚSQUEDA POR TEMAS *****-------------------------------- //
 document.getElementById('education').addEventListener('click', () => { // Tema: Educación
   document.getElementById('result-box').innerHTML = '';

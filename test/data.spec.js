@@ -65,7 +65,7 @@ describe('filterYears es una función', () => {
 
   it('returns `debería retornar los porcentajes correspondientes al año ingresado`', () => {
     expect(WorldBank.filterYears(miniData, inputByYears)).toEqual(outputByYears);
-  });
+  }); 
 });
  
 // ----------- Testeando sortData ----------- //
@@ -74,14 +74,19 @@ const dataData = [{year: '1960', value: 45.04}, {year: '1990', value: 15.3567}, 
 // Para parámetro 'dataType'
 const inputSort1 = 'Años';
 const inputSort2 = 'Valores';
+const inputSort3 = '';
 // Para parámetro 'orderType'
 const inputOrder1 = 'Mayor';
 const inputOrder2 = 'Menor';
+const inputOrder3 = '';
+
+
 // Resultados esperados para sortData
 const añosMayor = [{year: '2000', value: 30.45}, {year: '1990', value: 15.3567}, {year: '1960', value: 45.04}];
 const añosMenor = [{year: '1960', value: 45.04}, {year: '1990', value: 15.3567}, {year: '2000', value: 30.45}];
 const valoresMayor = [{year: '1960', value: 45.04}, {year: '2000', value: 30.45}, {year: '1990', value: 15.3567}];
 const valoresMenor = [{year: '1990', value: 15.3567}, {year: '2000', value: 30.45}, {year: '1960', value: 45.04}];
+const respuestaDefault = '';
 
 describe('sortData es una función', () => {
   it('debería ser una función', () => {
@@ -102,6 +107,10 @@ describe('sortData es una función', () => {
 
   it('returns `debería retornar un array de objetos ordenados por valores de menor a mayor`', () => {
     expect(WorldBank.sortData(dataData, inputSort2, inputOrder2)).toEqual(valoresMenor);
+  });
+
+  it('returns `debería retornar un alert`', () => {
+    expect(WorldBank.sortData(dataData, inputSort3, inputOrder3)).toEqual(respuestaDefault);
   });
 });
 // ----------- Testeando averageCompute ----------- //
