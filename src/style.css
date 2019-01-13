@@ -11,8 +11,9 @@ select,
 option,
 label,
 .search-fast,
-.copyright-txt,
-.topic-btn {
+.copyright-txt, 
+button,
+th {
   font-family: AndesRoundedW01-Regular;
   font-weight: normal;
   text-align: center;
@@ -236,7 +237,8 @@ label {
 
 .topic-btn,
 #searchyears-btn,
-#sortBy-btn {
+#sortBy-btn,
+#averageBtn {
   background-color: #009FDA;
   color: #ffffff;
   border-radius: 8px;
@@ -256,12 +258,14 @@ label {
 
 .sort-form {
   grid-template-columns: 100px 100px 100px;
-  grid-template-rows: 28px 28px;
+  grid-template-rows: 45% 45%;
   grid-template-areas: 'indicators indicators indicators'
                        'dataT orderT apply';
 }
+
 .indicatorSelect {
   width: 100%;
+  height: 90%;
   border-radius: 8px;
   border: 1px solid #002244;
   grid-area: indicators;
@@ -280,6 +284,18 @@ label {
 #sortBy-btn {
   grid-area: apply;
 }
+
+.average-form {
+  text-align: center;
+  align-self: center;
+} 
+
+#indicators-average{
+  width: 80%;
+  height: 50%;
+  margin-bottom: 5px;
+}
+
 /*Impresión de resultados: listas y tablas*/
 .result-container {
   height: 400px;
@@ -317,13 +333,45 @@ a {
   color: #002244;
 }
 
-#table-years th {
-  font-size: 14px;
+table {
+  border: 5px solid #ffffff;
+  border-collapse: collapse;
+  margin: auto;
+  padding: 0;
+  width: 100%;
+  justify-self: center;
+}
+
+table th {
+  font-size: 13px;
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: center;
-  background-color: #009FDA;
+  text-transform: uppercase;
+  background-color: #002244;
   color: #ffffff;
+  text-align: center;
+}
+
+table tr {
+  border-bottom: 2px solid #009fda;
+  padding: 5px;
+}
+
+table td,
+table td.tableYear {
+  padding: 8px;
+  font-size: 12px;
+  text-align: justify;
+}
+
+table td.tableYear {
+  text-align: center;
+}
+
+td.tableValues{
+  padding: 0;
+  text-align: center;
+  font-weight: bold;
 }
 
 .menu-back {
@@ -455,7 +503,6 @@ footer {
 
 #back-btn:hover {
   cursor: pointer;
-  font-weight: bold;
   background-color: #009FDA;
 }
 
@@ -484,8 +531,8 @@ footer {
     grid-auto-columns: auto auto auto;
   }
 
-#apa-btn:hover {
-  background-color: #009FDA;
-  cursor: pointer;
-}
+  #apa-btn:hover {
+    background-color: #009FDA;
+    cursor: pointer;
+  }
 }
