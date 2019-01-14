@@ -13,7 +13,7 @@ document.getElementById('searchfast-btn').addEventListener('click', () => {
   document.getElementById('years-container').style.display = 'none';
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
-  if (window.matchMedia('(min-width: 728px)').matches) {
+  if (window.matchMedia('(min-width: 1024px)').matches) {
     document.getElementById('sections-menu').style.display = 'block';
   } else {
     document.getElementById('sections-menu').style.display = 'none';
@@ -28,7 +28,7 @@ document.getElementById('themes-btn').addEventListener('click', () => {
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
-  if (window.matchMedia('(min-width: 728px)').matches) {
+  if (window.matchMedia('(min-width: 1024px)').matches) {
     document.getElementById('sections-menu').style.display = 'block';
   } else {
     document.getElementById('sections-menu').style.display = 'none';
@@ -43,7 +43,7 @@ document.getElementById('years-btn').addEventListener('click', () => {
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
-  if (window.matchMedia('(min-width: 728px)').matches) {
+  if (window.matchMedia('(min-width: 1024px)').matches) {
     document.getElementById('sections-menu').style.display = 'block';
   } else {
     document.getElementById('sections-menu').style.display = 'none';
@@ -58,7 +58,7 @@ document.getElementById('sort-btn').addEventListener('click', () => {
   document.getElementById('average-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
   document.getElementById('years-container').style.display = 'none';
-  if (window.matchMedia('(min-width: 728px)').matches) {
+  if (window.matchMedia('(min-width: 1024px)').matches) {
     document.getElementById('sections-menu').style.display = 'block';
   } else {
     document.getElementById('sections-menu').style.display = 'none';
@@ -73,7 +73,7 @@ document.getElementById('average-btn').addEventListener('click', () => {
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
   document.getElementById('years-container').style.display = 'none';
-  if (window.matchMedia('(min-width: 728px)').matches) {
+  if (window.matchMedia('(min-width: 1024px)').matches) {
     document.getElementById('sections-menu').style.display = 'block';
   } else {
     document.getElementById('sections-menu').style.display = 'none';

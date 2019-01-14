@@ -1,4 +1,4 @@
-/* Responsive para dispositivo móvil [360px - 640px] */
+/* Responsive para dispositivo móvil [480px - 854px] */
 body {
   margin: 0;
   background-color: #ffffff;
@@ -31,7 +31,7 @@ tr {
 /*Encabezado*/
 header {
   height: 45px;
-  width: auto;
+  width: 100%;
 }
 
 .header-container {
@@ -130,7 +130,12 @@ nav li:hover {
 }
 
 /*Menú de secciones*/
+aside {
+  height: 800px;
+}
+
 #total-result-section {
+  height: 50em;
   display: none;
 }
 
@@ -139,7 +144,7 @@ nav li:hover {
 .years-container,
 .sort-container,
 .average-container {
-  height: 6.4em;
+  height: 19.5%;
   width: 100%;
   background-color: #002244;
   margin-bottom: 6px;
@@ -199,7 +204,7 @@ nav li:hover {
 #years-container,
 #sort-container,
 #average-container {
-  height: 105px;
+  height: 20%;
 }
 
 h2 {
@@ -334,9 +339,10 @@ h2 {
 }
 
 /*Impresión de resultados: listas y tablas*/
+
 .result-container {
-  height: 400px;
   display: block;
+  height: 80%;
 }
 
 #result-box {
@@ -459,9 +465,12 @@ hr {
 
 /*Pie de página*/
 footer {
+  background-color: #ffffff;
+  width: 100%;
   padding-top: 4px;
   justify-content: space-around;
   display: flex;
+  height: 35px;
 }
 
 .copyright {
@@ -495,7 +504,7 @@ footer {
 }
 
 /* Responsive para tablets o pantallas de resolución similar */
-@media screen and (min-width : 361px) {
+@media screen and (min-width : 728px) {
 
  .menu-list {
     margin: -1% 0 0 -94.6%;
@@ -519,7 +528,7 @@ footer {
 }
 
 /* Responsive para tablets o pantallas de resolución similar (en vertical) */
-@media screen and (min-width : 728px) {
+@media screen and (min-width : 1024px) {
   
   header {
     box-shadow: 5px 2px 12px #002244;
@@ -548,11 +557,6 @@ footer {
     grid-template-rows: 28px;
   }
 
-  .result-container {
-    height: 27em;
-    display: block;
-  }
-
   aside {
     width: 50%;
     float: left;
@@ -564,17 +568,13 @@ footer {
 
   footer {
     border-top: 1px solid #002244;
-    position: fixed;
-    left: 0px;
-    bottom: 5px;
-    height: 35px;
-    width: 100%;
+    position: relative;
   }
 
 }
 
 /* Responsive para desktop */
-@media screen and (min-width : 1024px) {
+@media screen and (min-width : 1360px) {
 
   .header-container {
     grid-template-columns: auto 35%;
