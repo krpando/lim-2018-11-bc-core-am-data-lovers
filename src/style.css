@@ -495,7 +495,7 @@ footer {
 }
 
 /* Responsive para tablets o pantallas de resolución similar */
-@media screen and (min-width : 361px) {
+@media screen and (min-width : 729px) {
 
  .menu-list {
     margin: -1% 0 0 -94.6%;
@@ -519,7 +519,7 @@ footer {
 }
 
 /* Responsive para tablets o pantallas de resolución similar (en vertical) */
-@media screen and (min-width : 728px) {
+@media screen and (min-width : 1024px) {
   
   header {
     box-shadow: 5px 2px 12px #002244;
@@ -574,7 +574,7 @@ footer {
 }
 
 /* Responsive para desktop */
-@media screen and (min-width : 1024px) {
+@media screen and (min-width : 1359px) {
 
   .header-container {
     grid-template-columns: auto 35%;
