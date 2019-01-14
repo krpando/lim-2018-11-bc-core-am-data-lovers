@@ -4,60 +4,82 @@
 /* exported searchHrefToSort*/
 /* exported themesHrefToSort*/
 
-// ------------------------ Disposición inicial de las secciones (mobiel) ------------------------ //
-document.getElementById('total-result-section').style.display = 'none';
-
 // -------------------------------- Desplazamiento entre secciones-------------------------------- //
 // Desplegar sección Búsqueda rápida
 document.getElementById('searchfast-btn').addEventListener('click', () => {
-  document.getElementById('sections-menu').style.display = 'none';
   document.getElementById('total-result-section').style.display = 'block';
   document.getElementById('search-container').style.display = 'grid';
   document.getElementById('themes-container').style.display = 'none';
   document.getElementById('years-container').style.display = 'none';
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
+  if (window.matchMedia('(min-width: 728px)').matches) {
+    document.getElementById('sections-menu').style.display = 'block';
+  } else {
+    document.getElementById('sections-menu').style.display = 'none';
+  }
 });
+
 // Desplegar sección Búsqueda por temas
 document.getElementById('themes-btn').addEventListener('click', () => {
-  document.getElementById('sections-menu').style.display = 'none';
   document.getElementById('total-result-section').style.display = 'block';
   document.getElementById('themes-container').style.display = 'grid';
   document.getElementById('years-container').style.display = 'none';
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
+  if (window.matchMedia('(min-width: 728px)').matches) {
+    document.getElementById('sections-menu').style.display = 'block';
+  } else {
+    document.getElementById('sections-menu').style.display = 'none';
+  }
 });
+
 // Desplegar sección Búsqueda por años
 document.getElementById('years-btn').addEventListener('click', () => {
-  document.getElementById('sections-menu').style.display = 'none';
   document.getElementById('total-result-section').style.display = 'block';
   document.getElementById('years-container').style.display = 'grid';
   document.getElementById('themes-container').style.display = 'none';
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
+  if (window.matchMedia('(min-width: 728px)').matches) {
+    document.getElementById('sections-menu').style.display = 'block';
+  } else {
+    document.getElementById('sections-menu').style.display = 'none';
+  }
 });
+
 // Desplegar sección Ordenamiento de datos
 document.getElementById('sort-btn').addEventListener('click', () => {
-  document.getElementById('sections-menu').style.display = 'none';
   document.getElementById('total-result-section').style.display = 'block';
   document.getElementById('sort-container').style.display = 'grid';
   document.getElementById('themes-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
   document.getElementById('years-container').style.display = 'none';
+  if (window.matchMedia('(min-width: 728px)').matches) {
+    document.getElementById('sections-menu').style.display = 'block';
+  } else {
+    document.getElementById('sections-menu').style.display = 'none';
+  }
 });
+
 // Desplegar sección Promedio de datos
 document.getElementById('average-btn').addEventListener('click', () => {
-  document.getElementById('sections-menu').style.display = 'none';
   document.getElementById('total-result-section').style.display = 'block';
   document.getElementById('average-container').style.display = 'grid';
   document.getElementById('themes-container').style.display = 'none';
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
   document.getElementById('years-container').style.display = 'none';
+  if (window.matchMedia('(min-width: 728px)').matches) {
+    document.getElementById('sections-menu').style.display = 'block';
+  } else {
+    document.getElementById('sections-menu').style.display = 'none';
+  }
 });
+
 // Botón Volver al menú principal (sólo mobile): Desplegar menú de opciones 
 document.getElementById('back-btn').addEventListener('click', () => {
   document.getElementById('sections-menu').style.display = 'block';
@@ -69,17 +91,17 @@ document.getElementById('back-btn').addEventListener('click', () => {
 let inData = WORLDBANK.PER.indicators;
 const paises = () => {
   switch (document.getElementById('country').value) {
-    case 'BRASIL':
-      inData = WORLDBANK.BRA.indicators;
-      break;
-    case 'CHILE':
-      inData = WORLDBANK.CHL.indicators;
-      break;
-    case 'MÉXICO':
-      inData = WORLDBANK.MEX.indicators;
-      break;
-    default:
-      inData = WORLDBANK.PER.indicators;
+  case 'BRASIL':
+    inData = WORLDBANK.BRA.indicators;
+    break;
+  case 'CHILE':
+    inData = WORLDBANK.CHL.indicators;
+    break;
+  case 'MÉXICO':
+    inData = WORLDBANK.MEX.indicators;
+    break;
+  default:
+    inData = WORLDBANK.PER.indicators;
   }
   return inData;
 };
@@ -270,13 +292,20 @@ document.getElementById('averageBtn').addEventListener('click', () => {
       inDataValues.push(inDataIndicator[i].value);
     }
   }
+  document.getElementById('result-box').innerHTML = ''; // Limpiado de caja antes de impresión
   let outputCompute = WorldBank.averageCompute(inDataValues);
   if ((outputCompute.toString())[1] === '.' || (outputCompute.toString())[2] === '.') {
     document.getElementById('result-box').innerHTML += `
-    <p>${outputCompute.toFixed(2)} %</p>
+    <p class='indicator-txt'>${indicSelected}</p>
+    <hr/>
+    <div align='center'><span class='pais-txt'>${document.getElementById('country').value}</span>
+    <span class='value-txt'>${outputCompute.toFixed(2)} %</span></div>
     `;
   } else document.getElementById('result-box').innerHTML += `
-   <p>${outputCompute}</p>
+    <p class='indicator-txt'>${indicSelected}</p>
+    <hr/>
+    <div align='center'><span class='pais-txt'>${document.getElementById('country').value}</span>
+    <span class='value-txt'>${outputCompute}</span></div>
    `;
 });
 // -------------------------------- Copiado de referencia tipo APA -------------------------------- //

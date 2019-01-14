@@ -70,7 +70,7 @@
   <section class="total-result-section" id="total-result-section">
     <!--Parametro para Search-->
     <div id="search-container">
-      <label>BÚSQUEDA RÁPIDA DE INDICADORES</label>
+      <h2>BÚSQUEDA RÁPIDA DE INDICADORES</h2>
       <form class="search-form">
         <input class="search-input" placeholder="Ejemplo: educación, género, desempleo" id="word" />
         <button type="button" id="search-btn"></button>
@@ -78,7 +78,7 @@
     </div>
     <!--Parametro para Themes-->
     <div id="themes-container">
-      <label>BÚSQUEDA DE INDICADORES POR TEMAS</label>
+      <h2>BÚSQUEDA DE INDICADORES POR TEMAS</h2>
       <form class="themes-form">
         <button type="button" class="topic-btn" id="gender">GÉNERO</button>
         <button type="button" class="topic-btn" id="education">EDUCACIÓN</button>
@@ -88,7 +88,7 @@
     </div>
     <!--Parametro para Years-->
     <div id="years-container">
-      <label>BÚSQUEDA DE INDICADORES POR AÑO</label>
+      <h2>BÚSQUEDA DE INDICADORES POR AÑO</h2>
       <form class="years-form">
         <input class="years-input" type="number" min="1960" max="2017" id="year" />
         <button type="button" id="searchyears-btn">BUSCAR</button>
@@ -96,9 +96,11 @@
     </div>
     <!--Parametro para Sort-->
     <div id="sort-container">
-      <label>ORDENAMIENTO DE DATOS</label>
+      <h2>ORDENAMIENTO DE DATOS</h2>
       <form class="sort-form">
-        <select class="indicatorSelect" id="indicators"></select>
+        <select class="indicatorSelect" id="indicators">
+          <option value="" disabled selected>Selecciona un indicador...</option>
+        </select>
         <select id="data-type">
           <option>Valores</option>
           <option>Año</option>
@@ -112,9 +114,11 @@
     </div>
     <!--Parametro para Average-->
     <div id="average-container">
-      <label>CÁLCULO DE PROMEDIO DE DATOS</label>
+      <h2>CÁLCULO DE PROMEDIO DE DATOS</h2>
       <form class="average-form">
-        <select class="indicatorSelect"  id="indicators-average"></select>
+        <select class="indicatorSelect"  id="indicators-average">
+          <option value="" disabled selected>Selecciona un indicador...</option>
+        </select>
         <button type="button" id="averageBtn">PROMEDIAR</button>
       </form>
     </div>
