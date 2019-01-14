@@ -271,6 +271,7 @@ h2 {
 #sortBy-btn:hover,
 #averageBtn:hover {
   background-color: #B88C1D;
+  cursor: pointer;
 }
 
 .years-form {
@@ -526,7 +527,7 @@ footer {
 
   #total-result-section {
     display: block;
-    width: 65%;
+    width: 50%;
     float: right;
   }
 
@@ -553,7 +554,7 @@ footer {
   }
 
   aside {
-    width: 35%;
+    width: 50%;
     float: left;
   }
 
@@ -580,7 +581,7 @@ footer {
   }
 
   .menu-container {
-    grid-template-columns: 30% 65%;
+    grid-template-columns: 28% 68%;
     justify-items: center;
   }
 
@@ -598,18 +599,21 @@ footer {
   .menu-list {
     height: auto;
     width: auto;
-    list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: transparent;
+    background-image:unset;
     position: relative;
     display: flex;
     flex-direction: row;
   }
 
-  .menu-options a {
+  nav li:hover {
+    background-color:unset;
+  }
+
+ .menu-options a {
     display: unset;
-    padding: 0;
+    padding: 5px;
     margin-right: 10px;
     color: #000000;
     text-align: center;
@@ -618,6 +622,35 @@ footer {
     border-top: unset;
   }
 
-  /*Poniters y hovers*/
+  .menu-options a:hover {
+    background-color: #B88C1D;
+    color:#ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+  }
 
+  #total-result-section {
+    width: 65%;
+  }
+
+  aside {
+    width: 35%;
+    float: left;
+  }
+
+/*Pointers y hovers*/
+.arrow-btn:hover,
+#country:hover {
+  cursor: pointer; 
+}
+
+#apa-btn:hover,
+#search-btn:hover,
+.topic-btn:hover, 
+#searchyears-btn:hover,
+#sortBy-btn:hover,
+#averageBtn:hover {
+  background-color: #B88C1D;
+  cursor: pointer; 
+}
 }
