@@ -3,7 +3,7 @@
 /* exported paises*/
 
 // ------------------------ Disposición inicial de las secciones (mobile) ------------------------ //
-document.getElementById('total-result-section').style.display = 'none';
+/* document.getElementById('total-result-section').style.display = 'none'; */
 
 // -------------------------------- Desplazamiento entre secciones-------------------------------- //
 // Desplegar sección Búsqueda rápida

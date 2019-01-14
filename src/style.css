@@ -12,8 +12,8 @@ h2,
 .search-fast,
 .copyright-txt,
 button,
-th, 
-p, 
+th,
+p,
 span {
   font-family: AndesRoundedW01-Regular;
   font-weight: normal;
@@ -71,6 +71,12 @@ select {
   text-align-last: center;
 }
 
+select:hover {
+  background: #009FDA;
+  border-radius: 8px;
+  color:#ffffff;
+}
+
 option {
   background-color: #ffffff;
   color: #002244;
@@ -102,10 +108,15 @@ nav {
   list-style-type: none;
   margin: -2% 0 0 -84.5%;
   padding: 0;
-  background-color: #009FDA;
-  position: absolute;
+  background-image: linear-gradient(to right, transparent, #009FDA);
+  position: fixed;
+  right: 0;
   display: flex;
   flex-direction: column;
+}
+
+nav li:hover {
+  background-color: #B88C1D;
 }
 
 .menu-options a {
@@ -115,10 +126,14 @@ nav {
   text-align: right;
   font-size: 11px;
   text-decoration: none;
-  border-top: 1px solid #ffffff;
+  border-top: 1px solid transparent;
 }
 
 /*Menú de secciones*/
+#total-result-section {
+  display: none;
+}
+
 .search-container,
 .themes-container,
 .years-container,
@@ -175,6 +190,7 @@ nav {
   background-image: linear-gradient(rgba(0, 34, 68, .7),
     rgba(0, 34, 68, .7)),
     url(https://i.ibb.co/DVmp8Cq/IBRD-Learn-More-Tiles-ABC-SP.png);
+    margin-bottom: 0px;
 }
 
 /*Parámetros de secciones*/
@@ -230,8 +246,13 @@ h2 {
   border-color: #009FDA;
 }
 
+#search-btn:hover {
+  opacity:0.5;
+}
+
 .themes-form {
   grid-template-columns: 150px 150px;
+  grid-gap: 5px 5px;
   grid-template-rows: 28px 28px;
 }
 
@@ -243,6 +264,13 @@ h2 {
   color: #ffffff;
   border-radius: 8px;
   border-color: transparent;
+}
+
+.topic-btn:hover, 
+#searchyears-btn:hover,
+#sortBy-btn:hover,
+#averageBtn:hover {
+  background-color: #B88C1D;
 }
 
 .years-form {
@@ -398,8 +426,12 @@ td.tableValues {
   justify-self: center;
 }
 
+#back-btn:hover {
+  background-color: #009fda;
+}
+
 hr {
-  border:1px solid #002244;
+  border: 1px solid #002244;
   width: 80%;
 }
 
@@ -408,22 +440,25 @@ hr {
 }
 
 .indicator-txt {
-font-size:12px;
-text-align: center;
-margin:6%;
+  font-size: 12px;
+  text-align: center;
+  margin: 6%;
 }
+
 .pais-txt {
-color:#009FDA;
-font-size: 15px;
-margin-right: 12px;
+  color: #009FDA;
+  font-size: 15px;
+  margin-right: 12px;
 }
+
 .value-txt {
-color:#002244;
-font-size: 20px;
+  color: #002244;
+  font-size: 20px;
 }
 
 /*Pie de página*/
 footer {
+  padding-top: 4px;
   justify-content: space-around;
   display: flex;
 }
@@ -454,38 +489,16 @@ footer {
   font-size: 7px;
 }
 
+#apa-btn:hover{
+  background-color: #009fda;
+}
+
 /* Responsive para tablets o pantallas de resolución similar */
-@media only screen and (min-width : 361px) {
+@media screen and (min-width : 361px) {
 
-  .menu-icon {
-    display: none;
-  }
-
-  nav,
-  li {
-    visibility: visible;
-    opacity: 1;
-    transition: unset;
-  }
-
-  .menu-list {
-    margin: auto;
-    padding: 0;
-    background-color: #009FDA;
-    position: unset;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .menu-options a {
-    display: block;
-    padding:unset;
-    color: #002244;
-    text-align: right;
-    font-size: 11px;
-    text-decoration: none;
-    border-top: 1px solid #ffffff;
-  }
+ .menu-list {
+    margin: -1% 0 0 -94.6%;
+  } 
 
   /*Menú de secciones*/
   .search-container,
@@ -502,4 +515,109 @@ footer {
     align-content: center;
     justify-content: center;
   }
+}
+
+/* Responsive para tablets o pantallas de resolución similar (en vertical) */
+@media screen and (min-width : 728px) {
+  
+  header {
+    box-shadow: 5px 2px 12px #002244;
+  }
+
+  #total-result-section {
+    display: block;
+    width: 65%;
+    float: right;
+  }
+
+  #themes-container,
+  #years-container,
+  #sort-container,
+  #average-container {
+    display: none;
+  }
+
+  #search-container {
+    display: grid;
+  }
+
+  .themes-form {
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 8px;
+    grid-template-rows: 28px;
+  }
+
+  .result-container {
+    height: 27em;
+    display: block;
+  }
+
+  aside {
+    width: 35%;
+    float: left;
+  }
+
+  .menu-back {
+    display: none;
+  }
+
+  footer {
+    border-top: 1px solid #002244;
+    position: fixed;
+    left: 0px;
+    bottom: 5px;
+    height: 35px;
+    width: 100%;
+  }
+
+}
+
+/* Responsive para desktop */
+@media screen and (min-width : 1024px) {
+
+  .header-container {
+    grid-template-columns: auto 35%;
+  }
+
+  .menu-container {
+    grid-template-columns: 30% 65%;
+    justify-items: center;
+  }
+
+  .menu-icon,
+  #menu-display {
+    display: none;
+  }
+
+  nav {
+    visibility: visible;
+    opacity: 1;
+    transition: unset;
+  }
+
+  .menu-list {
+    height: auto;
+    width: auto;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .menu-options a {
+    display: unset;
+    padding: 0;
+    margin-right: 10px;
+    color: #000000;
+    text-align: center;
+    font-size: 11px;
+    text-decoration: none;
+    border-top: unset;
+  }
+
+  /*Poniters y hovers*/
+
 }
