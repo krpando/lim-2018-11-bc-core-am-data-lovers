@@ -1,6 +1,8 @@
 /* global WORLDBANK*/
 /* global WorldBank*/
 /* exported paises*/
+/* exported searchHrefToSort*/
+/* exported themesHrefToSort*/
 
 // -------------------------------- Desplazamiento entre secciones-------------------------------- //
 // Desplegar sección Búsqueda rápida
@@ -11,7 +13,7 @@ document.getElementById('searchfast-btn').addEventListener('click', () => {
   document.getElementById('years-container').style.display = 'none';
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
-  if (window.matchMedia('(min-width: 728px)').matches) {
+  if (window.matchMedia('(min-width: 1024px)').matches) {
     document.getElementById('sections-menu').style.display = 'block';
   } else {
     document.getElementById('sections-menu').style.display = 'none';
@@ -26,7 +28,7 @@ document.getElementById('themes-btn').addEventListener('click', () => {
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
-  if (window.matchMedia('(min-width: 728px)').matches) {
+  if (window.matchMedia('(min-width: 1024px)').matches) {
     document.getElementById('sections-menu').style.display = 'block';
   } else {
     document.getElementById('sections-menu').style.display = 'none';
@@ -41,7 +43,7 @@ document.getElementById('years-btn').addEventListener('click', () => {
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('average-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
-  if (window.matchMedia('(min-width: 728px)').matches) {
+  if (window.matchMedia('(min-width: 1024px)').matches) {
     document.getElementById('sections-menu').style.display = 'block';
   } else {
     document.getElementById('sections-menu').style.display = 'none';
@@ -56,7 +58,7 @@ document.getElementById('sort-btn').addEventListener('click', () => {
   document.getElementById('average-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
   document.getElementById('years-container').style.display = 'none';
-  if (window.matchMedia('(min-width: 728px)').matches) {
+  if (window.matchMedia('(min-width: 1024px)').matches) {
     document.getElementById('sections-menu').style.display = 'block';
   } else {
     document.getElementById('sections-menu').style.display = 'none';
@@ -71,7 +73,7 @@ document.getElementById('average-btn').addEventListener('click', () => {
   document.getElementById('sort-container').style.display = 'none';
   document.getElementById('search-container').style.display = 'none';
   document.getElementById('years-container').style.display = 'none';
-  if (window.matchMedia('(min-width: 728px)').matches) {
+  if (window.matchMedia('(min-width: 1024px)').matches) {
     document.getElementById('sections-menu').style.display = 'block';
   } else {
     document.getElementById('sections-menu').style.display = 'none';
@@ -82,6 +84,7 @@ document.getElementById('average-btn').addEventListener('click', () => {
 document.getElementById('back-btn').addEventListener('click', () => {
   document.getElementById('sections-menu').style.display = 'block';
   document.getElementById('total-result-section').style.display = 'none';
+  document.getElementById('result-box').innerHTML = '';
 });
 
 // -------------------- Elección de países para uso general de variable inData -------------------- //
@@ -102,7 +105,12 @@ const paises = () => {
   }
   return inData;
 };
-
+// Probando funcion para href
+const searchHrefToSort = () => {
+  document.getElementById('search-container').style.display = 'none';
+  document.getElementById('sort-container').style.display = 'block'; 
+  document.getElementById('result-box').innerHTML = '';
+};
 // ----------------------------------***** BÚSQUEDA RÁPIDA *****---------------------------------- //
 document.getElementById('search-btn').addEventListener('click', () => {
   document.getElementById('result-box').innerHTML = ''; // Limpiado de caja antes de impresión
@@ -114,13 +122,17 @@ document.getElementById('search-btn').addEventListener('click', () => {
     for (let i = 0; i < outputSearch.length; i++) {
       document.getElementById('result-box').innerHTML += `
         <ul class="result">
-          <li><a href="#sortSection" class="result">${outputSearch[i]}</a></li>
+          <li><a href = "javascript:searchHrefToSort()">${outputSearch[i]}</a></li>
         </ul>
         `;
     }
   }
 });
-
+const themesHrefToSort = () => {
+  document.getElementById('themes-container').style.display = 'none';
+  document.getElementById('sort-container').style.display = 'block'; 
+  document.getElementById('result-box').innerHTML = '';
+};
 // ---------------------------------***** BÚSQUEDA POR TEMAS *****-------------------------------- //
 document.getElementById('education').addEventListener('click', () => { // Tema: Educación
   document.getElementById('result-box').innerHTML = '';
@@ -147,10 +159,9 @@ document.getElementById('economy').addEventListener('click', () => { // Tema: Ec
 // Impresión de resultados en página
 const resultado = (themes) => document.getElementById('result-box').innerHTML += `
   <ul class="result">
-    <li><a href="#sortSection" class="result">${themes}</a></li>
+    <li><a href="javascript:themesHrefToSort()">${themes}</a></li>
   </ul>
   `;
-
 // ----------------------------------***** FILTRADO POR AÑOS *****--------------------------------- //
 document.getElementById('searchyears-btn').addEventListener('click', () => {
   document.getElementById('result-box').innerHTML = ''; // Limpiado de caja antes de impresión
@@ -256,7 +267,6 @@ document.getElementById('sortBy-btn').addEventListener('click', () => {
     }
   }
 });
-
 // -----------------------------***** PROMEDIO SEGÚN INDICADORES *****----------------------------- //
 
 document.getElementById('averageBtn').addEventListener('click', () => {
@@ -298,7 +308,6 @@ document.getElementById('averageBtn').addEventListener('click', () => {
     <span class='value-txt'>${outputCompute}</span></div>
    `;
 });
-
 // -------------------------------- Copiado de referencia tipo APA -------------------------------- //
 document.getElementById('apa-btn').addEventListener('click', () => {
   const inputTemporal = document.createElement('input');

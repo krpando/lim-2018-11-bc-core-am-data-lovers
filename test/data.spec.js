@@ -65,7 +65,7 @@ describe('filterYears es una función', () => {
 
   it('returns `debería retornar los porcentajes correspondientes al año ingresado`', () => {
     expect(WorldBank.filterYears(miniData, inputByYears)).toEqual(outputByYears);
-  });
+  }); 
 });
  
 // ----------- Testeando sortData ----------- //
